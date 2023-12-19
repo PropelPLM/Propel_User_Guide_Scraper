@@ -1,17 +1,11 @@
-use serde::Serialize;
-use std::{error::Error, io::Write};
-use std::thread;
-use std::time::Duration;
+use std::error::Error;
 use thirtyfour::{
     prelude::{ElementWaitable, ElementQueryable, WebDriverError},
-    By, DesiredCapabilities, WebDriver, WebElement, fantoccini::elements,
-    error::WebDriverResult
+    By, DesiredCapabilities, WebDriver, WebElement
 };
 use futures::future::try_join_all;
 use url::Url;
 use std::fs;
-use std::io;
-use serde::ser::StdError;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>>{
@@ -31,20 +25,6 @@ async fn main() -> Result<(), Box<dyn Error>>{
     // write the pages into 
     for link in homepage_element_links {
         write_page_content_to_file(&driver, link).await?;
-        // let link = link?;
-        // driver.goto(&link).await?;
-        // let heading_element = driver.query(By::XPath("//html/body/div[3]/div[2]/div/div[3]/div/div[2]/div[1]/article[1]/h1|/html/body/div[3]/div[2]/div/div[2]/div[1]/div/div[2]/div[1]/article[1]/h1")).first().await?;
-        // heading_element.wait_until().displayed().await?;
-        // let heading_text = heading_element.text().await?.replace(" ", "_");
-
-        // let page_content_element = driver.query(By::XPath("//div/div[1]/div/div/div[2]/span/div")).first().await?;
-        // let page_content_text = page_content_element.text().await?;
-        // // get subpage reference links
-
-        // println!("heading text: {:?}", heading_text);
-        // let dest_file_name = format!("scraped_pages/{heading_text}.txt");
-        // println!("dest_file_name: {:?}", dest_file_name);
-        // fs::write(dest_file_name, page_content_text)?;
         println!("printing_subpage_links");
         let subpage_link_elements = get_subpage_elements(&driver).await?;
         let subpage_links = get_element_links_absolute(&url, subpage_link_elements).await?;
@@ -80,7 +60,6 @@ async fn get_homepage_elements(driver: &WebDriver) -> Result<Vec<WebElement>, We
 async fn get_subpage_elements(driver: &WebDriver) -> Result<Vec<WebElement>, WebDriverError> {
     // finds all the subpage elements that link to different pages of the guide
     // print!("getting homepage elements");
-    // let elements = driver.find_all(By::XPath("/html/body/div[3]/div[2]/div/div[3]/div/div[2]/div[1]/article[2]/div/div/div/div/div[1]/div/div/div[2]/span/div/ul/li/span/span/a")).await?;
     let elements = driver.find_all(By::XPath("//div/div[1]/div/div/div[2]/span/div/ul/li/span/span/a")).await?;
     print!("sub__elements: {:?}", elements);
     Ok(elements)
