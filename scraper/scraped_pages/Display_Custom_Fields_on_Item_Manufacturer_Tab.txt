@@ -1,0 +1,21 @@
+Display Custom Fields on Item Manufacturer Tab
+When an Item contains one or more manufacturer parts, the Manufacturers tab on the Item record will display information regarding that part. 
+  Additionally, the Item’s BOM tab has With Manufacturers view, which appends Manufacturer information to the details already provided on the BOM tab. 
+This article walks through customizing the fields that are displayed on the both tabs on an Item record. These fields can originate from either the Manufacturer Item object or the Manufacturer Part object, but are controlled through field sets on the Manufacturer Item object.
+Before You Begin
+This article assumes that the field has already been created and is ready to be added. If you still need to create the field, go to the Add Custom Fields to a Manufacturer Item or Manufacturer Part Record article.
+Add the Custom Field to the Field Set
+Once the field has been created, there are two field sets on the Manufacturer Item object you can add the created field to, depending on where you want it to appear: 
+Default AML View: This field set determines which fields are visible from the Manufacturers tab on an Item record.
+AML in BOM View: This field set determines which manufacturer fields are visible from the BOM tab when the With Manufacturers list view is selected.
+Go to Setup > Object Manager and select the Manufacturer Item object.
+Select Field Sets and then click the name of the field set record you want to update, either Default AML View or AML in BOM View.
+The left panel of the Field Set screen lets you choose the location of your field. In the example below, the Manufacturer Item object is the parent with the lookups listed below as the children (the Item Revision and Manufacturer Part objects). If you created your custom field on the Manufacturer Item object, then it should appear on the right panel when you select the Manufacturer Item option on the left.
+Once you’ve located your field, drag it from the list of available fields down to the In this Field Set section. You can order it anywhere in the list you like.
+Click Save.
+Refresh Page Layouts
+Once you’ve updated any field sets or page layouts, you need to refresh the page layouts so that the changes can be viewed by the users.
+Select Propel Setup from the navigation bar.
+Under User Settings click Refresh Page Layouts.
+See Also
+Add Custom Fields to a Manufacturer Item or Manufacturer Part Record

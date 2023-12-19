@@ -1,0 +1,29 @@
+Run a Workspace Report for Propel Sharing Rules
+Propel offers several Workspace searches to help you test and manage your Propel Sharing Rules. This article will cover the different searches available as well as how to execute those searches. For more information about the Propel Workspace feature and how you can configure and execute many different complex searches, go to our Workspace Overview article.
+You can use the information provided by the searches/reports to help determine if your sharing strategy is working as expected and that the expected users have access to the correct information (and do not have access to information you do not want to share).
+Available Workspace Searches/Reports
+There are currently three Workspace Searches available under Sharing Reports:
+Shared by User/Group: Through a search of a specific user or Public Group, this lets you see what private records are available to a specific user or Public Group, and see why (based on configuration settings) they are available to the user or group.
+Shared by Object: This lets you search by a private record to determine who can see the record and why.
+Shared by Rule Name: By searching for a specific Propel Sharing Rule name that has been configured, you can see what the rule grants access to (which records and to which users or groups).
+Run a Workspace Search/Report
+Note: You must have Modify All permissions for the private object to see the sharing information.
+Select the Workspace tab from the navigation bar.
+Click the dropdown list for the available List Views and select the Sharing Reports option.
+Click the name of the Sharing Report you want to execute.
+Enter the parameters for the report. These are different for each report:
+Shared by User/Group: Enter the name of the User or Group, along with the name of the applicable Object. As you enter text, the system will search for available entries and let you select from the found options. To include the logic behind the access, select the Include Owner Reason checkbox.
+Shared by Object: Enter the name of the applicable private Object, along with the name of the applicable Name/Number of a specific record. For the Object, As you enter text, the system will search for available entries and let you select from the found options. The Name/Number must be manually entered.
+Shared by Rule Name: Enter the Rule Name, and optionally the Object Type and Source Record Name. As you enter text, the system will search for available entries and let you select from the found options. 
+Once you’ve entered your criteria, click Search.
+The system will display the results, which you can compare against the expected results of your search strategy.
+Recalculate Sharing Rules
+If you are not seeing the results you expected, you may need to modify your Propel Sharing Rule. If you do this, you will need to rerun - or Recalculate - your sharing rules. This will modify previously shared data to re-share based on the updated rules.
+Go to Propel Setup > Admin Settings > Sharing Rules.
+In the Sharing Rules section, click the dropdown list and select the Name of the rule you modified.
+Click Recalculate. The system will take a moment to perform the recalculation.
+Repeat steps 2 and 3 for each rule you’ve modified.
+See Also
+Create a Custom Field for a Propel Sharing Rule
+Configure a Propel Sharing Rule
+Propel Sharing Rules and Reporting Overview

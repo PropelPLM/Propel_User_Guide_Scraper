@@ -1,0 +1,25 @@
+Manually Assign Training Assignments
+In most cases, you will automatically generate Training Assignments to assign training. However, there may be instances where you want to manually generate ad hoc Assignments, such as when you want to modify due dates in bulk or reassign completed training after a Quality Event is logged.
+
+Training Assignments must be generated through a Training Plan (no assignments without a parent plan -- instructions on Training Plan configuration found here.)
+This article covers two methods for manually assigning Training Records:
+Assign selected Items to all Trainees in a Training Plan
+Assign all Items in a Training Plan to selected Trainees.
+Manually Assign Items
+This process lets you select one or more Items in a Training Plan, and then manually assign training on those selected Items to all of the Trainees in the Training Plan. 
+Select the Training Plans tab from the navigation bar and click the Name of the Training Plan you want to use for your manual assignment.
+Click View All in the Training Items section. With limited space, the Training Items section only displays the first few Items in the Training Plan. In the example below, you can see there are more records than are displayed as the number in parenthesis has a plus sign after it: (3+). This will take you to a List View of all of the Training Items in the Plan.
+Using the checkboxes to the left of each Training Item, select the Items that you want to manually generate Training Records for. Then click Assign.
+
+Note: The Assign option is also available by clicking the dropdown icon beside the Item on the main Training Plan page. You just won’t be able to see more than three Items or select multiple Items.
+Use the calendar to select a Due Date for the training. This will override the default due date, which is based on the Training Plan configuration. If you leave this blank, it will use the default due date.
+Click Assign to complete the process.
+Manually Assign Trainees
+This process lets you select one or more Trainees in a Training Plan, and then manually assign training on all of the Items in the Training Plan to those selected Trainees. 
+Select the Training Plans tab from the navigation bar and click the Name of the Training Plan you want to use for your manual assignment.
+Click View All in the Trainees section. With limited space, the Trainees section only displays the first few users and/or groups in the Training Plan. In the example below, you can see there are more records than are displayed as the number in parenthesis has a plus sign after it: (3+). This will take you to a List View of all of the Trainees in the Plan.
+Using the checkboxes to the left of each Trainees, select the Trainees that you want to manually generate Training Records for. Then click Assign.
+Use the calendar to select a Due Date for the training. This will override the default due date, which is based on the Training Plan configuration. If you leave this blank, it will use the default due date.
+Click Assign to complete the process.
+See Also
+Create and Manage a Training Plan

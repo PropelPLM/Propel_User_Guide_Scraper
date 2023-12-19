@@ -1,0 +1,14 @@
+Configure a Profile
+A profile determines what users can and can’t do in Propel, as well how they access data and objects. Every user must have a profile assigned - this is done when you Create a New Propel User. As with permission sets, cloning an existing profile saves time by copying all of the settings from the original profile, where you then customize it. For more detailed information on profiles, go to the Profiles article from Salesforce.
+This article walks you through cloning the Standard User profile, which is a part of the out of the box Propel configuration. You can, however, clone any existing profile.
+Clone the Standard User Profile
+Go to Setup > Users > Profiles.
+Locate the Standard User profile and click Clone beside it. As noted, you can choose any existing profile to clone.
+In the Profile Name field, enter the name of your new profile, and click Save.
+The Profile screen appears.
+Click Edit. 
+Here you can make the necessary changes to configure your profile based on your needs. We recommend that administrators have a strong knowledge of Salesforce before making changes to profiles. For further assistance, contact Propel Support.
+Click Save.
+See Also
+Create a New Propel User
+Salesforce Profiles

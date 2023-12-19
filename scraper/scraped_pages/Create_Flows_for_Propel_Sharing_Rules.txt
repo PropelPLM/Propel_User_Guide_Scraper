@@ -1,0 +1,61 @@
+Create Flows for Propel Sharing Rules (Example)
+Once you’ve completed the configuration steps for your Propel Sharing Rules, you’ll need to set up one or more Flows to enable the actual sharing of the records that you create and/or update. If you do not set up the necessary Flows, then your records will not be shared as needed.
+In this article, we’ll provide a demonstration of a Sharing Rule Flow to show how it is used in the context of Propel Sharing Rules. Specifically, we'll show how to share Items with the associated Manufacturers and Distributors (from the Manufacturer Parts) upon the release of the Item Revision.
+The Flows that you configure will vary greatly depending on the different Propel Sharing Rules that you configure and the Sharing Strategy that you’ve employed. For additional examples, check out our Propel Sharing Rules Deep-Dive Webinar.
+This article assumes that you have at least a basic understanding of Flows and how to create them within Propel. For detailed instructions on using Flows, go to Salesforce's Flows Builder documentation.
+Create a Flow (Example)
+Go to Setup:
+Locate Flows (1) using the left-side panel, then click New Flow (2): 
+Select the Platform Event - Triggered Flow option, then click Create:
+Select Publish Item Revision from the “Platform Event” field, then click Done:
+Add Data Element to Flow
+Click the Plus icon to add an element to the Flow:
+Select Get Records from the dropdown:
+Enter the appropriate values for the “Label” and “API Name” fields:
+Select Item Revision in the “Objects” field:
+Complete the “Filter Item Revision Records” section by completing the conditions for the Flow:
+In this example, select Id in the “Field” option:
+Select the appropriate “Operator” from the dropdown, we will use Equals:
+In the “Value” field, first select $Record:
+Then select PDLM__Record_Id__c in the list that appears:
+Adjust the settings for the other sections if necessary, then click Done:
+Add Decision Element to Flow
+Click the Plus icon below Get Item Revision Record:
+Click Decision:
+Input the appropriate values into the required “Label” and “API Name” fields:
+Enter True into the required “Label” and “Outcome API Name” fields:
+In the “Resource” field, select Item Revision from Get_Item_Revision_Record:
+Then select PDLM__Released__c in the list that appears:
+  Select the appropriate “Operator”, we’ll use Equals:
+Select $GlobalConstant.True in the “Value” field:
+Click Done:
+Add Apex Action to Flow
+In the main Flow Builder screen, click on the Plus icon under True:
+Click Action:
+Set the "Filter By" field to Type (1), select Apex Action (2) in the left panel, then select Sharing Rule Action (3) from the "Action" field. See the notes at the bottom of the article for more details about the possible variables in this Action:
+Input the appropriate values into the required “Label” and “API Name” fields:
+Select Item Revision from Get_Item_Revision in the “Record Id” field:
+Then select PDLM__Master_Item__c in the list that appears:
+Input the appropriate values for the “Share Reason” and “Sharing Rule Name” fields, then click Done:
+Finalizing the Flow
+In the main Flows Builder screen, click the Plus icon under the new apex action:
+Click End:
+Click Save:
+Input the appropriate values into the “Flow Label” and “Flow API Name” fields, then click Save:
+Click Activate to apply the Flow:
+And that’s the whole process for creating Flows for Propel Sharing Rules.
+Important Reminder
+The Sharing Rule Flow example above is only for a certain type of Sharing Rule. Propel has various types of Sharing Rules that will require certain adjustments to the prescribed configuration.
+When you add the Sharing Rule Action Apex Class, you'll be presented with three Apex Variables that you will need to set: 
+The Record Id is the Reference for the object-to-be-shared's Record Id.
+When the rule shares Items, the Record Id must be an Item Id. If the event is triggered off of an Item Revision, you will need to use a field reference to provide the Parent Item's Record Id.
+When the rule shares Changes, the Record Id must be a Change Id.
+When the rule shares Quality, the Record Id must be a Quality Id.
+When the rule shares Manufacturer Parts, the Record Id can be a Manufacturer Part Id, Item Id, or Item Revision Id depending on the rules and sharing strategy.
+The Share Reason is a short text entry that you'll mostly use for reporting. 
+The Sharing Rule Name is the API name of the Custom Metadata you set up in when you Configured your Propel Sharing Rules. This ties the Propel Sharing Rule and the Flow together.
+  See Also
+Propel Sharing Rules and Reporting Overview 
+Configure a Propel Sharing Rule 
+Salesforce's Flows Builder documentation 
+ 

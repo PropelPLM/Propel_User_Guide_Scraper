@@ -1,0 +1,14 @@
+Manage BOM Costs
+Propel lets you determine which Items in the Bill of Materials (BOM) will be used to calculate assembly costs and component costs.
+Note: You will need to Configure Cost Roll-ups for this to work.
+Set the Items that will Calculate Costs
+Select the Items tab from the navigation bar and click on the name of the Item for which you want to manage costs.
+Select the applicable Item Revision draft and select the BOM tab.
+In the View dropdown list, select With Manufacturers.
+Click Edit Draft. 
+There are two options for including Items in the cost rollup for the parent Item: select all Items, or select individual Items. To include all of the items in the BOM, select the Include All in Cost Roll-up checkbox. To include only specific Items, such as the Preferred Items, in the cost roll-up, select the checkboxes for the individual Items in the Include in Cost Roll-up column.
+The Cost Roll-Up will be displayed in the record header.
+Click Save and then click Done Editing.
+See Also
+Configure Cost Roll-ups
+Configure Additional Cost Fields to Track in Part Cost History

@@ -1,0 +1,10 @@
+Configure Network Access
+When you configure network access, you’re adding a list of trusted IP Addresses that can log in to your Propel org. Users within these trusted IP ranges who login will not have to complete a login challenge (usually by entering a code sent to their mobile device or email address). Users outside of this trusted range generally only have to complete the challenge once for each device they use to login with.
+Note: This does not prevent users from outside of you trusted IP Addresses from logging in all together. It just initiates the login challenge for them.
+Set Trusted IP Ranges
+Go to Setup > Security > Network Access.
+On the Network Access page, click New.
+Enter the Start IP Range value and the End IP Range Value. All IP addresses that fall within that range will be covered. If you are adding a single address, the Start and End values will be the same.
+If desired, enter a Description to help identify the range.
+Click Save.
+Repeat the above process for additional IP Addresses and ranges.

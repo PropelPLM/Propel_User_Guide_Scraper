@@ -1,0 +1,27 @@
+Customize Your Navigation Bar Tabs
+In Propel, the navigation bar is the list of tabs that you see at the top of the screen. 
+You can customize the tabs that you see by default every time you open Propel, and you can also change the order in which they appear across the screen.
+If you need help adding accessing the Propel app, go to the Login and Launch Propel article.
+Add Tabs from the Navigation Bar
+In the top right, click the Pencil icon. This will launch the Edit Propel App Navigation Items screen.
+Click Add More Items.
+Click All. This will display all of the available tabs that you can add.
+Here, you can scroll through the available tabs or use the Search all items… field to search for a specific tab.
+Once you find the tab you’re looking for, click the Plus (+) icon. It will change to a checkmark.
+You can select as many additional tabs as you like. Once you’ve selected them all, click Add <number> Nav Item(s). The <number> will change based on how many items you select.
+Click Save. Your tab will be added to the end of the list.
+Note: Depending on your screen size and the number of tabs you have, your new tab may appear in the More tab. Select the More tab to see a list of available tabs.
+Reorder Tabs on the Navigation Bar
+Note: In addition to the method below, you can also reorder tabs simply by dragging them to a different spot on your navigation bar.
+If your tab is visible, meaning it is not contained in the More tab, you can simply drag it to a new location on the navigation bar.
+If your tab is not visible, click the Pencil icon to bring up the Edit Propel App Navigation screen.
+With the list of all tabs now visible, you can drag and drop the tabs to their new locations.
+Once you’ve made all of your changes, click Save.
+Remove a Tab from the Navigation Bar
+You can’t remove any of the default tabs from the Propel app.
+Click the Pencil icon to bring up the Edit Propel App Navigation screen.
+For the tabs that are not part of the default Propel app, you’ll see an X to the right of their name, indicating that they can be removed.
+Click the X to remove the tab.
+
+Note: You can also click the Pencil icon to change the name of a non-default tab.
+Once you’ve finished removing tabs, click Save.

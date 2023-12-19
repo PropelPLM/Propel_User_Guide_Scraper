@@ -1,0 +1,45 @@
+Display Custom Fields on the Item BOM Tab
+The Bill of Materials (BOM) tab on an Item record displays a hierarchical list of all the Items that make up the current Item, such as assemblies, individual parts, and documents. On this tab, you can see all of the Items in the hierarchy, view information about the Items in the BOM, and drill down into each record for more information. Items that are individual components will not have a BOM, only those that are made up of other Items.
+
+Out of the box, Propel displays a number of fields in its BOM that contain pertinent information about each Item. However, you may have created custom fields on relevant objects that you also want to display on the BOM. This article outlines how to pull in that custom field information to an Item's BOM tab.
+Setup for the BOM Tab resides on the Assembly and Manufacturer Item objects - it's here that you’ll modify the Field Sets to display your custom fields. The field you want to display can exist on the Assembly object, or it can be pulled from an object with a Lookup relationship to the Assembly object; by default, the Propel Assembly object has lookups to the Item, Item Revision, and User objects. The field sets are:
+For the Default BOM View: Assembly's "Default BOM View" field set
+With Manufacturers view: Assembly's "AML in BOM View" field set and the Manufacturer Item's AML in "BOM View" field set
+Create a Formula Field on the Assembly Object
+If you’re wanting to display a custom field that you’ve already created on the Assembly, Item or Item Revision object, then you can skip this step and go straight to the Add Fields to Field Sets section. However, if you need to pull data from another field on a different object through lookups and display that on the BOM tab, then you will need to create a formula field on the Assembly object.
+There are several reasons why you might need to create this formula field:
+The field you need to access does not exist on the Item or Item Revision object, but on another object that has a lookup relationship to those objects. Salesforce lets you access up to 10 levels.
+You’ve created a custom object with a lookup on the Assembly object.
+You want to add a field from the Assembly, Item or Item Revision field that has not been marked by the Propel developer as “Available for Field Set”. This means that even though the field exists you can’t add it into a field set.
+By creating a formula field, you are able to copy the data from one field into a field on the Assembly object that you can then add to the proper field set. These steps assume a basic understanding of creating formula fields and using them for copying data across objects. For more information, go to Salesforce’s help on creating a Cross Object Formula.
+Go to Setup > Object Manager > Assembly.
+Select Fields & Relationships and click New.
+Select Formula as the Data Type and click Next.
+Enter a name in the Field Label field; the Field Name will auto-populate. 
+Select the Formula Return Type. Most likely, this will be Text.
+Click Next.
+The type of data you’re pulling in will determine the function that you need to use. In this example, because the field we are gathering data from is a picklise, we’ve selected the TEXT function. Once you’ve inserted your function, click Insert Selected Function.
+Remove the “value” text from the method, with your curso in the parenthesis, select the Advanced Formula tab. 
+Click Insert Field and drill down through the levels to find the field that you want to copy over. Any Labels followed by a > can be expanded.
+Once you’ve selected your field, you’ll see a message indicating the formula. Click Insert.
+Once your function is complete, click Next, then click Save. 
+Now that you have your formula field set up, you can follow the instructions below to add it to the applicable field set.
+Add the Custom Field to a Field Set
+Go to Setup > Object Manager > Assembly and select Field Sets.There are multiple field sets on the Assembly object that you may want to update:
+Default BOM View: Add Item details and assembly fields to default the BOM view.
+AML in BOM View: Refers to the "With Manufacturers" view.
+Export: Sets which BOM/Assembly fields will appear during an export.
+Where Used: Sets BOM/Assembly fields to appear on the Where Used Tab.
+Where Used Top: Sets BOM/Assembly fields to appear on Top Parent Where Used Tab.
+Click the name of the Field Set you want to update and click Edit.
+The left panel of the Field Set screen lets you choose the location of your field. The Assembly object is the parent with the lookups listed below as the children (the Item and Item Revision objects). If you created your custom field on the Assembly, Item, or Item Revision object, then it should appear on the right panel when you select one of the options on the left. If you do not see your custom field in any of the options, then you will most likely have to use a formula field.
+Once you’ve located your field, drag it from the list of available fields down to the In this Field Set section. You can order it anywhere in the list you like.
+Click Save.
+Add the Custom Field to Permission Sets
+If you haven’t already done so, you will need to add any custom fields you created to applicable Permission Sets so that your users can view them. Go to our Add a Custom Field to a Permission Set article for detailed instructions.
+Refresh Page Layouts
+Once you’ve updated any field sets or page layouts, you need to refresh the page layouts so that the changes can be viewed by the users.
+Select Propel Setup from the navigation bar.
+Under User Settings click Refresh Page Layouts.
+See Also
+Add a Custom Field to a Permission Set

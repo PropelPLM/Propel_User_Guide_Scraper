@@ -1,0 +1,13 @@
+Remove a Propel License from a User
+By removing a user’s Propel license, you free up that license for a different user.
+This article assumes that you are not also deactivating the user’s Salesforce account. If you are, go to the Deactivate a Propel User article.
+Remove a User's Propel License
+This will free up the license so it is available to grant to another user.
+Go to Setup > Apps > Packaging > Installed Packages to show a list of all installed packages.
+Click the Propel app you are assigning, such as Propel PLM.
+Click Manage Licenses. This will show all of the current users with Propel licenses.
+Click Remove by the user's name you would like to remove. 
+See Also
+Deactivate a Propel User
+Create a New Propel User
+Assign Propel to a User

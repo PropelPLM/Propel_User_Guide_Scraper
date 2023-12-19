@@ -1,0 +1,13 @@
+Configure Filters on the Declaration Affected Items Tab
+Records listed on the Affected Items tab of a Declaration are the Items that have been added to the Declaration to set their adherence to a Specification. These records could potentially have an extensive list of Affected Items, including Manufacturer Parts, making it difficult to locate a specific Item on the screen. Propel’s filters give you a way to shrink that list to make it easier to find the information you’re looking for.
+Configure a Filter
+Select the Declarations tab from the navigation bar, depending on the type of record you want to open. Click the Name of the record to open it.
+Select the Affected Items tab and click Filters.
+Empty fields will appear below the field headings in the Affected Items tab. Depending on the type of data in the field, and your configuration, these empty fields could be text fields or checkbox fields.
+For the text boxes, you can enter in text to filter your Affected Items list. In the example below, entering “resis” in the Description field displays only Items that have “resisi” in their Description, allowing you to see all of the resistors.
+You can further filter results by entering text in other fields. For example, you could enter in a Category or Declared Status to further narrow the list of Items that get displayed.
+If the filter field is a checkbox, this lets you filter based on whether or not a value exists in the field. If you select the checkbox, it will only show you Items that have a value.
+To remove the filters and return to the original view, click Clear All to the left of the filter fields.
+To remove the filter fields from view, click Filters again. This will also clear any filters you have applied.
+See Also
+Manage Declaration Record Affected Items

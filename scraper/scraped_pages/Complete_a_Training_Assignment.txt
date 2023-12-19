@@ -1,0 +1,34 @@
+Complete a Training Assignment
+This article covers how to complete a training assignment that has been assigned to you by your manager. Depending on your configuration, and the training assigned, you may have to complete a quiz as a part of this training.
+When you have training that needs to be completed, you will receive a notification. Generally, this will be an email that will link you to your Propel Home Page, where you can view all your open training assignments.
+Once you’ve received notification of a training assignment, you can go to one of two places to view and complete your training:
+The Home Page, which contains the widget for My Open Training Assignments.
+Administrators: check out this article for details on how to Configure the Propel Training App.
+The Training Plan to see all open training assignments for the plan.
+Complete a Training Assignment
+These instructions assume you are using the Home Page to access your Training Assignments.
+Select the Home Page from the navigation bar and scroll down to the My Training Assignments section.
+By default, this will display all of your open Training Assignments. Click on the Action icon or the assignment you wish to complete.
+
+Wait - My Screen Looks Different: If your screen does not contain the Action column or icons, then you may be using the older Salesforce Classic/Visualforce training assignment widget. In Winter '23 we deprecated that old VisualForce component, so if you are still using it we encourage you to switch over to the improved Search component. Click on the linked article for details on how to Configure the Propel Training App.
+The Training Assignment window opens with the details of your assignment.
+Click on View Documents to see any attached documents for the assignment.
+To view the attachment inside Propel, click the Open icon. This will display a preview of the attachment.
+
+Note: Not all file types can be previewed.
+To download the file so that you can open it in its native application, click the Download icon.
+If the assignment has a quiz attached, click Training Quiz. You will only see this option if the assignment has a quiz.
+Click Start Quiz to take the quiz.
+The quiz will open in the Training Assignment window. Complete all of the Quiz questions and then click Finish.
+The system evaluates the quiz and lets you know immediately if you passed or failed.
+If you pass the quiz, you’ll get a Success message and see a green checkmark beside your quiz.
+If you do not pass the quiz, select Retake Quiz and attempt the quiz again.
+Depending on your org configuration, when you complete a quiz your training sign off may happen automatically. If so, you’ll see checkmarks beside both the Quiz and Sign Off and your training assignment process is complete. If not, continue with the next steps.
+If your training assignment does not have a quiz or still requires manual sign off, click the Sign Off section to expand it, then click Sign Off.
+
+Note: If your org is set up with Dual Signatures, you may need to enter your password after clicking Sign Off.
+Once your Training Assignment Status Bar is at 100% your training assignment is complete. You can close the window.
+  See Also
+Create and Manage a Training Plan
+Download Item Attachments
+Items Overview

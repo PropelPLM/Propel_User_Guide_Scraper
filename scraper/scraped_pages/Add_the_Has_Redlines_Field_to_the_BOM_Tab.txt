@@ -1,0 +1,10 @@
+Add the Has Redlines Field to the BOM Tab
+This article shows you how to add the Has Redlines icon field to the BOM tab, which will display a red dot to indicate changes when you compare one revision to another. This is also a sortable column.
+
+Add the Has Redlines Field to the Assembly Object
+Go to Setup > Object Manager and select the Assembly object.
+Select Field Sets from the left panel and select Default BOM View field set.
+The Has Redlines field should already exist. Drag it from the top section to the In the Field Set section below. 
+Click Save.
+Select the Propel Setup tab front eh navigation bar and click Refresh Page Layouts.
+Navigate to an Item with a BOM to view the redlines field, as applicable.

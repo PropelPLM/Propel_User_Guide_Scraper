@@ -1,0 +1,60 @@
+Set Up Alternate Parts in a BOM
+If an item in a BOM is totally interchangeable with another item, setting up Alternate Parts can be helpful to identify which item is the preferred item. Note that this is not referring to a preferred supplier, as that would be managed with Manufacturer Part Numbers/Distributor information in the AML or Manufacturers tab rather than the BOM.
+This article covers how to set up fields in the BOM (Assembly) to define which parts can be used as alternates for other parts. It includes adding custom fields to the Assembly object and updating the BOM views and export.
+Create a “Primary or Alternate” Field on the Assembly Object
+Got to Setup > Object Manager and select the Assembly object.
+Select Fields & Relationships and click New.
+For the new field’s Data Type, select Picklist and click Next.
+Enter “Primary or Alternate” for the Field Label.
+For the Values, select Enter values, with each value separated by a new line. Enter the following, with each item on its own line:
+Primary
+Alternate
+Select Use first value as default value.
+Click Next > Next > Save & New, leaving the default values on each screen.
+  Create an “Alternate For” Field on the Assembly Object
+Clicking Save & New in the previous section will launch the New Custom Field screen. If you previously clicked Save instead, make sure you’re in the Fields & Relationships section and click New.
+For the new field’s Data Type, select Lookup Relationship and click Next.
+In the Related To field, select Item. This will create a lookup to the Item object.
+Click Next.
+Enter “Alternate For” in the Field Label field. Ensure the Field Name auto-populated and click Next > Next > Next > Save, leaving the default values on each screen.
+Update BOM Views
+Still in the Assembly object, select Field Sets.
+Select the Default BOM View field set.
+Drag the Alternate For and Primary or Alternate fields into the desired location on the field set. We recommend placing them after the Quantity field.
+Click Save.
+Still in the Field Sets section in the Assembly object, select the AML in BOM View field set.
+Again, drag the Alternate For and Primary or Alternate fields into the desired location on the field set.
+ Click Save.
+Update BOM export to include new fields
+Still in the Field Sets section in the Assembly object, select the Export field set.
+Drag the Alternate For and Primary or Alternate fields into the desired location on the field set.
+Click Save.
+Still in the Field Sets section in the Assembly object, select the ExportXML field set.
+Drag the Alternate For and Primary or Alternate fields into the desired location on the field set.
+Click Save.
+  Add New Fields to Permission Sets
+Add Custom Fields to Propel Everyone (Read Only) - Custom Fields Permission Set
+Go to Setup > Users > Permission Sets. 
+Select Propel Everyone (Read Only) - Custom Fields.
+In the Apps section, click Object Settings.
+Select Assemblies and click Edit.
+Ensure the following fields have Read Access selected and Edit Access deselected. Only edit the permissions on the custom fields you created; leave all other fields at the settings displayed.
+Alternate For
+Primary or Alternate
+                          
+  Click Save.
+Add Custom Fields to Propel Full Use - Custom Fields Permission Set
+Go to Setup > Users > Permission Sets. 
+Select Propel Full Use - Custom Fields..
+In the Apps section, click Object Settings.
+Select Assemblies and click Edit.
+Ensure the following fields have BOTH Read Access and Edit Access selected. Only edit the permissions on the custom fields you created; leave all other fields at the settings displayed.
+Alternate For
+Primary or Alternate
+                           Click Save.
+Refresh Page Layouts
+The final step in the process is to refresh the page layouts for Propel objects to ensure the custom fields will now display for the applicable users.
+Select the Propel Setup tab from the navigation bar.
+Under User Settings in the Cached Data section, click Refresh Page Layouts.
+
+ 

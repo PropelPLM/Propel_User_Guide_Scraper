@@ -1,0 +1,69 @@
+Propel Setup
+Propel Setup is Propel’s administration module that, combined with Salesforce’s admin tools, allow administrators to configure and manage specific areas of Propel. It also allows individual users to customize certain settings to help ensure Propel matches their business workflows.
+Propel Setup is accessed through the Propel Setup tab on the main navigation bar.
+There are three main sections to Propel Setup, each of which are detailed in this article:
+Import: Propel’s import tool for loading data sets.
+User Settings:  Settings that the users can configure for their individual instances.
+Admin Settings:  Org-wide settings administrators configure.
+This article provides an overview of Propel Setup and the many settings that are available. Where more complex configuration is available, links to more details articles are provided.
+Import
+Propel’s import tool allows you to import data sets from Excel and/or CSV files. Through the tool, you can load Item, Bill of Material (BOM), Manufacturer Part (AML), and Attachment records, either separately or in combination with one another. You can also load PIM Products Overview, Attributes, Variant Dimension Values, and SKU data.
+  For detailed instructions on importing the different data sets, go to one of the following articles:
+Propel Import Tool: Item Data
+Propel Import Tool: Bill of Material (BOM) Data
+Propel Import Tool: Approved Manufacturer List (AML) Data
+Propel Import Tool: Item Attachments (Files)
+User Settings
+The following User Settings are available to allow users to customize certain areas of their Propel experience:
+Item Page Default Tab: Select the tab that will display by default when a user opens an Item record.
+Start in editing mode on Item: Determine whether an Item record will be in Edit mode by default when a user opens it.
+Start in editing mode on Change: Determine whether a Change record will be in Edit mode by default when a user opens it.
+Cached Data: Click the Refresh page Layouts button after updating page layouts or field sets on Propel objects.
+Reset help and warning dialogs: Click Reset to re-enable all help and warning dialogs that may have been turned off.
+Admin Settings
+The Admin Settings section has several subsections listed on the left. Select one to drill into the individual settings. These settings help administrators enable capabilities across an entire org. 
+
+NOTE: Most of these settings enable backend jobs and batches. The admin that sets the setting will be tied with the background job. If that admin is deactivated, you will need to retoggle the settings by a current admin.
+  General Settings
+Disable Surveys: Set whether Net Promoter Score (NPS) surveys will appear.
+Signature Required on Approval: Determine whether Change, Quality, or Declaration approvers will need to provide an electronic signature (enter their password) when they approve records. For more information on setting up Dual Signatures, go to our Setup Dual Signatures article.
+Require a Comment on Approval: Determine whether Change, Quality, or Declaration approvers are required to enter a comment when they approve records. Note that the option to enter a comment is always available, even if it’s not required.
+Require a Comment on Rejection: Determine whether Change, Quality, or Declaration approvers are required to enter a comment when they reject records. Note that the option to enter a comment is always available, even if it’s not required.
+Cloud Document Management: When you select an available external system, such as Google Drive, Propel lifecycle rules are applied to Item Attachments managed in an external system. See our Configure the Google Workspace Integration article for more information.
+Cloud File Storage: Determine the storage system that will be used to store Item Attachments, such as Salesforce (which is the default) or Google Drive. All Item Attachments will be uploaded to the selected storage system. See our Configure Propel to Store All Attachments in Google Drive article for more information.
+Auto-reassign when Users is Deactivated: Lets you set whether the person’s Manager or a Designated Approver will be assigned their Approvals, Activities, and/or Record Ownership users are deactivated.
+Lookup Filters: Configure Propel Filtered Lookup custom settings. Note that you’ll only see options here if you have already configured lookup filters.
+Item Settings
+Allow Multiple Item Drafts: Enables multiple draft revisions of the same item to exist at the same time.
+Calculate Top Where Used: When enabled, it will calculate the highest level Item in the Item’s hierarchy so that you can use the information in reports or for display in the Where Used tab on an Item record.
+Enforce Unique Find Numbers: Requires all non-blank find numbers in a BOM to be unique.
+Item Category Settings: Lets you create or modify Item Categories. To set up a Category, go to our Configure a Category article, or see our Categories Overview article for more information.
+Calculate Item Revision Costs: When enabled, this triggers a nightly batch job to calculate the rolled-up costs for Item Revisions throughout the system. These roll-ups are typically displayed in the Item record header.
+Changes
+Change Category Settings: Lets you create or modify Change Categories, add Category-Specific Custom Fields, and Create Criteria-Based Approver Rules. To set up a Category, go to our Configure a Category article, or see our Categories Overview article for more information.
+Quality
+Quality Category Settings: Lets you create or modify Quality Record Categories, add Category-Specific Custom Fields, and Create Criteria-Based Approver Rules. To set up a Category, go to our Configure a Category article, or see our Categories Overview article for more information.
+Projects
+Product Launch Activity Reminders: Set whether ALL Product Launch Reminders are delivered to users.
+Automatically Create Projects for Change/Quality on Creation: This feature automatically creates a Project record when a Change or Quality record is created. The Project will be labeled "<Record Name> Tasks". If a Change or Quality record with a Project is deleted, the associated Project and activities will also be deleted.
+Show Chatter on Activity Modal: Set whether Chatter will be available to users on the Projects Activities tab.
+Set Dependency Buffer: When you enable this setting, you can automatically set the number of buffer days by manually rescheduling (moving) the Successor activity. Then, whenever you reschedule the Predecessor activity, it will retain the buffer that you previously set. 
+Training Records
+Enable Rescheduled Training Records: If you plan to retrain on training plans, you must ensure that this setting is enabled so that the system schedules the training.
+Calculate Late Training Records: When enabled, Propel sets the Is Late flag on any overdue training assignments. This then goes into the # of Late Assignments rollup on the Training Plan.
+Deliver Training Notifications: Send out digest emails to remind trainees and supervisors of open training assignments. See the Configure Email Notifications for Training Assignments article for configuration instructions.
+Manually Manage Training Assignments: When enabled, Propel will not automatically generate training assignments automatically for active training plans. This allows the training plan owner to create the assignments manually.
+Supervisor Training Notification Skip: When enabled, the trainee’s supervisor does not receive a digest email triggered by new training assignments being assigned to employees.
+Signature Required on Sign Off: Requires sign-off users to provide an electronic signature, which is done by entering their password.
+Allow Surrogate User to Sign-off On Behalf of Trainees: This will let another designated user, either the Training Plan Owner or the trainee's Supervisor/Manager, sign off of a trainee’s training record. When disabled, trainees must always sign off for themselves.
+Manage Large Training Plans: Enable this setting if you have more than 1000 training assignments in one plan (to calculate this, multiply the number of trainees by the number of training items). When enabled, most operations that generate new training assignments will be generated in batch processing.
+Maintain Group Membership Changes: Enable this setting if you add a public group as a trainee. This will automatically generate assignments for users added to the group and obsolete assignments for users removed from the group. 
+Compliance
+Calculate Compliance Status: When enabled, Propel will calculate the Compliance  Status at the interval you set, such as every 2, 24, 72, or 720 hours.
+Product Pricing
+Product Pricebook Change Management: When enabled, the system will auto-create Pricebook and Product records for Propel Items in the system. There is extra configuration needed for this work. See Pricebook Configuration and Technical Details for more information.
+Product Default Category: Set the default category for products when they get created. Click the button and enter the name of the Category you want to be the default.
+Sharing Rules
+Sharing Rules: Allows you to manually recalculate sharing access based on a rule. Note that you will need to have Sharing Rules already set up to do the recalculation. There is also a Remove button that allows you to remove all the sharing granted by a rule. This ability is there so that, in the event that you tried out a sharing strategy and decided to do it a different way, you can clean up the unwanted shares.
+
+ 

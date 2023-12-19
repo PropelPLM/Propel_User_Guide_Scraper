@@ -1,0 +1,19 @@
+Configure Dependent Picklists
+Dependent picklists let you display values in one picklist, based on the value selected in another picklist. This ensures that the most applicable values are available to your users.
+For example, in looking at product issues or failures, you may have several high-level Root Cause Categories that all issues fall under. These high-level categories then each have multiple sub-categories to help better classify the issues. If you listed out all of the potential sub-categories in a picklist the user could potentially see dozens of options, with only a limited subset being valid for the main Root Cause Category they chose. However, if you limit the sub-categories to display only the relevant options for each main category, you make it far easier for the user to choose a valid option.
+In the above example, the main Root Cause Category picklist is called the Controlling Field and the Sub-Categories field is the Dependent Picklist. While Salesforce outlines a number of considerations  to be aware of when configuring dependent picklists, here are a few to keep in mind:
+A field can be both a controlling field and a dependent picklist (for a different controlling field). If you do this, the order of operations for completing the fields becomes important.
+You can set default values for controlling fields but not for dependent picklists.
+Multi-select picklists can be dependent picklists but not controlling fields.
+Page layouts that contain dependent picklists must also contain their controlling picklist fields, or the dependent picklist values don't display.
+Configure a Dependent Picklist
+Go to Setup > Object Manager and select the object on which you want to create the dependent picklist. For example, you may select the Change object if you want the validation rule to be on a Change record.
+Select Fields & Relationships from the left panel and click New.
+On the Field Dependencies page, click New.
+Select the Controlling Field and the Dependent Field from the available picklists.
+Click Continue.
+On the Edit Field Dependency page you can select which dependent fields are relevant for each controlling field. The controlling fields are listed across the top in the table, and the available dependent fields are listed below each controlling field column.
+Select a dependent field and click Include Values to add it as a dependent value in your picklist. You can also use your Ctrl or Cmd key to select multiple values at once before clicking Include Values. Or you can double-click values to select or deselect them.
+Once you’ve included all of your values, click Save.
+See Also
+Dependent Picklist Considerations

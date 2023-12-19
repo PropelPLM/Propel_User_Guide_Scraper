@@ -1,0 +1,24 @@
+Create or Edit a Declaration Record
+Declarations let you declare the compliance status for the Items or Manufacturer Parts that you add into the Declaration. 
+This brief article walks you through creating a new Declaration record and editing an existing Declaration. For more information on working with Declaration records, go to our Declarations Overview article. 
+Create a New Declaration Record
+Select the Declarations tab from the navigation bar and then click New.
+OR
+Click the dropdown icon on the Declarations tab and select New Declaration.
+Click in the Category field to search for and select the Declaration’s category.
+Enter a Description for your Declaration record. This will display on the header of your Declaration and help identify it.
+Click Save.
+Your Declaration record will display.
+Edit a Declaration Record
+To make any changes to a Declaration record, such as adding affected items, approvers, or attachments, you need to have the record in Edit mode. You’ll need to do this even if you’ve just created your Declaration.
+Select the Declarations tab from the navigation bar and click the Name of the Declaration you want to modify to open it.
+Click the Edit button in the top right.
+Make any changes to your Details tab, or any of the other tabs on the Declaration record. In many cases, when you make changes on a tab, you will need to save those changes. Until you save your changes, you’ll see a warning icon on the tab.
+
+Note: Some changes, such as adding Affected Items or Attachments, will save automatically and you will not see the warning symbol.
+Once you completed all of your edits and have saved the necessary changes, click Done Editing.
+See Also
+Declarations Overview
+Manage Declaration Record Affected Items
+Add or Remove Approvers on a Declaration Record
+Manage Declaration Record Attachments (Add/Remove)

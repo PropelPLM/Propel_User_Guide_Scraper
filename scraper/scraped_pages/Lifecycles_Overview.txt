@@ -1,0 +1,28 @@
+Lifecycles Overview
+This article provides an overview of Propel Lifecycles. If you have a solid understanding of Lifecycles and want to dive right into setup, go to our Configure a Lifecycle article.
+In Propel, Lifecycles are used to build Change, Quality, and Declaration workflows, and to control aspects around Item Revisions. They’re highly customizable and include Lifecycle Phases that may require specific users to sign off on. Overall, Lifecycles provide a structure to help you manage your business practices.
+When you set up a Lifecycle, you have to specify the Type of Lifecycle you are creating: Item, Change, Quality or Declaration. (There are also Project Lifecycles, but those are covered in our Projects section.) Then you configure Lifecycle Phases and Categories that are each associated with that Lifecycle.
+ 
+As you can see from the diagram above, you can have multiple Phases associated with a single Lifecycle, and multiple Categories linked to the same Lifecycle. From the end user’s perspective, they select a Category when they create a new Item or workflow. And because that Category is linked to a Lifecycle, the Item or workflow comprises all of the Phases that are associated with that Lifecycle (and, subsequently, all of the behaviors of each Lifecycle Phase such as order, phase transitions and approvals).
+Let’s look at a quick example:
+Configuration
+You create a Lifecycle named “Change - Change Order” and select the Change type.
+On the Lifecycle, you create five Lifecycle Phases: Initial, Doc Control, In Approval, Approved, Implemented, Canceled. Each of these Phases has behaviors, transitions, and approvals configured.
+You then create three Categories: ECO, ECR, Stop Ship. For each of these you choose Change as the Category Type and you associate each of them with the Change Order Lifecycle you created (which also has the Change type).
+User Steps
+The user navigates to the Changes tab in Propel and clicks New to create a new change record.
+Because you used the Change type for the Categories you set up, when the user goes to the Changes tab, they’ll see the ECO, ECR, and Stop Ship options (along with any other Change Categories that have been configured).
+They choose ECO from the list of Categories, enter a Title and Description, and click Save.
+A new ECO change record is created with the following Lifecycle Phases: Initial, Doc Control, In Approval, Approved, Implemented, Canceled.
+These Phases come from the Change Order Lifecycle.
+If they had chosen ECR or Stop Ship from the list of Categories, that record would also be created with the same Phases as these come from the Lifecycle the Category is associated with.
+If they had chosen a different Category, one that was linked to a different Lifecycle, then the change order would have been created with the Phases related to the other Lifecycle.
+When you configure a Category, you will be asked to select an existing Lifecycle to associate the Category to, which means you must have that Lifecycle already set up in the system. The exception to this is when you create a Category as a group header, but most Categories you set up will require an existing Lifecycle.
+Recommendations
+As a Best Practice for creating Lifecycles, we recommend having multiple Categories associated to a single Lifecycle whenever possible, rather than having one Category to each Lifecycle. This will make setup and maintenance easier. However, this is dependent on your business processes and your different Phase needs. For example, if your ECO and ECR workflows use different Phases, or require different Phase behaviors, then you will need a Lifecycle for each.
+Recommended Next Steps
+If you are looking to add or update a Lifecycle, go to the article below.
+Configure a Lifecycle
+See Also
+Lifecycle Phases
+Categories Overview

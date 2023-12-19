@@ -1,0 +1,19 @@
+Quoted Costs and Other Roll-Up Types
+Propel rolls up the costs in the BOM using the manufacturer part costs of the items on the BOM.
+Regardless of if costs are locked or not (see more about Locked Costs), you have the option on a per BOM basis to set a sub-assembly to Quoted. When Quoted, the component costs of the subassembly's BOM are not included in the roll-up regardless of the Include in Cost Roll-up or Use Cost checkboxes being checked.
+In this example, you are looking at the BOM for TLA 9.
+Let's say that the supplier split for Item 1 is 100% for Mfr Part A, so that Item 1 is $4.
+For Assy X, you have 3 options.
+Option 1: Quoted
+This may happen when your manufacturing partner has quoted you the cost for that assembly (possibly including the labor), so you use the cost on Mfr Part C to show represent that total.
+You can check Quoted for Assy X, and Include in Cost Roll-up (or Use Cost) for Mfr Part C.
+In this case, Propel will ignore the $4 for Mfr Part A in Item 1, and rollup the total for TLA 9 will be $12 (from Mfr Part C).
+Option 2: Rolled-up
+This is more common where you want to use the cost roll-up from the underlying components in a BOM.
+You can leave Quoted unchecked for Assy X, and uncheck Include in Cost Roll-up (or Use Cost) for Mfr Part C.
+In this case, Propel will use the rolled-up costs for Item 1 which is $4, because we say 100% of Item 1 is from Mfr Part A.
+Option 3: Rolled-up and Quoted
+This may happen if you want to include the cost of Mfr Part C in the roll-up for TLA 9. Maybe the cost on Mfr Part C represents tooling or labor, and you want for the total to include that plus the material costs of the components in the BOM.
+You can leave Quoted unchecked for Assy X, and check Include in Cost Roll-up (or Use Cost) for Mfr Part C.
+In this case, Propel will use the rolled-up cost for Item 1 plus the cost of Mfr Part C. $4+$12 = $16.
+ 

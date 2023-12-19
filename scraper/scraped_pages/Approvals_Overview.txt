@@ -1,0 +1,32 @@
+Approvals Overview
+Setting up Approvals and Approvers is an integral part to setting up Change, Quality, and Declaration records. The majority of these records have some kind of approval process to ensure that changes and issues are properly reviewed and signed off by the appropriate people before proceeding to the next step in the process.
+Propel offers a number of different options to ensure that your approval needs are fully met and realized in the system.
+Set Up a Lifecycle Phase for Approval
+A Change, Quality, or Declaration record consists of multiple Lifecycle Phases that users work on to move the record from its initial Phase through to its completion. For a complete overview on how Phases work in the different record types, go to our Lifecycle Phases article. 
+For any of the approval settings to work - Approval Definitions, Criteria-Based Approvals, Dual Signatures - you need to set your Phases up correctly. When you set up the Phases for a Change, Quality, or Declaration record, one or several of these Phases may need to be configured for approvals. 
+In addition to setting the Lifecycle Phase up for approvals, you also have to determine if it will automatically move to another Phase if it is approved or rejected, as well as whether it will be submitted automatically for approval or require a manual submission. These settings are all explained in the Phase Behavior Section of the Configure a Change, Quality, or Declaration Phase article.
+Basic approvals can work if you only set this part up, which will allow users to manually add Approvers to a record. However, by configuring Approver Definitions and/or Criteria-Based Approval Rules, you add much more robustness and automation to your approvals.
+Approver Definitions
+For every Lifecycle Phase you’ve set up for approvals, you can Configure an Approver Definition to automatically assign approvers to a specific Phase based on members of Public Groups. You can add multiple groups per Phase and, depending on permission, users have the option of removing those users from the approval process to shorten the list of approvers.
+Once an Approver Definition is defined, the members of that group will automatically be added to the Approvers tab on the workflow under the specified Lifecycle Phase. This helps remove human error when selecting approvers by ensuring the right people are added. You can also determine if the approval needs to be unanimous (all approvers must approve or the record is rejected), or whether it’s based on the first response (if the first responder approves, the Phase is approved - or rejected if they reject it).
+Note: While the Approver Definition functionality does allow you to set approvers per Lifecycle Phase, Criteria-Based Approver Rules provides more flexibility and enhanced features for setting approvers. We recommend using Criteria-Based Approver Rules where possible. However, this is currently only available for Change and Quality Records.
+Criteria-Based Approver Rules
+Criteria-Based Approver Rules offer a powerful solution to determine approvers for a Phase, letting you specify approvers by Category AND Phase AND the data in specific fields. This gives you an immense amount of flexibility in assigning your approvers.
+You can specify up to five different criteria to determine which groups will be able to provide reviews at different points in the process. For example, you may have multiple document types that all require review. However, SOPs and Work Instructions may be reviewed by a group of people that are different from those that review and approve Specifications. As shown above, you can specify criteria that looks only for Affected Items with a value of either “Work Instruction” OR “SOP” in the Item Category field. Based on this criteria, it will assign the appropriate group to the review and approval.
+Dual Signatures
+Depending on your approval requirements, you can set up Propel to prompt an approver to enter their Propel password in order to complete a workflow approval, which we refer to as “Dual Signatures”. This adds an extra layer of rigor to your approvals. 
+Approvals and Public Groups
+Propel utilizes Public Groups to assign approvers in the configuration of both Approver Definitions and Criteria-Based Approver Rules - approvers are assigned based on their membership to a group. There are several advantages to this:
+Groups allow you to add multiple approvers into a single group while at the same time allow one approver to reside in multiple groups.
+Group membership is flexible and can change over time. Public Groups give you a central place to manage this, rather than having to update each and every Change, Quality, or Declaration Lifecycle.
+Because of this flexibility, the members of the group are evaluated at the time the group is added to the record. For Approver Definitions, this occurs at creation time and for Criteria-Based Approvers, this occurs when the rules are applied. Manual approval groups are evaluated when they get added. If group membership changes after the group is added to the record, the change does not get reflected in the record.
+Additionally, although Salesforce allows you to create a hierarchy of groups, Propel only recognizes members of the actual group specified, not the members of any child groups that group may have. 
+Recommended Next Steps
+Depending on the nature of the approval that you want to set up, select one of the articles below. 
+Configure a Change, Quality, or Declaration Phase
+Create Criteria-Based Approver Rules
+Configure an Approver Definition
+Setup Dual Signatures
+See Also
+Lifecycle Phases
+Lifecycle Phase Transitions

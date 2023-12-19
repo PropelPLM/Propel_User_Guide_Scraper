@@ -1,0 +1,24 @@
+Create or Clone a Specification Record
+There are multiple ways to create a new Specification record. If you are creating a Specification that’s similar to an existing one, the most efficient creation method is to Clone the existing record and then make modifications. The Details of your Specification will be cloned; however, Item Specifications, Category Specifications, Exemptions, and Compliance Statuses will not.
+Create a New Specification Record
+Select the Specifications tab from the navigation bar and then click New.
+OR
+Click the dropdown icon on the Specifications tab and select New Specification.
+Enter a Name and a short Description of your Specification.
+Select the Status of your Specification. A new Specification will either be in a Draft state, which means it cannot be applied, or in an Active state.
+In the Long Description field, enter information that will help augment your Specification, such as Restricted Materials, how the Specification is applied, or links to relevant websites.
+Enter the default Good Label and Bad Label values that will display when an item is either IN or OUT of compliance. As a best practice, we suggest you use the Compliant and Not Compliant values.
+Select the Jurisdiction where this Specification will be enforced.
+If applicable, set an Expiration Date for your Specification.
+Complete any other fields that may be unique to your organization.
+Click Save & New to create another Specification, or click Save to view your new Specification record.
+Clone a Specification Record
+As noted, the Details of your Specification will be cloned; however, Item Specifications, Category Specifications, Exemptions, and Compliance Statuses will not.
+Select the Specifications tab from the navigation bar and click the Name of the Specification you want to clone to open the record.
+Click Clone in the upper right of the record.
+After a moment, your the New Specification screen will appear with the details from your cloned Specification.
+Make changes to the fields as applicable, especially to the Name field. See the section above for more information on the fields.
+Click Save.
+See Also
+Manage Item and Category Specifications
+Manage Specification Exemptions

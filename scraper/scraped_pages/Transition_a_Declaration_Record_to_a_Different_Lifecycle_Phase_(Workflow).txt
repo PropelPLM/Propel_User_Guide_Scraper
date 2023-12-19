@@ -1,0 +1,21 @@
+Transition a Declaration Record to a Different Lifecycle Phase (Workflow)
+A component of a Declaration record involves working through its Workflow - transitioning the record from the current Lifecycle Phase to a different allowable Phase. While moving a record to a different Phase can happen with a single click, it’s important to understand the rules and constraints around those changes.
+Workflows on Declaration records are represented by a flow graphic under the record header. This graphic shows all of the different Lifecycle Phases this type of Declaration record can be in. The Lifecycle Phases are fully customizable, so your workflow may look very different from the one below; however, the functionality behind it remains the same.
+Green: Completed Phases
+Light Blue: Current Phase
+Grey: Phases not yet completed
+Dark Blue: Phases you can transition the record to (Only viewable when you hover over the workflow)
+Allowed Phase Transitions
+When Lifecycle Phases for a Declaration record are configured, the setup includes determining which Phases a particular Phase can transition to. For example, you may allow a record in the Draft Phase to move to the Review Phase, but you would not let the record skip directly to the Completed Phase. When you hover over the graphic, the Phases you can transition to change to Dark Blue.
+Approval Phases
+Approval Phases require sign-off from one or more reviewers before the record can move into the next Phase. You may still need to manually move the record into the next Phase once the approval is complete; however, it is more common to configure Auto-Advance and Auto-Reject Phases. This means that when a record is either approved or rejected, the system will automatically move the record into the correct Phase.
+  Move a Declaration Record to a New Lifecycle Phase
+Select the Declarations tab from the navigation bar and click the Name of the Declaration you want to modify.
+Once the record opens, hover your mouse over the Workflow graphic to see the Phases you can currently transition the record to. The allowable Phases will turn Dark Blue. Depending on your configuration, this may be a single Phase (as in the example below) or multiple Phases.
+Click the Phase you want to transition to.
+A warning message appears asking to confirm your change. Click Confirm.
+
+Note: If you try to move the record into an Approval Phase before you set the approvers, the system will stop you. You will have to add Approvers to the Declaration Record.
+See Also
+Configure a Change, Quality, or Declaration Phase
+Add or Remove Approvers on a Declaration Record

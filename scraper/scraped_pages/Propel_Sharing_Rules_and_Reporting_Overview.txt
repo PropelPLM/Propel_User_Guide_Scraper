@@ -1,0 +1,60 @@
+Propel Sharing Rules and Reporting Overview
+Propel Sharing Rules let you automate the sharing of private records, allowing for safe and secure information sharing between internal divisions and external groups, such as design, supply chain and manufacturing partners.
+These sharing rules apply to the following Propel objects: Items, Item Attachments, Changes, Quality, and Manufacturer Parts. And they can also be used to share associated BOMs and Affected Items.
+For Propel Sharing Rules, we have developed eight different predefined logics based on common sharing scenarios. Each of these logics is named according to the object affected and the method that will be used for sharing: either through a custom Field, or by matching the name of the Mfrs and Distributers.
+For most of the rule logics, you’ll determine sharing based on a value (or values) in a custom field you configure on the applicable objects. The values in this custom field will match the names of Public Groups you’ve configured. In the list below, these rule logic names all have “With Field” in them. For two of the rule logics, however, the custom field is optional as the sharing can be based on a direct correlation between the name of the Manufacturer or Distributor (the Account name), and the names of your Public Groups, or based on an Account field. In the list below, these rule logic names have “With Mfrs and Distributors” in them.
+Share Items with Field
+Share Items with Mfrs and Distributors
+Share Changes with Field
+Share Changes with AI Field
+Share Quality with Field
+Share Quality with AI Field
+Share Mfr Parts with Mfrs and Distributors
+Share Mfr Parts with Field
+Share Change with Users Who Can Access Affected Items
+Share Quality with Users Who Can Access Affected Items
+We recommend that you read through this article to familiarize yourself with the necessary configuration steps and the different logics you can utilize. If you like, you can also jump directly to the Rule Definitions and Logic section for detailed descriptions of each of the rule logics, which is also provided in the Configure a Propel Sharing Rule article. 
+Configuration Steps
+The linked steps below take you to an article that provides specific instructions on that configuration step. Generally, you will work through initial Sharing Rules configuration in the order outlined below. However, once you have established your sharing Rules, you may only need to access specific articles as you update or configure new rules. 
+Define your Sharing Strategy: This step happens outside of Propel, but forms the basis of your configuration. Having your strategy defined ahead of time will make the configuration steps much quicker. A few questions to ask:
+Will you be configuring Propel Sharing Rules for internal users, external users, or both?
+Who are all of the different groups you’re sharing with and how granular will your rules be? For example, will you group certain manufacturers together, or will each supplier be in its own group, or will you break that out even further and have different rules for different divisions in some manufacturers?
+What will you be sharing (Items, Changes, Quality Records and/or Manufacturer Parts), and with whom will you be sharing each of those?
+Create Public Groups: This will be based on your sharing strategy. The Group names will match the manufacturers, distributors, or picklist values you’re using in your rules. You’ll also need to assign users to those Groups.
+Create Custom Fields: Most of the rules you set up will be based on the value (or values) you specify on a custom field on an object. You’ll need to configure these custom fields on the applicable objects and we recommend using a Global Value Set for this so that updates only need to done in one place. Applicable to the following rules:
+Share Items with Field
+Share Items with Mfrs and Distributors (optional)
+Share Changes with Field
+Share Changes with AI Field
+Share Quality with Field
+Share Quality with AI Field
+Share Mfr Parts with Mfrs and Distributors (optional)
+Share Mfr Parts with Field
+Create the Propel Sharing Rules: The rules are defined through Custom Metadata Types and will determine the criteria that will share specific records with specific groups. As part of this step, you will also determine which objects you need to set to Private mode and possibly leverage Salesforce’s Sharing Rules.
+Create Process Builders: These will determine when your Sharing Rules are executed for the applicable records.
+Set Applicable Objects to Private: This ensures your Propel Sharing Rules will function as expected. 
+Test your Rules: As with any new configuration, you will want to test to ensure the rules are executed as you intended and the specified records are shared accordingly. You can do this by logging in as different users and running through various sharing scenarios, and also by using the Workspace Sharing Reports that we’ve set up to help you with Propel Sharing Rules.
+Rule Definitions and Logic
+Propel currently offers eight different sharing strategies and logic that you use as a starting point to configure your rules. When you configure your rules, you’ll implement one of these based on your sharing strategy and the results you want to achieve. Each of the rule logics is explained below. Go to our Configure a Propel Sharing Rule article for detailed instructions on setting up the rule.
+Share Items With Field: Define what to share (Item only, BOM, Manufacturer Parts, Attachments) with selected value(s) from a custom field on the Item object whose options are a list of Public Group names. Only the users in the selected Groups would see the shared records.
+Share Items With Mfrs and Distributors: Define what to share (Item only, BOM, AML, Attachments) with public groups whose names match that of the Manufacturer or Distributor on the AML of the Item. 
+Typically, you would share only the Item and possibly the Attachments and first level BOM. The Manufacturer users in the group would see the Item and only the manufacturer part that they manufacture.
+This would also typically be used in conjunction with a Share Manufacturer Parts with Manufacturers and Distributors rule.
+As of Spring '22 Minor, you can optionally create a custom field on the Account/Manufacturer object where the user will be able to enter or select a single Public Group name. If the field is filled in on the account record, the system will look for a match to that field. If the field is not filled in, the system will try to match the account name.
+Share Changes With Field: Define what to share (Change only, Affected Items, BOM of AIs, AML of AIs, and Attachments of AIs) with the selected value(s) from a custom field on the Change object whose are a list of Public Group names. Only the users in the selected Groups would see the shared records.
+Share Changes With AI Field: Define what to share (Change only, Affected Items, BOM of AIs, AML of AIs, and Attachments of AIs) based on the selected value(s) Affected Item’s custom Item field whose options are a list of Public Group names. 
+Typically, this would be used in conjunction with a Share Items With Field rule and you would share only the Change and the users would only see the Affected Items that they can see from Share Items With Field.
+As of Spring '22, best practice would be to use rule #9 instead, so that if a child item was shared by Share Items with Field because you shared the BOM, when that child is added to a Change, the Change is also shared.
+Share Quality With Field: This is similar to a Share Change With Field rule, but for Quality records.
+Share Quality With AI Field: This is similar to a Share Change With AI Field rule, but for Quality records.
+Typically, this would be used in conjunction with Share Items With Field and you would share only the Quality record and the users would only see the Affected Items that they can see from Share Items With Field.
+As of Spring '22, best practice would be to use rule #10 instead, so that if a child item was shared by Share Items with Field because you shared the BOM, when that child is added to a Quality, the Quality is also shared.
+Share Mfr Parts with Mfrs and Distributors: Shares the Manufacturer Parts with Public Groups whose name matches that of the Manufacturer or Distributor on the Manufacturer Part. 
+Typically, this would be used in conjunction with Share Items With Manufacturers and Distributors, so the users can see the Manufacturer Parts and the Items that the parts are on AML.
+As of Spring '22 Minor, you can optionally create a custom field on the Account/Manufacturer object where the user will be able to enter or select a single Public Group name. If the field is filled in on the account record, the system will look for a match to that field. If the field is not filled in, the system will try to match the account name.
+Share Mfr Parts with Field: Shares the Manufacturer Parts with selected value(s) on a Manufacturer Part field whose options are a list of Public Group names.
+Share Change with Users Who Can Access Affected Items: As of Spring '22, shares changes with the same users who can access any of the affected items.
+Share Quality with Users Who Can Access Affected Items: As of Spring '22, shares quality with the same users who can access any of the affected items.
+Propel Sharing Rules Reports
+As mentioned in the Configuration Steps section, Propel provides several reports that are available through our Workspace searches. These will help you determine if your sharing strategy is working as expected and that users you’ve identified in your strategy have the correct level of access to the records and information they require.
+To learn more about the Workspace searches and how to execute them, go to our Run a Workspace Report for Propel Sharing Rules article.

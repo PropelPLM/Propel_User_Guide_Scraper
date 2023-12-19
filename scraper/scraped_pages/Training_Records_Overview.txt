@@ -1,0 +1,33 @@
+Training Records Overview
+Propel’s Training Records Module lets you ensure everyone is up to date on the latest product changes and processes. Single, unified training plans developed directly from product information helps create effective training that decreases risk for your company, employees, and customers. Propel’s comprehensive training record management solution includes full employee training transcripts, document-based training and quizzes, automated retraining, and training analytics. 
+Once configured, Propel Training Records will function as follows:
+A training manager sets up a Training Plan. For example: "Training Plan for Cleanroom Employees". This Training Plan contains the following:
+A list of all documents on which people need to train.
+A list of all the people who need to train on these documents.
+When a new revision of a document is published, Propel automatically generates a Training Assignment for each person listed in the Training Plan.
+Individuals in the Training Plan receive an email that they have a new Training Assignment. These individuals review the associated document and sign off that they have completed the training. Users can do this through a Training Assignment widget on their Home Page, so that they can easily see the training they need to complete, navigate to the applicable documents (Item records), and take any Training Quizzes that have been set up.
+Training Records Configuration
+While configuring Training Records is straightforward, there are several areas that allow you to customize the configuration to ensure that it meets your organization's ongoing training needs. These tasks are aimed at Propel Administrators.
+While training may already be configured for your organization, it’s important to understand the configuration to maintain the system and troubleshoot any issues that may occur. The articles below provide a comprehensive understanding of the Propel Training Records Module.
+Configure the Training Records Module
+Configure the Propel Training App
+Manage Training Settings through Propel Setup
+Configure Email Notifications for Training Assignments
+Configure Training Item Dependencies
+Configure Training on Drafts
+Training Plans
+Training Plans allow managers to determine what Items need to be trained on, and exactly who needs to be trained on those items. Once a Training Plan is complete and active, Training Records will automatically be generated for those items and assigned to the users in the Training Plan.
+Create and Manage a Training Plan
+Set an Item Draft to Require Training
+Manually Assign Training Records
+Training Quizzes
+Training Quizzes allow the training manager to require trainees to complete and pass a quiz in order to complete and sign-off on their training assignments.
+Setup Training Quizzes
+Create and Assign a Training Quiz
+Training Assignments
+Once Trainees are assigned one or more training, they can easily complete the training through Propel. 
+Complete a Training Assignment
+See Also
+Propel System Overview
+Quality Records Overview
+Items Overview

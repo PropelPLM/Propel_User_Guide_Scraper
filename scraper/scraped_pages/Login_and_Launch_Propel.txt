@@ -1,0 +1,12 @@
+Login and Launch Propel
+Because Propel is built on the Salesforce platform, you’ll first have to login to Salesforce and then open Propel.
+In your browser, go to login.salesforce.com.
+Enter your Username and Password and click Log In. Salesforce will start.
+If you don’t automatically see Propel information when you log in, click the App Launcher icon in the top left. A list of Apps will appear.
+If Propel shows on this list, select it and the Propel application will start. If not, select View All to see a list of all available Salesforce apps.
+Locate the Propel app in the All Apps section. What you see will depend on the apps that you have available.
+
+Note: If you do not see the Propel app, contact your Propel Administrator to ensure you have a valid Propel license associated with your account.
+If you want to have the Propel app appear in the initial App Launcher menu. Click and hold on the Propel app and drag it to the top of the list. Generally, the first 7 apps will appear in the menu.
+Click the Propel app to start the application.
+Salesforce remembers the last app you were using when you logged off or closed your browser. If that last application was Propel, then it will launch automatically the next time you login.

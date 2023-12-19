@@ -1,0 +1,20 @@
+Manage Your Company Information Page
+The Company Information page shows all the important information about your company. While this Salesforce article goes into detail on every field, we’ve highlighted some of the key fields you need to be aware of to maintain your org.
+Note: If you are not the Salesforce Administrator for your org, be sure to discuss any changes to this page before making any modifications.
+Key Company Information Fields
+To access the Company Information page:
+Go to Setup > Company Settings > Company Information.
+The page is divided into two sections: the Organization Detail and the Related Lists.
+Organization Details
+Note: The fields you have available may vary depending on the Salesforce Edition that you have.
+Organization Edition: The Salesforce Edition that you have.
+Salesforce.com Organization ID: This is a code that uniquely identifies your organization to Salesforce. You’ll need this if you open up a ticket with Salesforce or if you want Support to remotely access your site.
+Instance: Salesforce has datacenters all across North America and the world. This will let you know where your particular Salesforce instance is located. This can be helpful when tracking service disruptions, to see which instances have been affected. Additionally, you can track when Salesforce will be updating your org.
+Default Time Zone: Primary time zone in which the organization is located. A user's individual Time Zone setting overrides the organization's Default Time Zone setting. This field is important for time-stamping the creation of, and the modification to, records. 
+Currency Locale: The country or geographic region in which the organization is located. The setting affects the format of currency amounts. For single currency organizations only.
+Activate Multiple Currencies: This allows you to enable multiple currencies in your org. However, once this is enabled it cannot be turned back off so ensure that you fully understand the implications of turning it on.
+Used Data Space: Amount of data storage in use. This will show how much you’ve used in relation to your overall allowed amount.
+Used File Space: Amount of file storage in use. This will show how much you’ve used in relation to your overall allowed amount.
+API Requests, Last 24 Hours: The number of recent API requests. For high volume orgs, you need to ensure that you’re not getting close to this limit.
+Related List - Licensing Information
+The related lists on the page show the different Salesforce Licenses that you have - those that you’ve used and those that you still have available. Note that these are Salesforce licenses and not Propel licenses.

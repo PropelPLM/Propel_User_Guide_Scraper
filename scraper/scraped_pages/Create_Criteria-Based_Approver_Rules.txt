@@ -1,0 +1,76 @@
+Create Criteria-Based Approver Rules
+Criteria-Based Approver (CBA) Rules allow you to assign approvers and/or observers based on data contained in specific fields on a Change or Quality record. When the criteria you have defined for a rule evaluates to “True”, the rule will get applied to the record.
+Note: To set up observers or followers, you will need to have a rule with at least one approver group or user.
+Criteria-Based Approver Rules assign approvers and observers by individual users or through Public Groups that are set up in your system, so you’ll need to have set up your groups prior to creating your rules if you want to use them. If you need help with public groups, go to our Configure a Public Group article. 
+For more information on Approvals, including other approval options - such as Approver Definitions and Dual Signatures - go to our Approvals Overview article. For information on Observers, go to the Observers Overview article.
+
+Note: Approvers will not be auto-applied until the record enters the approval process. If this phase is not configured to auto-submit for approval, it will need to be manually submitted before Approvers will populate on the Approvers tab.
+Apply a Criteria-Based Rule to a Record
+When you set up your rule, you can determine whether the approvers/observers you set up will automatically be applied to the record. 
+If you choose to not automatically apply them, then users will still have to apply them to a Change or Quality record after the record has been created. For users to apply the rules, they need to have the Apply Suggested Approvers custom permission. Instructions for applying rules, along with the required permissions, are in our Apply a Criteria-Based Approver Rule on a Record article.
+Set the Auto-Apply Custom Setting
+To enable the feature to Auto-Apply Approvers and Observers, you need to ensure that the necessary custom setting is properly configured. This is a one-time action that needs to be performed by a Propel Administrator.
+Go to Settings > Custom Code > Custom Settings.
+Click Manage beside Configuration.
+If you have the UseAutoApplyCBA custom setting already added, click Edit and ensure the Value is set to ”true”.
+If you do not have the UseAutoApplyCBA custom setting, click New and enter the following:
+Once complete, click Save.
+Create a Criteria-Based Approver Rule
+Criteria-Based Approver Rules are added to a specific Category through the Propel Setup tab. This article assumes that you already have your Category configured. The steps in this article can also be performed as you are setting up a new Category.
+Select Propel Setup from the navigation bar. Select Admin Settings and then either Changes or Quality, depending on the type of record you’re adding your rules to.
+Select the Category on which you want to create your Criteria-Based Rules. This will bring up several related lists on the right.
+Click the Category Criteria-Based Approver Rules header to expand the section and click Add.
+Enter a Rule Description to help you identify the rule.
+If you want the rule to automatically add approvers and observers to the applicable Phase, select Auto-apply Criteria-based Approvers. Otherwise, users will have to manually apply approvers and observers.
+In the For Phase field, select the applicable Lifecycle Phase in which this rule will be applied. The list of available phases is driven from the Category on which you’re creating the rule.
+ In the Criteria Section, click Add Criteria. This will add a single row of criteria for your rule - you can have a maximum of 5.
+The Criteria consists of three parts: Object, Field, and Value.
+Object: This determines where the field is located. You can choose from either the Change or Quality object, depending on the type of category you’re working with, or from the Affected Items object.
+Field: Based on the object you chose, you’ll select the field that you want your rule to evaluate. When you click in the field, you’ll see a list of all available fields. You can type in a partial field name to limit your choices.
+Value: This is the data the rule will evaluate. If the value in the workflow matches this (evaluates to “True”), along with the rest of the criteria you set up, then the rule will be applied. If the field you chose is a picklist, then you can choose from a list of values. Otherwise, you will enter the expected value into the field. 
+Note: Because the rule is looking for an exact match, you must enter the value in correctly - so spelling does count.
+Click Add Criteria to add another row and repeat the above steps. 
+Note: If your field is a multi-picklist, you can choose multiple values on the same criteria row. However, this will mean that your rule has to contain both of those values to evaluate to true. If you want the rule to evaluate to true on one value OR the other, then you should add another criteria row and add custom logic for the OR evaluation to occur.
+Add Custom Logic to your Rule
+Unless you enter Custom Logic, each of the criteria rows you add will be appended as an AND statement: row 1 criteria AND row 2 criteria AND row 3 criteria. In this case, the workflow would have to match all 3 criteria to evaluate to true.
+
+Rule criteria also supports the NOT keyword, which allows you to create more complex rules. You must put parentheses around the criteria you want to apply the NOT to. For example: 1 AND NOT(2 OR 3)
+
+Custom logic lets you create more complex, and thereby more flexible, criteria. Most notably, you can have the rule evaluate against one value OR another value, instead of always using AND.
+You’ll notice that the criteria rows all have a number, from 1 to 5. These numbers are what you enter in the Custom Logic field, separated by either “AND” or “OR” to create your logic.
+Examples of how you can use custom logic:
+1 OR 2 OR 3: The workflow must contain at least one of the values to evaluate to true.
+(1 AND 2) OR 3: The workflow must contain either both of the values in rows 1 and 2, or just the value in row 3.
+(1 AND 2) OR (3 AND 4): The workflow must contain either both of the values in rows 1 and 2, or both of the values in rows 3 and 4.
+Add Approvers to your Rule
+You can add either Groups or an individual User as approvers. Selecting Groups will add the members of the specified public groups as approvers if the rule is matched. Selecting User, will use a dynamic lookup to a user associated with the record to apply an Approver. For example, you might want for the affected item’s owner to approve, in which case the owner for each of the items would be added, if the rule is matched.
+Note: Approvers are required for a Rule; however, observers and followers are optional. To set up observers or followers, you will need to have a rule with at least one approver group or user.
+Select the Approval Type for your rule, either Group or User.
+If you selected Group, click Add Group. A row for adding the group appears.
+Note: The Group Name is used as the "role" that the approvers are approving as, such as Electrical Engineering, Mechanical Engineering, or Quality Assurance. If your setup requires it, you can use an empty group as a placeholder for that role and then select the actual approvers after the rule is applied.
+In the Search field, enter part of the name of the group you want to use and then select the group.
+Choose the approval method, which will be either Unanimous or First Response.
+If you want to add another group, click Add Group again and repeat the above steps.
+If you selected User for your Approval Type, a row for adding the user appears.
+When you click in the Search field, you can choose from a list of applicable fields that contain a lookup to users associated with the workflow. Select the appropriate field.
+The Role field is a required text field and it is used when applying the rule to show what role the user(s) approve as. For example, you could choose the Affected Item's Owner for the Work Instructions category, and then enter the role as “Doc Owners”.
+Choose the approval method, which will be either Unanimous or First Response.
+Add Observers to your Rule
+Adding Observers is very similar to adding Approvers. Like Approvers, you can add multiple Users or Groups to your CBA Rule.
+In the Observers section, click Add Observers
+Select either User or Group depending on who you are adding as an Observer.
+Click in the Group Name or User Field to search for and select the applicable user or group. 
+When you select a User Field, the Role field is a required text field that is used when applying the rule to show what role the user(s) are added as. 
+If you want to add another individual user or group to your Observers, click Add Observers and repeat the above steps.
+You can click the trashcan icon to delete the row.
+Add Followers to your Rule
+Although we recommend using Observers, optionally you can select a group that will receive chatter updates about the record if the rule is matched. Search and select a group for the Follower Group field. Followers differ from observers in that there is no audit trail and no admin-configurable email notification, just the chatter emails based on the user's settings. 
+
+Recommended Next Steps
+You need to ensure that the users who will be applying the approvers to the workflow when the rules are matched have permission to do so. For this, they will need to be assigned a permission set that has the Apply Suggested Approvers custom permission. The Propel Administrator permission set has this by default. You should also be familiar with how a user applies a rule once it’s been matched on a workflow.
+Apply a Criteria-Based Approver Rule on a Record
+Remember that Approvers will not be auto-applied until the record enters the approval process, so if this phase is not configured to auto-submit for approval, you will still need to manually submit the record for approval before Approvers populate on the Approvers tab.
+See Also
+Approvals Overview
+Categories Overview
+Configure a Category

@@ -1,0 +1,14 @@
+Edit Costs on Released BOMs
+You can edit manufacturer part costs on the Bill of Materials (BOM) tab of a released Revision as long as you have the proper permissions. Setting up the permissions will need to be done by your Propel Administrator.
+Note: You will also need to Configure Cost Roll-ups for this to work.
+Edit Costs on a BOM
+Select the Items tab from the navigation bar and click on the name of the item you want to edit costs on.
+From the Item Revision dropdown, select the released revision you want to edit.
+In the top right, click Edit Cost.
+Select the BOM tab and select the With Manufacturers view. Locate the Item that you want to change the cost on.
+In one of the Cost columns, double-click on the value you want to edit. The value will be highlighted and the cursor will blink when you have entered editing mode.
+Edit the value and then click outside of the highlighted box. The Cancel and Save buttons will become enabled once you make a change. Click Save. Note that until you save the change, there will be a warning symbol on the BOM Tab letting you know there are unsaved changes on the tab.
+When you have finished editing costs, click Done Editing.
+See Also
+Configure Cost Roll-ups
+Configure Additional Cost Fields to Track in Part Cost History

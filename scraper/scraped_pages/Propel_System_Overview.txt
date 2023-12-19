@@ -1,0 +1,98 @@
+Propel System Overview 
+Welcome to Propel! 
+This article will give you a high-level overview of the Propel system, the main objects that it utilizes and the primary records that it generates and that your users will interact with on a daily basis. The primary audience for this article is an organization's Propel Administrator, so they can get familiar with Propel - a unified product success platform, that includes Product Lifecycle Management (PLM), Quality Management System (QMS) and Commercialization - and help them configure and manage the system to support their users.
+There are two main aspects of Propel that we want to cover in this article: 
+Items and Item Revisions
+Change, Quality, and Declaration Records
+While there are many other areas within Propel’s extensive system, the above two will give you a solid foundation on the system. Details on all aspects of Propel, including more information on the topics covered in this article, can be found in our Propel User Guide.  
+Items and Item Revisions
+Item Records
+Items are the different components that you want to track as part of your product. Propel items are versatile and can be configured to track just about anything. Items can be individual parts, such as a bolt or piece of fabricated steel. They can also be combinations of parts, such as an electrical assembly, or a combination of parts and assemblies that comprise a complete product, such as an ebike or plasma collection device, which can be grouped into a hierarchical Bill of Materials (BOM). Documents such as standard operating procedures (SOPs), work instructions, labels, specifications, and user manuals are also considered items and can be tracked accordingly, and can also be a part of a product or assembly.
+Item records also let you track and manage Item Revisions, Bills of Material (BOMs), Manufacturer Parts, as well as view related Change Orders and Quality records. 
+Item Revisions
+Item Revisions are used to track changes to the Items in your system, and every Item has a Revision. When an Item is first added to the system it is in a “draft” state until it is published. At that time, it’s given a revision designation (such as A, B, C, or 1, 2, 3). Subsequently, when an item gets modified and republished, through a change workflow such as an Engineering Change Order (ECO), its revision designation is increased.
+Key Configuration Components of an Item Record
+Lifecycle: Provides the overall structure to help you manage your business practices for the Items that you manage and track. Every Item goes through a set Lifecycle - from inception to obsolescence - through a series of Phases that are configured on the Lifecycle. 
+Lifecycles Overview
+Configure a Lifecycle
+Phase: The different stages that an Item goes through within a Lifecycle. Phase configuration determines the behaviors of the Item in each Phase, as well as what the end users can and can’t do at a particular Phase. It’s important to note that Phases and Revisions are not the same thing, nor do they necessarily correlate when you change one or the other. For example, an Item may stay in the Prototype Phase for multiple Revisions until it is moved to the Production Phase, where it may go through many more revisions before being obsolesced. However, when an Item moves from one Phase to the next, there is generally a corresponding Change Order and revision update.
+Lifecycle Phases
+Configure an Item Phase
+Category: Works in conjunction with Lifecycles and Phases to let you further configure and customize the behaviors and constraints of different Item types. For example, you can create a category of Items for Parts versus Documents, and they can have different fields, layouts and behavior. When you create a Category, you associate it with a Lifecycle, which means that it also inherits the Lifecycle’s Phases. Because you can associate multiple Categories to the same Lifecycle, this lets you reuse your Lifecycle and Phase configurations. From an end user perspective, they choose a Category when they create a new Item, which then drives the associated Lifecycle and Phases for the new Item.
+Categories Overview
+Configure a Category
+Autonumber: Lets you specify how the numbering sequence for an Item record will be formatted.
+Autonumbers Overview
+Configure an Autonumber
+Item Details: The main Items page can be customized to display the pertinent information based on the item’s category.
+Add Custom Fields to the Item Object
+Display Custom Fields on the Item Details Tab
+Bill of Materials (BOM): Displays a hierarchical list of all the Items that make up the current Item, such as assemblies, individual parts, and documents. On this tab, you can see all of the Items in the hierarchy, view information about the Items in the BOM, and drill down into each record for more information. Items that are individual components will not have a BOM, only those that are made up of other Items.
+Display Custom Fields on the Item BOM Tab
+Manufacturers: Tracks the Item’s manufacturer.
+Add Custom Fields to a Manufacturer Item or Manufacturer Part Record
+Display Custom Fields on Item Manufacturer Tab
+Attachments: You can attach any electronic file to an item. Often, these are supporting documents that provide more information on an item, its history, or its use.
+Display Custom Fields on the Item Attachments Tab
+Item Lifecycle Example
+One of the out of the box Item Lifecycles delivered with Propel is the Parts and Documents Lifecycle. The image below is the Lifecycle record that has been configured.
+Note: Although this is available out of the box, you can customize it to fit your specific needs. Plus, even though it is configured for you, there is no requirement for you to use it. You can deactivate it and simply use it as a guide for creating your own.
+As you can see from the image above, there are four Categories associated with this Lifecycle: SOP, Work Instruction, Part, and Document. This means Items in each of those Categories will use the five Phases that are included in the Lifecycle, as well as the behaviors configured in each of those Phase:
+Initial: When Items are initially created in Propel, they are assigned the Initial phase.  Items in this phase are just starting to be specified and may be conceptual sketches, built as mock-ups, or engineering samples with limited functionality that are intended for internal use only. The item revision for this Phase is numerical and begins with 01. Since this is the initial addition into the Propel system when the Item might not be well defined, modifications in this Lifecycle may be frequent and informal. To keep track of interim versions in the Initial lifecycle, the item must be published to track revisions.
+Prototype: Items progress from the Initial to the Prototype Phase. This is when the design and specifications get more detailed and limited quantities of the Items are built or used in order to validate the design. These items may be pre-qualified, proof-of-concept manufacturing development samples, or fully qualified. Throughout this Phase, prototypes may be provided to customers for development or qualification. The Item Revision is numerical.
+Production: When an item is approved for full Production, it is moved from Prototype to Production with an ECO that changes the revision from numerical to alphabetical. Items in the Production phase have a final BOM and have completed qualification. The item revision begins with “A”.
+Inactive: Items in the Inactive phase are temporarily unavailable for development, manufacturing, and sale. These items may be used in future designs, in which case they can move back into the previous phases to be re-released (Initial, Prototype, or Production).
+Obsolete: Items in the Obsolete phase are at the end of their Lifecycle and are no longer available internally or externally. Reasons for stopping availability of this item may be because it is no longer accurate, not available, or has been replaced with newer technology. Items that are obsolete cannot be used for future designs.
+Change, Quality, and Declaration Records
+In Propel, there are three main types of workflow records: Change, Quality, and Declarations. Change workflows are the repeatable processes that you use to track and control changes for new products, or to release them as updates or new versions. 
+For companies with a Quality Management System, Quality workflow records are used to track and report on potential and confirmed product issues in order to successfully mitigate those issues. And for companies that want to track compliance to specifications, Declaration workflow records can be used to approve products that meet certain regulatory requirements. 
+Approvals are an integral part of workflow records and can be added to any workflow as dictated by your business processes. The system lets you specify approvers, multiple approval gates, as well as all of the rules around approval, and then lets the approvers into the workflow to complete the approval online and move the process forward.
+Change Workflow Records
+These records allow you to track and manage changes to Items in the system, which can include individual parts, assemblies, and documents. Typical types of change orders include Engineering Change Requests (ECRs), Engineering Change Orders (ECOs), Stop Ship change orders, Document Change Orders (DCOs) and Deviations. Items that are a part of the change order, called Affected Items, are added into the change order. Changes can be set up to automatically move affected items into a revisionable state, thus linking the change order and item workflows. Additionally, Item Lifecycles let you manage Item Revisions and can be directly linked to Change Order Workflows to track and manage changes to your products.
+Quality Management Workflow Records
+Companies in regulated industries require an extra level of rigor in managing processes. Propel’s Quality Management records ensure that companies can track and report on quality processes such as Corrective and Preventive Actions (CAPAs), Supplier Corrective Action Requests (SCARs), Defects and Complaints. Like Change records, Quality records let you add Affected Items to the process to ensure that all products related to the potential issue are identified and tracked.
+Declaration Workflow Records
+Declaration records are for companies that want to track compliance to specifications, like FDA registration, UL certification, RoHS, etc. Just like Change and Quality records, approvals can be added to the workflow to be used to approve the products that meet certain regulatory requirements.
+Key Configuration Components of a Workflow Record
+Several of the components used by Item records - Lifecycles, Phases, Categories, Autonumbers - are also used similarly in Change, Quality, and Declaration records.
+Lifecycle: Provides the overall structure to help you manage your business practices for the workflows.
+Lifecycles Overview
+Configure a Lifecycle
+Phase: The different stages that workflow goes through within a Lifecycle. Phase configuration determines the behaviors of the record in each Phase, as well as what the end users can and can’t do at a particular Phase. A major component of Phase configuration is determining which Phases require approvals.
+Lifecycle Phases
+Configure a Change, Quality, or Declaration Phase
+Phase Transition: Determine how the Phases in a record will progress from one to another. Certain Phases may be able to transition into multiple Phases, whereas other Phases may be more limited in their transitions.
+Lifecycle Phase Transitions
+Configure a Lifecycle Phase Transition
+Category: Works in conjunction with Lifecycles and Phases to let you further configure and customize the behaviors and constraints of different workflow types. When you create a Category, you associate it with a Lifecycle, which means that it also inherits the Lifecycle’s Phases. Because you can associate multiple Categories, this lets you reuse your Lifecycle and Phase configurations. From an end user perspective, they choose a Category when they create a new Change, Quality, or Declaration record, which then drives the associated Lifecycle and Phases for the new record.
+Categories Overview
+Configure a Category
+Autonumber: Lets you specify how the numbering sequence for a workflow record will be formatted.
+Autonumbers Overview
+Configure an Autonumber
+Approvals: A key component of workflow records, Approvals can be set up on any Phase and let you determine who you want to Approve at any given Phase. For example, during a Complaint workflow, you may have multiple approvals, with one set of approvals coming during the regulatory review, another coming at the design review, and still another final approval - all from different groups. Additionally, you can set up Criteria-based Approver Rules for Change and Quality workflows, which lets you determine who the reviewers will be based on the values of specific fields.
+Approvals Overview
+Create Criteria-Based Approver Rules
+Apply a Criteria-Based Approver Rule on a Record
+Configure an Approver Definition
+Setup Dual Signatures
+Affected Items: Lets you specify the components and assemblies that are associated with a given workflow so you can track the different items associated with a Change, Quality, or Declaration record. Additionally, for non-descriptive changes, you can automatically place the affected items into a revision state, which then links to an Item Lifecycle.
+Display Custom Fields on the Affected Items Tab
+Change Workflow Example
+One of the out of the box workflow Lifecycles delivered with Propel is the ECO, Engineering Change Order, Lifecycle. An ECO is needed to release an Item for the first time, make a change to an Item, or move an Item from one Phase to another.
+The images below show the Lifecycle record that has been configured along with a record that was created with this Lifecycle.
+As workflows are an organized sequence of phases involving people’s decisions - their review, revision, and approval or rejection of a record - the different phases are portrayed as a flow that progresses through the Lifecycle. In the example above, the green chevrons indicate completed Phases, and the blue chevron indicates the current Phase. Users can manually progress to different Phases, as allowed by the Phase Transition configuration, or certain progressions can be automated.
+For example, when all required fields are completed, and the approvers have signed off for an approval phase, the change can be moved automatically, or “auto promoted,” to the next status. Approval and rejection of the change occurs within defined permissions and configuration settings.
+In this ECO Lifecycle there are six different Phases configured, but only one Category is associated with it. However, as with Items, it is possible to associate multiple Categories to a Lifecycle. The configuration of each Phase in the Lifecycle will include setting the Phase(s) that will require Approvers, and determining the possible Transitions for each Phase:
+Initial: When an ECO is started, the status is “Initial”; this is when all the information about the change is entered. When the ECO author has completed filling out the ECO Details, Affected Items, selected Approvers, and added attachments, the ECO is then manually moved to the Doc Control phase by clicking on the Doc Control chevron in the flow.
+Doc Control: This step is intended to catch any omissions, ensure the change is filled out appropriately, and that the ECO is ready for approval. At this Phase, the reviewers are not checking technical content, except as it pertains to the ECO description. Once the ECO is ready to move into the next Phase, this is done manually by clicking on the In Approval chevron in the flow.
+In Approval: When the ECO has been promoted to the In Approval stage, the ECO details are then reviewed by the specified approvers. When all approvers approve the ECO, which is done by clicking the Approve button on the record, the ECO is moved automatically to the Approved phase.
+Approved: Once the ECO has been approved, the Affected Items are released. Items, including their attachments, are locked and cannot be edited as this status makes all the changes specified in the change order take effect in Propel.
+Implemented (Complete): This phase indicates the completion of all partner communications, material dispositions, and other actions related to the ECO.
+Cancelled: This Phase provides a way to cancel the Change. All items should be removed from the ECO’s Affected Items tab before cancelling a Change. Only the Administrator should have the privileges to move a cancelled Change back to the Initial phase.
+Where to Now?
+Now that you have a high-level understanding of the main aspects of Propel, you can start drilling down on the individual components that you need to configure. There have been links to relevant articles throughout this document to help you, but below are some of the main articles we recommend reading. Links to configuring each component are contained in the articles.
+Lifecycles Overview
+Categories Overview
+Autonumbers Overview
+Approvals Overview

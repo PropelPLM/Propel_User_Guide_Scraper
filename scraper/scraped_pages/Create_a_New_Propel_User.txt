@@ -1,0 +1,33 @@
+Create a New Propel User
+To create a new Propel user, you need to first create a Salesforce user and then assign a Propel license to that user. 
+This article covers creating individual users. If you are loading multiple users into Propel, go to the Dataload: Users article. You will also have to Assign a Propel Permission Set to the users and Assign the User to the Applicable Public Groups, which are covered in separate articles.
+Create a Salesforce User Account
+Go to Setup > Users > Users and click New User.
+Enter the applicable user information. For User License, select Salesforce Platform and for Profile, select the profile you want to assign them to, such as Propel Read Only User, Propel Change Analyst or Propel Full Use User. A Salesforce license is required for the System Admin Profile as well.
+The Role you select will depend on the user license. If there are none available you can leave it at <None Specified>.
+Ensure Active is selected.
+Scroll to the bottom of the page and select Generate new password and notify user immediately.
+Note: There may be instances where you do not want to notify the user at this time. If that is the case, you can leave this option deselected and come back and select it later in the process.
+Click Save.
+If you are creating more than one user account, repeat the above steps before going to the next section.
+Assign a Propel App to the New User
+You can assign the app to a single users or you can assign it to multiple users at once.
+Go to Setup > Apps > Packaging > Installed Packages to show a list of all installed packages.
+Locate the Propel app you are assigning, such as Propel PLM. Click Manage Licenses next to the name of the app.
+
+Note: Alternately, you can click the Name of the app and then click Manage Licenses when the app details page appears.
+Select the user(s) you just created and click Add. 
+These two steps should be completed before testing the new user
+Assign a Propel Permission Set
+Assign a User to a Public Group
+Test the New User
+You can test the new user by logging in as the user and opening the Propel App.
+Go to Setup > Users > Users.
+Click Login beside the new user.
+Click the App Launcher icon and select the Propel App you assigned to that user. If you don’t see the app in the initial list, select View All.
+Verify that the Propel app loaded.
+Once you’ve Assigned Propel to your users, you can direct them to our Login and Launch Propel article.
+See Also
+Assign a Propel Permission Set
+Assign a User to a Public Group
+Dataload: Users

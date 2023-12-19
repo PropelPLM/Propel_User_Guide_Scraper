@@ -1,0 +1,18 @@
+Add Fields to the Where Used Tab
+The Where Used tab, which appears as one of the tabs when you view an Item, gets its data from the Assembly object. So to add or change the fields that you can view in that tab, you’ll need to update the field set in the Assembly object.
+Before you begin
+To add a field, the field you are using must already exist on the Assembly object. 
+Add a field
+Go to Setup > Object Manager  and select the Assembly object.
+From the left pane, select Field Sets.
+You’ll need to edit two field sets: Where Used Immediate and Where Used Top. Select one of those to edit.
+Select Parent Item (Revision) from the field sets.
+Drag the Field from the right side to the In the Field Set section, in the order you want it to appear.
+Once you’ve added the fields you want to appear click Save.
+Repeat the steps for the other Where Used field set.
+Refresh page layouts
+The final step in the process is to refresh the page layouts for Propel objects to ensure the custom fields will now display for the applicable users.
+Select the Propel Setup tab from the navigation bar.
+Under User Settings in the Cached Data section, click Refresh Page Layouts.
+
+ 

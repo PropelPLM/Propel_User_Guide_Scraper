@@ -1,0 +1,40 @@
+Lifecycle Phases
+This article provides an overview of Propel Lifecycle Phases. If you have a solid understanding of Lifecycle Phases and want to dive right into setup, go to one of the following articles, depending on the type of Lifecycle Phase you are configuring.
+Configure an Item Phase
+Configure a Change, Quality, or Declaration Phase
+A record’s Phases are the different steps that the record goes through in its Lifecycle. When you configure a Lifecycle Phase, you determine the specific behaviors of the record while it is in that Phase, as well as many of the user actions that can occur during that Phase. Item, Change, Quality, and Declaration records all move through different Phases as they go through their Lifecycle, and these records can only be in one Lifecycle Phase at any given time.
+In Propel, Lifecycle Phases are created on a specific Lifecycle - a Lifecycle is, essentially, a collection of the different Phases. And that Lifecycle, in turn, is associated with one or more Categories.
+When a user creates a new Item record, or starts a new Change, Quality, or Declaration record, they begin by choosing a Category. As that Category is associated with a Lifecycle, the new record inherits all of that Lifecycle’s Phases. 
+Lifecycle Phases for Change, Quality, and Declaration records function as different steps in a workflow process that manages the record’s Lifecycle to an expected outcome. For example, a Change record such as an ECO may have the following phases: Initial, Doc Control, In Approval, Approved, Implemented, and Canceled. As the ECO gets worked on, it progresses through the various phases - moving forward or backward in the process based on the outcomes of each phase - towards getting Implemented (or Canceled).
+An Item record, such as a Part or Document, also has different Lifecycle Phases that the Item progresses through in its Lifecycle, but are slightly different. For example, an Item such as an Assembly, may have the following Lifecycle Phases: Initial, Prototype, Production, Inactive, Obsolete. An Item’s Phase, however, may not change even though its Revision does - an Item could go through multiple Revisions while in the Prototype Phase, and then go through even more Revisions while in the Production Phase.
+For more information on Items and Item Revisions, and how they get managed, go to our Items Overview article.
+Because an Item record’s Phases are different from the Phases for Change, Quality, and Declaration records, their configuration components are different as well.
+Lifecycle Phase Components for Change, Quality, and Declaration Records
+Jump to Lifecycle Phase Components for Item Records .
+Approvals
+Some Lifecycle Phases will require review and approval of the record before it can move to the next Phase. When you configure the Phase, you determine whether an approval is required. If the Phase needs approval, you’ll then need to configure more details of who does the approval and how that approval happens. This step, however, happens outside of Lifecycle Phase configuration. Go to the Approvals Overview article for details and steps.
+Required Fields
+For each Lifecycle Phase, you can determine which fields will be required on the main details page, as well as on the Affected Items page. Additionally, you have the added flexibility of controlling a Phase’s required fields by category.
+Change Record Data
+Propel allows you to determine who will be able to make changes to the fields in a record, and on what tabs those changes will be allowed. You can also make specific fields read only, so even if the tab can be edited, you can keep specific fields safe from changes. Plus you can determine whether a record can be deleted while in a specific Lifecycle Phase, and who will be able to delete it.
+Lifecycle Phase Transitions 
+Once you’ve configured your Lifecycle Phases, you then set your Lifecycle Phase Transitions. These determine the overall flow of the Phases. As users work through a record, they can manually transition that record into different Lifecycle Phases, or it may transition to another Phase automatically. Lifecycle Phase Transitions let you restrict the transition between records, based on your business processes. For example, you may allow a user to manually transition a Change record from the Initial Phase to either the Doc Control or Canceled Phase. However, you would prevent the user from transitioning the record directly from Initial into the In Approval or Implemented Phase. For more information and configuration documentation, go to our Lifecycle Phase Transitions article.
+Lifecycle Phase Components for Item Records
+Jump to Lifecycle Phase Components for Change, Quality, and Declaration Records.
+Change Control
+Item Revisions are generally managed through Change records - each time an Item is updated, a corresponding Change record (such as an ECO or DCO) is initiated to manage the revision process with the necessary reviews and approvals. You can set this up based on the Lifecycle Phase the Item is in at the time of the revision. For example, an Item in the Initial Phase, may not warrant change control, but when it gets to the Prototype or Production Phase, you would want change control.
+Required Fields
+As with the Change, Quality, and Declaration records, you can control required fields for the Item record by Phase.
+Next Phases
+Similar to Lifecycle Phase Transitions, with Item records you can determine the next Lifecycle Phase an Item can progress to after the current phase is complete. 
+Revision Sequence
+You can determine the sequence of numbers or letters that Propel will use to name the revision. Again, this can set up per Lifecycle Phase, so an Item in the Initial Phase might use the sequence 1, 2, 3…, while in the Production Phase it could use A, B, C...
+Recommended Next Steps
+As mentioned, configuring Phases is different based on the type of Phase:
+Configure an Item Phase
+Configure a Change, Quality, or Declaration Phase
+See Also
+Lifecycles Overview
+Categories Overview
+Approvals Overview
+Lifecycle Phase Transitions

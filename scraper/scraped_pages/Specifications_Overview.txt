@@ -1,0 +1,23 @@
+Specifications Overview
+In the Specification, you determine the Items and Manufacturer Parts that must comply with a Specification, as well as any exemptions that may apply. Depending on your processes, your specification can apply to the Top-level Assemblies / Finished Goods, or at the component level and the system can roll-up the compliance status.
+There are several key sections to a Specification, which are shown below with links to relevant articles.
+Specification Details
+The Details section contains the general information about the Specification as well as details such as Jurisdiction, Expiration Date, and how to label calculated Compliance Statuses. This is also where you activate or deactivate your Specification; only an active Specification can be referenced by a Declaration.
+Create or Clone a Specification Record
+Item and Category Specifications
+These sections of the Specification determine the Items and/or Manufacturer Parts that will be included in the Specification - those that need to comply with the specification. Depending on the Specification and your business processes, you can either add individual Items, include all of the Items that are in a Category, or use a combination of both individual Items and Categories. Anything you add here will need to be in a Declaration.
+Manage Item and Category Specifications
+Exemptions
+Many Specifications will have an Exemptions List that outlines the conditions in which an Item may be considered exempt front he Specification. These Exemptions are stored here. When an exempt item is added to a Declaration, you declare the status as “Exempt” and will need to associate it to an existing Exemption.
+Manage Specification Exemptions
+Manage Declaration Record Affected Items
+Compliance Status
+This section lets you see the declared and/or calculated statuses of all the Items in your Specification.
+Configure Filters for Compliance Statuses
+Specification Setup
+For Propel Administrators, there are some configuration steps that need to be taken to ensure that Specifications follow your organization’s business processes.
+Optionally, configure the Lightning Record Page to display separate tabs for Categories, Items, and Exemptions 
+Calculate Compliance Status
+See Also
+Declarations Overview
+Items Overview

@@ -1,0 +1,12 @@
+Propel Advanced Costing
+Propel supports managing costs at the manufacturer part level and can roll-up the costs for a BOM based on manufacturer part costs.
+You can define supplier splits:
+In the example above, Item 310-00378 has two parts on AML, and they want to a 50/50% split.
+If your supplier splits are consistent across all BOMs, you can lock the costs to always use the splits defined on the item's manufacturers tab. Or, keep the costs unlocked where you can define unique splits on different BOMs. For specific examples, see Locked Costs. 
+In addition to doing supplier splits within an item, you can also roll-up cost allocations across primary items and their substitutes. See Item Substitutes in a BOM for more information.
+There are also 3 different ways the costs can roll-up within a sub-assembly. See Quoted Costs and other Roll-Up Types for specific examples.
+The overall BOM cost roll-up is based on the Include in Cost Roll-up checkboxes for unlocked costs or Use Cost checkboxes for locked costs.
+The overall BOM cost roll-up is based on the Include in Cost Roll-up checkboxes.
+Propel also supports multiple cost roll-ups. Instead of a single Cost, you can configure multiple cost types like Prototype and Production or Quoted and Contracted, etc.
+Over time, as your BOM changes (BOM items revision or costs change), you can filter the BOM to look back at the BOM "As of" an earlier date to see how costs change over time. For example, if rev A of this item was released on October 1, and at that time BOM Item 200-00208 was at rev A, you can see rev A and the costs associated with rev A of that item on October 1.
+Go to our Configure Cost Roll-ups article to enable and set up costs in your org.

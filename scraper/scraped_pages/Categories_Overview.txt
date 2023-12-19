@@ -1,0 +1,41 @@
+Categories Overview
+This article provides an overview of Propel Categories. If you have a solid understanding of Categories and want to dive right into setup, go to our Configure a Category article.
+Categories are a core component used to generate Item, Change, Quality, and Declaration records. When end users create a new Item or start a new Change, Quality or Declaration record, their first step is to choose a Category, which then determines how that record behaves, what information is available, and how users are able to interact with the record (what they can and can’t do).
+The Categories that you use will depend on your business model and processes. Examples of Categories include: 
+Items: Parts, Assemblies, Products, and Documents
+Changes: ECOs, ECRs, Deviations and Stop Ships
+Quality: CAPAs, SCARS, Complaints, Defects
+Declarations: You may have only one Declaration category, or you may break it out
+Each Category you create is associated with a specific Lifecycle, which means it uses that Lifecycle’s Phases and the behaviors configured for those Phases. And because multiple Categories can be associated with a single Lifecycle, each of those Categories uses that same Lifecycle’s Phases, letting you essentially reuse the configuration of the Phases over and over again. 
+For more information on the relationship between Categories, Lifecycles, and Lifecycle Phases, go to our Lifecycles Overview article. 
+While certain behaviors are inherited from the Lifecycle, Categories are powerful in that they also let you further customize the behavior of a workflow or item to follow your particular business processes. So even though Categories may share a Lifecycle, they can have unique components such as autonumbers, custom fields, and a customized tab layout. 
+The sections below detail the different elements that you can configure in categories.
+Category Components
+There are two main methods for creating or updating categories, and each method has slightly different options available: through the Propel Setup tab or through the Categories tab. The specific capabilities available in each method that are outlined in the Configure a Category article. For the Item, Change, Quality categories, you can actually use both methods together if needed. However, Declaration categories can only be set up through the Categories tab. 
+The main components of Categories are explained below, with links to more detailed articles as applicable.
+Autonumbers
+Autonumbers can be used in all types of categories and allow you to create custom, sequential numbering systems for the item and workflow records that get created. The autonumber doesn’t have to be unique to the category, which means several categories can share the same autonumbering sequence. This gives you many options for how you number your item and workflow records, and provides the flexibility needed to match your unique needs. More information about autonumbers and how they work is provided in our Autonumbers Overview article. 
+Custom Fields and Tabs
+As shown on the Configure a Category article, you can specify category-specific fields, tab order and display, and customize certain tab names. This is available for Item, Change, Quality, and Declaration records and ensures that the information your users can access and work with meets your business requirements. 
+Criteria-Based Approver Rules
+Criteria-based approver rules apply only to Change and Quality records and they allow you to assign approvers on those record types based on the values in specific fields associated with the record. Again, these are category-specific, which means that when the criteria you set up is matched for a category, the system will generate approver groups that can then be applied to a given lifecycle phase. For more information, go to our Create Criteria-Based Approver Rules article. 
+Additional Settings
+These additional settings can help you customize your categories to fit your needs:
+Is Descriptive Change: Use this flag for Change workflows where the Affected Items in the change are not being revisioned or updated as a part of the change. An example of this would be an Engineering Change Request (ECR) - there would be Affected items, but you would not make any updates to the items during this workflow. Additionally, you can set this when you don’t want the workflow to have an expiry, such as you might with a Deviation type of Change workflow.
+Default Project Template: This is specific to the Change and Quality workflows and allows you to specify a Propel Project that will be used as a template when the end user selects this category. So when a record of that category is created (such as a new ECO), it clones the template project and associates it with the ECO as automated tasks to do as part of the workflow.
+Restrict Autonumber Override: Because multiple categories can share the same autonumber sequence, there may be instances where you want certain categories to be able to enter a number manually and override the autonumber that gets generated, and some instances where you do not want this to occur. By selecting this checkbox, users will not be able to override the generated autonumber, even if they have edit privileges on the field (unless they have the Override Restricted Autonumber custom permission).
+Parent/Child Categories: You can use the Parent field to select an existing category to become your new category’s parent. This means your child category will inherit aspects from the parent automatically, such as autonumbers and category-specific fields. Category-specific fields that are inherited cannot be changed. You can add additional category-specific fields to child categories, but any parent category-specific field is also category-specific for the child.
+Use as Category Group Name: Select this to use this category to group sub-categories. When this is selected, you will not be able to specify a lifecycle for this category, nor will users be able to select it when they create an Item, Change, Quality, or Declaration record.
+PIM Product: For Items, selecting this enables SKUs and Attributes for public PIM products. Go to our PIM Products Overview article for more information.
+Recommendations
+As a Best Practice for creating categories, we recommend having multiple categories associated to a single lifecycle whenever possible, rather than having one category to each lifecycle. This will make setup and maintenance easier and help streamline your workflows. However, this is dependent on your business processes and your different phase needs. For example, if your ECO and ECR workflows use different phases, or require different phase behaviors, then you will need a Lifecycle for each, with each lifecycle having one or more categories.
+
+Unless absolutely required, do not change the Category of released Items. This will impact every Revision of the Item, and can cause serious harm to your data. If you think your business requires making this update to your Item data, please contact your Customer Success Manager before making any updates.
+Recommended Next Steps
+To add or update a category, go to the article below. The steps for configuring Categories through both the Propel Setup tab and Categories tab are covered.
+Configure a Category 
+See Also
+Lifecycles Overview
+Lifecycle Phases
+Autonumbers Overview
+Create Criteria-Based Approver Rules

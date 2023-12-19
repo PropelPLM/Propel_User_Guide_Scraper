@@ -1,0 +1,25 @@
+Configure an Approver Definition
+An Approver Definition determines the group that will be assigned as approvers to a specific Lifecycle Phase in a Change, Quality, or Declaration record. Once configured, when a user creates that record, the specified approval Phases will automatically have those approvers added. Users still have the ability to add, remove or reassign approvers (see note below), but the initial step of adding approvers is done automatically.
+Approver definitions assign approvers through Public Groups that are set up in your system, so you’ll need to have set up your groups prior to creating your Approver Definitions - you don’t need to have all of the members defined, just a group created so that you can add it during configuration. If you need help with public groups, go to our Configure a Public Group article. 
+Note: When a record is set to an “in approval” state, which happens after submit, approvers can only be added or reassigned, but not removed. Before the record submitted for approval, approvers can be removed or added, but not reassigned.
+For more information on how Approver Definitions work, as well as other approval options - such as Criteria-Based Approvers and Dual Signatures - in Propel, go to our Configure a Public Group article.
+Create or Edit a Workflow Approver Definition
+Approver definitions are added to a specific Phase in a Lifecycle. 
+Note: While the Approver Definition functionality does allow you to set approvers per Lifecycle Phase, Criteria-Based Approver Rules provide more flexibility and enhanced features for setting approvers. We recommend using Criteria-Based Approver Rules where possible. However, this is currently only available for Change and Quality Records.
+Select the Lifecycles tab from the navigation bar and select the Change, Quality, or Declaration Lifecycle to which you want to add an Approver Definition.
+Scroll down to the Approver Definitions related list. Even if an Approver Definition has never been created for a Lifecycle, it will display the related list.
+To create a new Approver Definition, click New. To edit an existing one, click the dropdown icon at the end of the Approver Definitions row and select Edit.
+For the Group Names field, enter the API name for the group you want to add as approvers. You can find this on the Group Name field for your public group and it will look similar to “Change_Analyst_Group”.
+Note: you can only have one group per approval definition. If you want to use multiple groups for a single Phase, you can create multiple approval definitions.
+The Lifecycle field should already be populated based on the Lifecycle you’re on. We recommend leaving it as is.
+Click in the Phase field to search for and select the Lifecycle Phase to which you want to add the Approver Definition. You’ll only be able to search for Phases on the current Lifecycle.
+Note: Make sure that the Phase you selected is set up as an approval Phase. Go to our Configure a Change, Quality, or Declaration Phase article for more information.
+If you want the approval to be based on the first response that you receive from all of the approvers, select the First Response checkbox. If you leave this deselected, then the approval will default to Unanimous.
+Once you’ve completed your Approver Definition, click Save & New to start a new one, or Save to return to the previous screen.
+Recommended Next Steps
+You may want to set up notifications for your approvers. This will get sent to approvers when the record’s approval Phase gets submitted and sends an email to the approvers to let them know they have a record to approve.
+Configure Workflow Rule Email Alerts or Notification
+See Also
+Approvals Overview
+Lifecycle Phases
+Create Criteria-Based Approver Rules

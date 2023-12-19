@@ -1,0 +1,82 @@
+Watermark Item Attachments using Process Builder (V1 - Old)
+Note: As of our Summer ‘21 release, we recommend setting up watermarking using a Flow instead of a Process Builder. Salesforce is eventually retiring Process Builder. Although Process Builders will continue to work for the time being, you will need to switch to Flows eventually. See our Watermark Item Attachments with Flow  article for instructions.
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Propel gives you the ability to automatically generate a PDF with a watermark - such as “In Review” or “Latest Release” to help identify different versions of documents that are produced or modified at different points of the change process. Supported file types for this include PDF, DOCX, XLSX, DOC, and XLX (PDF is available as of our Summer ‘21 release; XLSX, DOC, and XLS are available as of Spring ‘21).
+This addresses a potential issue that can occur when users download Attachments. Because Item Attachments can change in the system over time, if a user opens the older downloaded Attachment, they could be viewing an out-of-date version without realizing it.
+How It Works
+At the designated time, such as on release of a Change, the system goes through each of the Affected Items on the Change. If there are any supported files attached to the Items, the system generates a watermarked PDF version of the file and attaches the PDF to the Affected Item.
+If designated to watermark superseded revisions, the system goes to the previous revision and generates a watermarked PDF version of the files on the previous revision and attaches it to the previous revision. For example, given the structure A (Released) and B(Draft), when B is Released then the Superseded PDF is generated on A.
+Example Use Cases
+On the release of a Change Order, you could attach a PDF watermarked with “Latest Release” to the Affected Items for each Attachment on the newly released revision. Optionally, you could also attach a watermarked PDF to the superseded revisions and/or append a list of approvers to each PDF. 
+As an additional example, when a change moves into an approval phase or other phase, you could attach a PDF watermarked with “In Review" to the Affected Items for each Attachment on the Change.
+Configure Attachment Watermarks
+There are several steps to configure this feature. Complete the following steps in the order specified to set up watermarking.
+Make the Documents Section Visible
+Go to Setup > Custom Code > Custom Settings.
+Click Manage beside the Configuration setting.
+Click New and add the following:
+Name: DocumentMerge
+Value: True
+Click Save.
+Add New Remote Site Settings
+This allows communication with Heroku and Aspose.
+Go to Setup > Security > Remote Site Settings.
+Click New Site Setting and add the following:
+Remote Site Name: Heroku
+Remote Site URL: https://propel-document-prod.herokuapp.com
+Click Save & New and add the following:
+Remote Site Name: Aspose
+Remote Site URL: https://api.aspose.com
+Create a Process Builder
+This will activate watermarking on Changes. As a recommended Best Practice, start the process when "A platform event message is received". This is more scalable because it runs on fresh governor limits and is recommended for watermarking when a Change is released. This will use the Change Event platform event. 
+Go to Setup > Process Automation > Process Builder and click New.
+Enter a Process Name. The API Name will auto populate.
+For The process starts when setting, select A platform message is received.
+Click Save.
+Click Add Trigger and enter the following:
+Platform Event: Change Event
+Object: Change
+Meeting Conditions: RecordID Equals Event Reference Record Id
+Click Save
+Click Add Criteria and enter a Criteria Name.
+For Criteria for Executing Actions, select Conditions are met.
+Set the Conditions as follows:
+Note: These are example criteria. Your criteria may be different based on your watermarking needs.
+To watermark on release of the Change, set the condition to Platform event, Is Approved, Equals, Boolean, True.
+To watermark when a Change enters a certain Lifecycle Phase, set the condition to Platform event, Is Update, Equals, Boolean, True. Additionally, set a second condition for the Phase Name: Object, PDLM__Change > Status > Phase > Phase Name, enter the name of the Lifecycle Phase.
+For Conditions, select All of the conditions are met (AND).
+Click Save.
+In Immediate Actions, click New Action.
+Select Apex for the Action Type and enter an Action Name.
+Set the Action Class to Change Watermark/Stamp Words to PDFs.
+Set the following required Apex Variables:
+Record ID: (Event Reference) Record ID 
+Include Approval: (Boolean) Set to True if you want an Approvals page appended to the watermarked PDF. (Note: If Watermark Superseded is True, it applies to both PDFs)
+Watermark Superseded Revision: (Boolean) Set to True if you want to also watermark the superseded document and only if you are watermarking on release of the Change.
+Watermark Text: (String) The text to watermark diagonally across each page of the current version of the document**
+**Note: Although required, this field can be made blank by referencing an Item Revision text field that is blank on the Item Revision. Use the following syntax (requires new custom field): {{Item_Revision__c.Blank_Custom_Field__c}}
+You can also set the following optional Apex Variables:
+Session Info: (Event Reference) Session (NOT OPTIONAL for process builders that run when a platform event message is received)
+Footer Text (Left): (String) Text to display in the left side of the footer
+Footer Text (Center): (String) Text to display in the center of the footer
+Footer Text (Right): (String) Text to display in the right side of the footer
+Left Margin Text: (String) Text to display in the left margin (sideways up the left)
+Right Margin Text: (String) Text to display in the right margin (sideways down the right)
+Superseded Watermark Text: (String) The text to watermark diagonally across each page of the superseded document
+Superseded Footer Text (Left): (String) Text to display in the left side of the superseded document's footer
+Superseded Footer Text (Center): (String) Text to display in the center of the superseded document's footer
+Superseded Footer Text (Right): (String) Text to display in the right side of the superseded document's footer
+Superseded Left Margin Text: (String) Text to display in the left margin (sideways up the left) of the superseded document
+Superseded Right Margin Text: (String) Text to display in the right margin (sideways down the right) of the superseded document
+Click Save and make sure you Activate your Process Builder.
+Below is an example of potential variables:
+
+Tips for Apex Variable Strings
+You can use special syntax to include data from the Change or Item Revision. 
+Examples: 
+{{Change__c.Name}} for the Change Name
+{{Item_Revision__c.Released_Date__c}} for the released date 
+Note: If you put a date time field in, the time is displayed as T0:00:00. The recommended best practice is to use a Date field
+See Also
+Document Management Overview

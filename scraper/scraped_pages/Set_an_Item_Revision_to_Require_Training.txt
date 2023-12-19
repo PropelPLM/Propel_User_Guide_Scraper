@@ -1,0 +1,18 @@
+Set an Item Revision to Require Training
+This short article shows how to require training for an Item Revision. This step must be performed if you want Training Records to be automatically generated for the Item when the draft version is published.
+Once you set this, it will automatically say set for subsequent versions. However, there may be times when you want to change this for an updated version, such as when there are only minor updates. In that instance, follow the instructions below and deselect the setting. You’ll then need to update this again prior to the next revision that you want to initiate training for.
+Note: This article assumes that you have Training Records configured and that the necessary fields have been added to the applicable Item Categories. Go to the Configure the Training Records Module article for more information.
+
+If you are looking for information on how to require training against approved drafts (not-yet-published revisions), check out how to configure Training on Drafts.
+Set the Item to Require Training
+Note: An Item must be in a Draft revision in order for you to complete these steps. If it is not in Draft, you will need to create a new draft for the Item. You can also set training as required when you create or clone an new Item .
+Select the Items tab from the navigation bar and click the Name of the Item you want to modify.
+When the record opens, ensure the Draft version is displayed and click Edit Draft.
+Ensure the Details tab is selected and scroll down to the Training section on the record.
+Select the Training Required option.
+Click Save on the Details tab. A warning icon will display on the tab until the changes have been saved.
+Now that the Training Required flag has been set, you still need to add it to a Training Plan, which will generate training assignment records for the people that belong to the Training Plan. Go to the Create and Manage a Training Plan article for configuration steps.
+See Also
+Create and Manage a Training Plan
+Edit an Item Record
+Configure the Training Records Module

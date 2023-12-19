@@ -1,0 +1,18 @@
+Add Values to a Picklist Field
+Picklists provide users with a list of options that they can choose from to enter data into a field. This article walks through the steps of adding values to a picklist that has already been created. 
+If you have not yet created your custom picklist field, go to one of the following articles:
+Add Custom Fields to a Change or Quality Record
+Add Custom Fields to the Item Object
+Add Custom Fields to a Manufacturer Item or Manufacturer Part Record
+For more detailed information on custom fields, go to Salesforce’s Custom Fields documentation.
+Add Values to an Existing Picklist
+Go to Setup > Object Manager and select the object where your picklist exists.
+Once you’ve selected your object, select Fields & Relationships and then click on the name of the picklist field you want to edit.
+Note: You can click on the Data Type heading to sort the fields. This will group all of the Picklist fields together.
+In the Values section, click New.
+A text box appears where you can add your new value. You can add a single value, or you can add several new values, all on a separate line. Once you’ve entered your value(s), click Save.
+Back on the Picklist field page, you can click Reorder to order your newly added values with the existing values.
+See Also
+Add Custom Fields to a Change or Quality Record
+Add Custom Fields to the Item Object
+Add Custom Fields to a Manufacturer Item or Manufacturer Part Record

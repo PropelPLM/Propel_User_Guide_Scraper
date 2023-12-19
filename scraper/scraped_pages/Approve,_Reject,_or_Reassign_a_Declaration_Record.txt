@@ -1,0 +1,44 @@
+Approve, Reject, or Reassign a Declaration Record
+Depending on the configuration of your org, there could be multiple ways that you are notified of a request for you to approve a Declaration record:
+Through an email notification.
+Via a notification on your Propel home page. Go to your Home tab to view this.
+Through the notifications icon on your Propel screen. The notifications icon will display a number letting you know you have notifications (often these are approval requests). Click on the icon to view your notifications.
+With each of these methods, you’ll be able to click on the notice to directly approve, reject, or reassign a single Declaration record. However, with the home page notification you can also manage multiple approval requests at once. The Manage Multiple Approval Requests section in this article covers this.
+Approve or Reject a Single Approval Request
+Click the link in the Approval notification
+From the email, click the web link. This will take you to the Declaration record. You may need to login if you weren’t already in Propel.
+From the Propel Home Page, click Approve/Reject. This will take you to the Declaration record.
+From the notification icon, click the icon and then click the notice. This will take you to an Approval Request screen. 
+Click Approve or Reject as applicable, based on your review. In both cases, you will be prompted to provide a comment for your action. This may or may not be required, depending on your configuration.
+
+Note: If Dual Signatures are required for approvals in your org, you will need to enter your password to complete your action. This is set up by your Propel Administrator.
+Reassign a Single Approval Request
+Reassigning an approval request is different depending on how you navigated to the approval request.
+If you navigated from an email notice or the Propel Home page: 
+Once on the Declaration record, select the Approvers tab and click the Edit button in the top right of the record.
+On the row for the Original Approver, click the dropdown icon and select Reassign.
+Click in the Search field, enter your search criteria, and select your replacement approver.
+Click Reassign.
+The record will now show both the original and reassigned approver.
+Your changes will save automatically. Once you’re done making changes, click Done Editing.
+If you navigated from the notification in the Notifications icon:
+Click Reassign.
+Click in the Reassign To search field, enter your search criteria, and select your replacement approver.
+Enter in any applicable comments.
+Click Reassign.
+Manage Multiple Approval Requests
+You can only manage multiple approval requests through your Propel Home page. However, you can also manage approval requests for different types of records all at once, such as Declarations, Changes, and Quality records.
+Select the Home tab from the navigation bar.
+In the Propel Approvals section, click Manage All. 
+Use the checkboxes to select multiple Approval Requests.
+To reassign multiple requests:
+Click Reassign.
+In the Mass Reassign window, search for and select the Approver you want to reassign your approval request to.
+ Enter in any applicable Comments and click Save.
+To approve or reject multiple requests:
+Click Approve/Reject.
+Depending on your business processes, you may need to search for and select the next Approver.
+Enter any applicable Comments and click either Approve or Reject, as applicable.
+See Also
+Add or Remove Approvers on a Declaration Record
+Setup Dual Signatures

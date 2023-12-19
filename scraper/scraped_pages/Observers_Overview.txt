@@ -1,0 +1,31 @@
+Observers Overview
+As of 8.10
+
+When certain types of Changes or Quality Records are introduced or updated, it’s often important to your business that certain users or groups, both internal and external, are made aware. These users - called Observers - don’t need to approve the Changes or Quality Records, and they don’t need to reject or block the Change or Quality workflow, but they do need to know what’s happening. Propel’s Observers feature (introduced in Summer ‘21) ensures that you can make this possible. 
+This article provides an overview of Observers, setup instructions, and links to articles that show you how to set up relevant Criteria-Based Approver Rules.
+Observers are great for internal and external users such as executives, procurement teams, or manufacturing partners who you want to notify and make aware of new or updated Change and Quality Records, but not necessarily have them as approvers who can slow down the process. Observers are added to phases, and will receive an admin-configurable emails (similar to approvers) to notify them when the Change or Quality Record enters that phase, and when it is approved, rejected, and recalled.
+All observer information is logged in the audit trail.
+Currently, the Observers feature is only available for Change and Quality Records that are configured using Propel Lightning Web Components (LWC). Like Approvers, they can be added manually, or added through Create Criteria-Based Approver Rules. They can only apply to approval phases at this time.
+Configure Observers
+As noted, Observers are only available in orgs using Propel LWC. When you enable observers using the Custom Setting outlined below, the Observers tab will display as a sub-tab in the Propel Approvers component.
+The Custom Setting indicated below only needs to be done once.
+Go to Setup > Custom Code > Custom Settings.
+Click Manage beside the Configuration setting and then click New.
+Add the following:
+Name: useObservers
+Value: true
+Click Save.
+Add Observers to a Change or Quality Record
+You can add Observers to a Change or Quality Record either manually, just as you would add Approvers. Or you can have Observers added automatically through Propel’s Criteria-Based Approver (CBA) Rules. Depending on the Observers you want to add through CBA Rules, you can include them in the same rule(s) as Approvers.
+For information and setup instructions, go to our Create Criteria-Based Approver Rules article.
+Note: Ulike Approvers, Observers are not required on a record when it is submitted for Approval. Neither the presence or absence of Observers will affect the workflow in any way.
+Send Additional Notifications to Observers
+When the Change or Quality record enters into the approval process for the phase that the observer is on, the observers will receive the "Notify Observers" notification. They will also receive the Approved, Rejected, and Recall email alerts defined in the underlying Change Phase approval processes.
+
+In the ad-hoc Send Notification, there are new quick links to add Observers. The messages sent are now (as of Spring '22) in the audit trail, and will include who was sent what, when and notifications were sent, and who sent the notifications.
+
+If you'd like to set up additional notifications for your observers, ask your Success Manager for guidance on what Email Notification Flows you should consider, or if there are better ways to get your users alerted to take action or review workflow statuses.
+See Also
+Create Criteria-Based Approver Rules
+Configure Workflow Rule Email Alerts or Notifications
+Propel Lightning Web Components (LWC)

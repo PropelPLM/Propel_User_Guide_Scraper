@@ -1,0 +1,19 @@
+Refresh a Sandbox
+As a best practice, we recommend that you do all of your setup and testing in a sandbox environment first, before implementing those changes in a Product org. This ensures that the changes you make will not adversely affect production environment users or production data.
+However, with administrators and users configuring and testing in your sandbox continuously, it’s possible that your sandbox gets out of sync with your production org and is no longer an accurate reflection of production. Or it’s possible that changes to your sandbox have created issues that are difficult to track down and/or resolve. 
+In these cases, you’ll want to Refresh your sandbox. This is essentially copying metadata from your production org and overwriting what is currently in the sandbox. Plus, if your sandbox is a clone or uses a sandbox template, it will also update the sandbox’s data.
+Note: The number and types of sandboxes that you have will depend on your Salesforce edition and licensing. 
+Refresh a Sandbox
+Note: You will need the Manage Sandbox permission to refresh a sandbox.
+Go to Setup > Environments > Sandboxes.
+You’ll see the number of available and used sandbox licenses that you have for the different types of sandboxes available. Again, the availability of the sandboxes will depend on your Salesforce license.
+Select the Sandboxes tab below the license details. This will display a list of all of your current sandboxes. Sandboxes that you can refresh will have a Refresh link next to them.
+Click Refresh next to the name of the sandbox you want to refresh.
+Select the type and sandbox environment that you want to refresh. The table shows the number and type of sandboxes that you have available, based on your licensing. YOu can select a different sandbox type to refresh.
+Select the data that you want to copy, if applicable.
+For a Partial Copy sandbox, click Next and select a template to specify the data for your sandbox. You will have to have previously created a template for this Partial sandbox.
+For a Full sandbox, click Next and then determine how much data you want to include. You may include template-based data, or choose all of the object data.
+Once you start the process for refreshing a sandbox, it will take some time to complete. If you want the sandbox to be available immediately after it’s complete, select the Auto Activate checkbox. Otherwise, you will receive an email when it’s complete with a link to manually activate the sandbox.
+Click Create to start the refresh. The amount of time it takes to complete the refresh will depend on the size of your sandbox and the amount of data you are copying.
+Note: Refreshing your sandbox can move it to a different instance.
+If you choose to not Auto Activate your sandbox, you will receive an activation email when your sandbox is ready to activate. Follow the steps in the email to activate your sandbox

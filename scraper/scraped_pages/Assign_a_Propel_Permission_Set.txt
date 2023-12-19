@@ -1,0 +1,28 @@
+Assign a Propel Permission Set
+You must assign at least one of the available Propel permission sets to each user so they can see the Propel custom tabs. This article walks you through assigning an existing Propel permission set; however, you can use these instructions to assign any permission set to a user.
+The steps for assigning permission sets are different if you are:
+Assigning permission sets to a single user
+Assigning permission sets to multiple users
+Propel Permission Set Guidelines
+We recommend assigning the Propel permission sets to users as follows:
+Administrators: Propel Administrator, Propel Import Data, Propel Full Use, and Propel Full Use - Custom Fields
+Standard Users: Propel Full Use and Propel Full Use - Custom Fields
+Read Only Users: Propel Everyone (Read Only) and Propel Everyone (Read Only) - Custom Fields
+Assign Permission Sets to a Single User
+You can assign several permission steps to a single user at once.
+Go to Settings > Users > Users and select the name of the user you want to assign permission sets to.
+In the Permission Set Assignments section click Edit Assignments.
+Use the multi picklist to select the permission sets you want to assign to the user.
+Click Add to move them into the Enabled Permission Sets section. 
+Click Save.
+Assign a Permission Set to Multiple Users
+You can assign a single permission set to multiple users at once.
+Go to Settings > Users > Permission Sets.
+Select the permission set that you want to assign to users, such as Propel Full Use.
+Click Manage Assignments to see the list of users assigned to that permission set. Then click Add Assignments.
+Use the checkboxes to select the users you want to assign that permission set to and click Assign.
+Verify you have the correct users and click Done.
+Repeat the above steps for any other permission sets you want to assign users to.
+See Also
+Add a Custom Field to a Permission Set
+Configure a Permission Set

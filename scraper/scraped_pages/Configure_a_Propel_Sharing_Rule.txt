@@ -1,0 +1,149 @@
+Configure a Propel Sharing Rule
+The Propel Sharing Rules you create define what to share, who to share with, and what access rights to grant. This article walks through the process of creating a Sharing Rule based on each of the predefined logics we’ve developed.
+It is possible to create multiple rules per rule logic. For example, you might have two different fields for sharing an item, one with internal groups where you share more information and another for partners with whom you share fewer details.
+When sharing Attachments with sharing rules, there’s an option to share only specific file types. For example, PDF only. As of Spring '21, there's an option to share files based on the value of a custom attachment field. For example, you can create an Internal Only checkbox field and base sharing files off of that value.
+Before you start configuring your rules, we recommend reading through the Rule Definitions and Logic section below so that you understand the different behaviors behind each logic. However, if you’re comfortable with the rule logics, you can go directly to configuring the rule.
+Rule Definitions and Logic
+Propel currently offers eight different sharing strategies and logic that you use as a starting point to configure your rules. When you configure your rules, you’ll implement one of these based on your sharing strategy and the results you want to achieve. Each of the rule logics is explained below. 
+Share Items With Field: Define what to share (Item only, BOM, AML, Attachments) with selected value(s) from a custom field on the Item object whose options are a list of Public Group names. Only the users in the selected Groups would see the shared records. 
+Share Items With Mfrs and Distributors: Define what to share (Item only, BOM, AML, Attachments) with public groups whose names match that of the Manufacturer or Distributor on the AML of the Item. 
+Typically, you would share only the Item and possibly the Attachments. The Manufacturer users in the group would see the Item and only the manufacturer part that they manufacture.
+This would also typically be used in conjunction with a Share Manufacturer Parts with Manufacturers and Distributors rule.
+As of Spring '22 Minor, you can optionally create a custom field on the Account/Manufacturer object where the user will be able to enter or select a single Public Group name. If the field is filled in on the account record, the sytem will look for a match to that field. If the field is not filled in, the system will try to match the account name.
+Share Changes With Field: Define what to share (Change only, Affected Items, BOM of AIs, AML of AIs, and Attachments of AIs) with the selected value(s) from a custom field on the Change object whose are a list of Public Group names. Only the users in the selected Groups would see the shared records.
+Share Changes With AI Field: Define what to share (Change only, Affected Items, BOM of AIs, AML of AIs, and Attachments of AIs) based on the selected value(s) Affected Item’s custom Item field whose options are a list of Public Group names. 
+Typically, this would be used in conjunction with a Share Items With Field rule and you would share only the Change and the users would only see the Affected Items that they can see from Share Items With Field. Only applies to the items where the field is populated, and not necessarily children of those items.
+As of Spring '22, best practice would be to use rule #9 instead, so that if a child item was shared by Share Items with Field because you shared the BOM, when that child is added to a Change, the Change is also shared.
+Share Quality With Field: This is similar to a Share Change With Field rule, but for Quality records.
+Share Quality With AI Field: This is similar to a Share Change With AI Field rule, but for Quality records.
+Typically, this would be used in conjunction with Share Items With Field and you would share only the Quality record and the users would only see the Affected Items that they can see from Share Items With Field. Only applies to the items where the field is populated, and not necessarily children of those items.
+As of Spring '22, best practice would be to use rule #10 instead, so that if a child item was shared by Share Items with Field because you shared the BOM, when that child is added to a Change, the Change is also shared.
+Share Mfr Parts with Mfrs and Distributors: Shares the Manufacturer Parts with Public Groups whose name matches that of the Manufacturer or Distributor on the Manufacturer Part. 
+Typically, this would be used in conjunction with Share Items With Manufacturers and Distributors, so the users can see the Manufacturer Parts and the Items that the parts are on AML.
+As of Spring '22 Minor, you can optionally create a custom field on the Account/Manufacturer object where the user will be able to enter or select a single Public Group name. If the field is filled in on the account record, the sytem will look for a match to that field. If the field is not filled in, the system will try to match the account name.
+Share Mfr Parts with Field: Shares the Manufacturer Parts with selected value(s) on a Manufacturer Part field whose options are a list of Public Group names.
+Share Change with Users Who Can Access Affected Items: As of Spring '22, shares Change with the same users who can access any of the affected items.
+Share Quality with Users Who Can Access Affected Items: As of Spring '22, shares Change with the same users who can access any of the affected items.
+Configure a Propel Sharing Rule
+Go to Setup > Custom Code > Custom Metadata Types.
+Select Manage Records next to the Sharing Rule option.
+Click New to start a new rule.
+Select the Rule Logic Name based on the type of Sharing Rule you want to implement.
+Enter a descriptive Label for your Sharing Rule. the Sharing Rule Name field will auto populate.
+The remaining fields will be completed based on the Rule Logic Name you selected. Each of these is detailed below:
+Share Items With Field
+Share With Field: Enter the API Name of the custom field you created on the Item object that will define which groups you share with.
+Share Affected Items: N/A for this logic.
+Share BOM: Select to share the Item’s BOM Items.
+Only Share First Level BOM: Select this if you only want to share the first level items in the BOM. This will be shared regardless of whether Share BOM is selected or not.
+Category Exceptions: If you are sharing the BOM, you can enter a comma separated list of Categories of BOM Items you DO NOT wish to share.
+Share Manufacturer Parts: Select to share the Item’s associated Manufacturer Parts.
+Share Attachments: Select to share the Item’s Attachments.
+Share Attachments of Type: If you are sharing Attachments, you can specify the file type(s) to share (i.e. DOCX or PDF); only files of the specified type will be shared. If you want to share attachments based on the value of another field than file type, enter the <field API Name>:<the value>. For example, if my custom Attachment checkbox field is Internal_Only__c and I only want to share when the value is not Internal Only, enter "Internal_Only__c:false".
+Access Level: Select either Read or Write.
+  Share Items With Mfrs and Distributors
+Share With Field: Optionally enter the API Name of the custom field you created on the Account/Manufacturer object that will define which group to share with.
+Share Affected Items: N/A for this logic.
+Share BOM: Leave this deselected so the users only see the BOM Items that are also shared by this rule or another.
+Only Share First Level BOM: Leave this deselected so the users only see the BOM Items that are also shared by this rule or another.
+Category Exceptions: If you are sharing the BOM, you can enter a comma separated list of Categories of BOM Items you DO NOT wish to share.
+Share Manufacturer Parts: Leave this deselected so that the users only see the parts they manufacture.
+Share Attachments: Select to share the Item’s Attachments.
+Share Attachments of Type: If you are sharing Attachments, you can specify the file type(s) to share (i.e. DOCX or PDF); only files of the specified type will be shared. If you want to share attachments based on the value of another field than file type, enter the <field API Name>:<the value>. For example, if my custom Attachment checkbox field is Internal_Only__c and I only want to share when the value is not Internal Only, enter "Internal_Only__c:false".
+Access Level: Select either Read or Write.
+  Share Changes With Field
+Share With Field: Enter the API Name of the custom field you created on the Change object that will define which groups you share with.
+Share Affected Items: Select this to share the Change record’s Affected Items.
+Share BOM: If you are sharing Affected Items, select this to share the Affected Items’ BOMs.
+Only Share First Level BOM: Select this if you only want to share the first level items in the Affected Items BOM. This will be shared regardless of whether Share BOM is selected or not.
+Category Exceptions: If you are sharing any BOM Items, you can enter a comma separated list of Categories of BOM Items you DO NOT wish to share.
+Share Manufacturer Parts: If you are sharing Affected Items, select this to share the Affected Items’ associated Manufacturer Parts.
+Share Attachments: If you are sharing Affected Items, select this to share the Affected Items’ Attachments.
+Share Attachments of Type: If you are sharing Attachments, you can specify the file type(s) to share (i.e. DOCX or PDF); only files of the specified type will be shared. If you want to share attachments based on the value of another field than file type, enter the <field API Name>:<the value>. For example, if my custom Attachment checkbox field is Internal_Only__c and I only want to share when the value is not Internal Only, enter "Internal_Only__c:false".
+Access Level: Select either Read or Write.
+  Share Changes With AI Field
+Share With Field: Enter the API Name of the custom field you created on the Item object that will define which groups you share with.
+Share Affected Items: Leave this and other Item fields deselected, so users will only see the Affected Items that are also shared by a Share Items with Field rule.
+Share BOM: As noted, leave this deselected.
+Only Share First Level BOM: As noted, leave this deselected.
+Category Exceptions: As you have the Share BOM option deselected, you can leave this blank.
+Share Manufacturer Parts: As noted, leave this deselected.
+Share Attachments: As noted, leave this deselected.
+Share Attachments of Type: As you have left Share Attachments option deselected, you can leave this field blank.
+Access Level: Select either Read or Write.
+  Share Quality With Field
+Share With Field: Enter the API Name of the custom field you created on the Quality object that will define which groups you share with.
+Share Affected Items: Select this to share the Quality record’s Affected Items.
+Share BOM: If you are sharing Affected Items, select this to share the Affected Items’ BOMs.
+Only Share First Level BOM: Select this if you only want to share the first level items in the Affected Items BOM. This will be shared regardless of whether Share BOM is selected or not.
+Category Exceptions: If you are sharing any BOM Items, you can enter a comma separated list of Categories of BOM Items you DO NOT wish to share.
+Share Manufacturer Parts: If you are sharing Affected Items, select this to share the Affected Items’ associated Manufacturer Parts.
+Share Attachments: If you are sharing Affected Items, select this to share the Affected Items’ Attachments.
+Share Attachments of Type: If you are sharing Attachments, you can specify the file type(s) to share (i.e. DOCX or PDF); only files of the specified type will be shared. If you want to share attachments based on the value of another field than file type, enter the <field API Name>:<the value>. For example, if my custom Attachment checkbox field is Internal_Only__c and I only want to share when the value is not Internal Only, enter "Internal_Only__c:false".
+Access Level: Select either Read or Write.
+  Share Quality With AI Field
+Share With Field: Enter the API Name of the custom field you created on the Item object that will define which groups you share with.
+Share Affected Items: Leave this and other Item fields deselected, so users will only see the Affected Items that are also shared by a Share Items with Field rule.
+Share BOM: As noted, leave this deselected.
+Only Share First Level BOM: As noted, leave this deselected.
+Category Exceptions: As you have the Share BOM option deselected, you can leave this blank.
+Share Manufacturer Parts: As noted, leave this deselected.
+Share Attachments: As noted, leave this deselected.
+Share Attachments of Type: As you have left Share Attachments option deselected, you can leave this field blank.
+Access Level: Select either Read or Write.
+  Share Mfr Parts with Mfrs and Distributors
+Share With Field: Optionally enter the API Name of the custom field you created on the Account/Manufacturer object that will define which group to share with.
+Share Affected Items: N/A for this logic.
+Share BOM: N/A for this logic.
+Only Share First Level BOM: N/A for this logic.
+Category Exceptions: N/A for this logic.
+Share Manufacturer Parts: N/A for this logic.
+Share Attachments: N/A for this logic.
+Share Attachments of Type: N/A for this logic.
+Access Level: Select either Read or Write.
+  Share Mfr Parts with Field
+Share With Field: Enter the API Name of the custom field you created on the Manufacturer Part object that will define which groups to share with.
+Share Affected Items: N/A for this logic.
+Share BOM: N/A for this logic.
+Only Share First Level BOM: N/A for this logic.
+Category Exceptions: N/A for this logic.
+Share Manufacturer Parts: N/A for this logic.
+Share Attachments: N/A for this logic.
+Share Attachments of Type: N/A for this logic.
+Access Level: Select either Read or Write.
+ Share Change with Users Who Can Access Affected Items
+Share With Field: N/A for this logic
+Share Affected Items:Leave this and other Item fields deselected, so users will only see the Affected Items that are also shared by a Share Items with Field or Share Items with Mfrs and Distributors rule.
+Share BOM: N/A for this logic.
+Only Share First Level BOM: N/A for this logic.
+Category Exceptions: N/A for this logic.
+Share Manufacturer Parts: N/A for this logic.
+Share Attachments: N/A for this logic.
+Share Attachments of Type: N/A for this logic.
+Access Level: Select either Read or Write.
+Share Quality with Users Who Can Access Affected Items
+Share With Field: N/A for this logic
+Share Affected Items:Leave this and other Item fields deselected, so users will only see the Affected Items that are also shared by a Share Items with Field or Share Items with Mfrs and Distributors rule.
+Share BOM: N/A for this logic.
+Only Share First Level BOM: N/A for this logic.
+Category Exceptions: N/A for this logic.
+Share Manufacturer Parts: N/A for this logic.
+Share Attachments: N/A for this logic.
+Share Attachments of Type: N/A for this logic.
+Access Level: Select either Read or Write.
+Once you’ve entered the parameters for the rule, click Save.
+Repeat the above steps for each rule you want to create. Once you’ve created your rules, then you can create the applicable Process Builders.
+Recalculate Sharing Rules
+If you modify your Propel Sharing Rule after the rule has initially run, you will need to rerun - or Recalculate - your sharing rules. This will modify previously shared data to re-share based on the updated rules.
+Go to Propel Setup > Admin Settings > Sharing Rules.
+In the Sharing Rules section, click the dropdown list and select the Name of the rule you modified.
+Click Recalculate. The system will take a moment to perform the recalculation.
+Repeat steps 2 and 3 for each rule you’ve modified.
+Schedule Sharing Rules Recalculation
+As of Spring '22, you can schedule the rule recalculation to run automatically instead of having to manually rerun the rules.
+Go to Propel Setup > Admin Settings > Sharing Rules.
+In the Sharing Rules section, select the Run Interval like every 24 hours, and Enable the setting.
+See Also
+Propel Sharing Rules and Reporting Overview
+Create a Custom Field for a Propel Sharing Rule
+Create Process Builders for Propel Sharing Rules

@@ -1,0 +1,28 @@
+Configure a Lifecycle Phase Transition
+Lifecycle Phase Transitions determine how a Change, Quality, or Declaration record will move through the entire process from beginning to end. This could be quite linear - starting at step 1 and moving through the rest of the steps in sequence. Or the process may jump around more - a rejection could move the process back a step, or the potential outcome of a Lifecycle Phase could dictate the next step. And each Phase can have multiple transitions defined for it, depending on the different paths a record may take.
+Regardless of how your record needs to progress, Propel’s Lifecycle Phase Transitions can help ensure you can create repeatable processes that still have the flexibility you require. If you want more background on Phase Transitions, go to our Lifecycle Phase Transitions article.
+This article walks through creating a new Lifecycle Phase Transition or editing an existing one. 
+Before You Begin
+Before you can start configuring your Lifecycle Phase Transitions, you need to have your Lifecycle Phases set up as you’ll be using these records in your configuration. For more information on Phases, go to our Lifecycle Phases article.
+Configure a Lifecycle Phase Transition
+You may want to sketch out all of your Lifecycle Phases and transitions in a table prior to creating your Phase Transitions in Propel, such as in the example below. This way you’re sure to catch all of the Phase Transitions that you need to record. The table below also has additional fields which will be covered in the following steps.
+
+Important: Do not create Phase Transitions that follow the same path for Phases with an Auto Advance Phase and/or Auto Reject Phase specified. For example, if your In Approval Phase can be manually moved to the Cancelled Phase, but you’ve set it up to automatically advance to the Approve Phase upon approval, you would still set up the In Approval to Cancelled transition, but would NOT set up the In Approval to Approved transition.
+Select the Lifecycles tab from the navigation bar and click the name of the Lifecycle for which you have set up Phases and want to configure Phase Transitions.
+Scroll down to the Phase Transitions related list on the Lifecycle. Even if this is a new Lifecycle, there will be a Phase Transitions related list.
+To create a new Phase Transition, click New. To edit an existing Phase Transition, click the dropdown icon at the end of the row for the transition you want to edit and select Edit.
+Note: If you cloned a Lifecycle with Phases and Phase Transitions already configured, then you will need to edit the existing transitions and add new ones as required.
+The Lifecycle field should already be populated with the Lifecycle you navigated to. If you need to change it, click the X to remove the Lifecycle and then search for and select the Lifecycle you want to replace it with.
+Click in the From Phase field and search for and select the Phase that the workflow will be transitioning FROM. For example, if you’re starting at the Initial Phase and moving to the Doc Control Phase, the Initial Phase is the FROM Phase.
+Note: The Phases that you search through are limited to the Phases for that specific Lifecycle so you don’t have to worry about selecting a Phase that is not applicable.
+Click in the To Phase field to search for and select the Phase that the workflow will be transitioning to.
+If you leave the Allow Phase Transition Group field blank, then anyone with access to the record can complete the Phase Transition. However, you can restrict the transition with two options: the "Owner" keyword (restricts to just the current owner of the record), or a Public Group, which will restrict the Phase Transition capabilities to just the members of the groups you specify. Enter in a comma separated list of groups using the groups’ API names, such as: Owner, Change_Analyst_Group, Regualtory_Review_Group. You can find the API name on the Group Name field on the Public Group record.
+If you have Affected Items in a released state and want to move them into an unreleased state during the transition, select the Unrelease Affected Items checkbox.
+Important: Use caution when setting this property as it is not an action that can be undone and will only get applied if all Affected Items are the latest released revision. Additionally, if an Affected Item already has another draft created this would prevent it from getting applied.
+Once you’ve completed all of the fields for the Phase Transition, click Save & New to create another Phase Transition, or click Save to return to the Lifecycle page and edit additional Phase Transitions.
+See Also
+Lifecycles Overview
+Lifecycle Phases
+Lifecycle Phase Transitions
+
+ 

@@ -1,0 +1,23 @@
+Configure a Public Group for Propel Sharing Rules
+This article is intended to help you specifically with configuring Public Groups for use with Propel Sharing Rules. If you are looking for more general information on setting up Public Groups in Propel, go to our Configure a Public Group for Propel Sharing Rules article.
+With Propel Sharing Rules, you use Public Groups to determine which users will have access to shared records. Once you create a Public Group, say for either an internal division or for an external partner, you will add the relevant Propel users into the Group. The users in the Group, then get access to shared records either by associating the Group through a custom field on the applicable object, or through a match to the name of an external Manufacturer or Distributor. The method is determined through the rule type that you configure.
+For more information, and configuration instructions, go to the following articles:
+Create a Custom Field for a Propel Sharing Rule
+Configure a Propel Sharing Rule
+Configure a Public Group
+The Groups that you configure will be based on your sharing strategy. Most likely, you’ll have at least one Group for each Manufacturer or Distributor Partner that you want to share records with, as well as Groups for each internal division. A good rule of thumb is that if they require different or unique access in any way - or you think they may in future - then you would create a separate group. 
+Note: This article assumes that the users have already been added in Propel. If not, you can still save the Group without any users and come back later once the users have been added to your system.
+Go to Setup > Users > Public Groups and click New.
+Give the Group a unique Label. The Group Name will automatically populate. For Groups of external users, we recommend naming the Group the same as the Account Name in Propel. This will ensure that the rules that do not rely on the values in the custom field on the object will execute correctly. 
+NOTE: Do not use semi-colons (";") in public group names to avoid parsing issues.
+In the Search field, select how you will be adding the users: by existing Public Groups, by users’ assigned Roles in the system, or by individual Users.
+Select one or more options from the Available Members section and click the Add button to move them into the Selected Members section.
+Once you’ve added all of your members, click Save.
+Repeat the steps above to add all of the Groups you need to execute your sharing strategy.
+If you are basing any of your Sharing Rules on the values that will be added to a custom field on the object, go to the Create a Custom Field for a Propel Sharing Rule article. If not, or if you have already completed this step, you can go straight to the Configure a Propel Sharing Rule article.
+See Also
+Once you’ve configured your Public Groups, you’ll need to go to the following step in the configuration process:
+Create a Custom Field for a Propel Sharing Rule
+Configure a Propel Sharing Rule
+Propel Sharing Rules and Reporting Overview
+ 

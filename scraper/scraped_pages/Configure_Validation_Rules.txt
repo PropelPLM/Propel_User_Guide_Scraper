@@ -1,0 +1,22 @@
+Configure Validation Rules
+Validation rules make sure that the data a user enters in a record meets the standards you specify before the record can be saved. They are rules defined using a formula that checks the data entered in specified fields against other data entered in the record. If the rule - the formula - fails to validate to “True”, then the record cannot be saved and the user is presented with a message outlining the data issue. The validation rule can reference a value on the same record, or on another record where a lookup relationship exists (cross-object validation).
+Some examples include:
+If one field has a value, then a corresponding field has to have a value. Conversely, you could specify that if the field has a value, then the corresponding field has to be empty.
+If the picklist field has a certain value selected, then a corresponding date field must be in a certain date range (say, within the next month).
+Ensure that a number can’t be negative, or that it must fall within a specific range (say, 50 to 100).
+Prevent a field from being changed after the initial record creation.
+Salesforce has several examples of Validation Rules, along with the specific formulas to help you complete the rules.
+Note: It is recommended that you have some familiarity with creating Salesforce formulas and working with the formula editor to configure Validation Rules.
+Configure a Validation Rule
+This will give you the basics of configuring a rule, but will not cover the specifics of formula creation. As noted, Salesforce has several great examples of formulas for Validation Rules. Additionally, they have extensive documentation and training on developing and working with formulas.
+Go to Setup > Object Manager and select the object on which you want to define the Validation Rule. For example, you may select the Change object if you want the validation rule to be on a Change record.
+Select Validation Rules from the left panel. You’ll see any existing rules on the right.
+Click New to start a new rule or click the dropdown icon and select Edit to modify an existing rule.
+Note: There may be managed Validation Rules on objects, which means they are part of the Propel package. These cannot be modified or removed.
+Enter a Rule Name and ensure the Active  checkbox is selected.
+It’s highly recommended that you enter a Description so that others can understand the intent of your rule if it needs to be modified in the future.
+Use the Formula Editor to add the formula for your Validation Rule. Be sure to use the Check Syntax option to check your formula for potential errors.
+Once you’ve completed your rule, click Save.
+It’s recommended that you test your new or modified Validation Rule to ensure that it functions as expected.
+See Also
+Salesforce Examples of Validation Rules

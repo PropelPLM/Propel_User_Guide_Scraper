@@ -1,0 +1,30 @@
+Search for a Record in Propel
+With multiple ways to search, Propel makes it easy to find the record you’re looking for. The methods outlined in this article provide basic search capabilities to find any record in Propel, including items, changes, quality records, projects, manufacturers and more. However, you can also take advantage of Propel's powerful Workspace search feature, which is covered in our Search Propel Using Workspace article.
+This article covers the following search methods: from the object’s tab, or by using the Global Search.
+Search from the Object’s Tab
+The tabs listed across the navigation bar in Propel give you access to a defined list of records specific to an object, such as Items or Change Orders. Once you select a tab, you can search the records in that defined list, rather than searching through all the records in the system. It’s especially useful when you are already viewing a list and want to find specific records in the list.
+Select the objects’ tab, depending on what you’re looking for.
+The records that you see are based on the List View that is “pinned” for that tab. Basically, it is the default List View. By default, the Recently Viewed list view is pinned for a tab (if this is your first time accessing these record types, your Recently Viewed list will be blank). If you want to learn more about changing that or making your own list views, go to our Create List Views article. This article introduces you to the basics of making a list view for any object. 
+If you want to change the list view, click on the list view’s name, which is in the top left, just under the object’s name, and select from one of the available list views.
+Once you’ve settled on a list to search, click in the Search this list… field. A message will pop up to let you know what fields are not searchable on that list. For Items, it’s best to search the Number or Description, and for Changes, it’s best to search the Number, Title, or Description fields.
+Enter your search term and press Enter. The list will automatically display the records where that search team is found.
+Search using Global Search
+Global Search lets you search the entire system at once, for anywhere that search term is mentioned.
+Some tips on searching:
+Asterisk (*) matches one or more characters and question mark (?) wildcard matches single characters of the same type as the character it’s placed after, such as a number or letter.
+Ca* (returns any Item that starts with "Ca", including Capacitor, Cable, Cap...)
+5?0 (returns results with Items that include 510, 520, 530...)
+Use operators (AND, AND NOT, OR, parentheses, quotation marks) in the search text to focus on search results.
+Capacitor (returns Items in Capacitor category and Items with "Capacitor" in description)
+Capacitor AND Ceramics (returns Items with descriptions that include both "Capacitor" and "Ceramics")
+If your search query contains punctuation or special characters and you’re not getting the right results, try your query with white spaces in place of the punctuation
+Perform Your Search
+At the top of the screen is the Global Search field.
+If you click All, you will see a list of all available objects. This will let you limit your search to only that selected object. If you leave it at All, it will search and return matching records from the entire system.
+Click in the Search [object] and more… The name of the [object] in the field will depend on what tab you currently have selected.
+Enter your search term and press Enter. Here, you can see using the same search term as in the tab brings additional results that are grouped by record types (such as Items, Changes, Files...etc.) and sorted by relevance.
+See Also
+Search Propel Using Workspace 
+Workspace Overview
+Create List Views
+Salesforce Search for Lightning Records

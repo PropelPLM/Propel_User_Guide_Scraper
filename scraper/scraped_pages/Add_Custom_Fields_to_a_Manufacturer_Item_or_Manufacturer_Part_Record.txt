@@ -1,0 +1,39 @@
+Add Custom Fields to a Manufacturer Item or Manufacturer Part Record
+This article walks through the steps of adding a custom field to a Manufacturer Item or Manufacturer Part object and then ensuring that it displays on the necessary Item records. 
+For more detailed information on custom fields, go to Salesforce’s Custom Fields documentation.
+WARNING: Do not create a custom field who's API name matches a Propel packaged field (e.g. a custom field named "Notes__c" will match with the Propel packaged field named "PDLM__Notes__c".) This naming duplication can cause a variety of features to fail including: exports, filters, and searches. If you think you want to make a similarly named field, we recommend adding "_custom" to the end of your custom field API name.
+Create the Custom Field on the Manufacturer Item or Manufacturer Part Object
+Go to Setup > Object Manager and select either the Manufacturer Item or Manufacturer Part object, depending on where you want to add your custom field.
+Select Fields & Relationships and click New.
+Select a Data Type for the field, such as Text, Picklist, Formula, etc. Click Next.
+
+Note: For detailed information on Data Types, go to Salesforce’s Custom Field Types article.
+The specific properties you configure for the field will depend on the Data Type you selected. However, all fields will require a Field Label and Field Name. The Field Name is generally auto-populated and often referred to as the API Name. Do not create an API name that matches a Propel packaged field.
+Note: We strongly recommend that you DO NOT select the Required checkbox for a custom field. Instead, this should be set on the required Lifecycle Phase. Go to our Configure a Change, Quality, or Declaration Phase  article for more information. 
+Once you’ve configured the properties for your field, click Next.
+Leave the default values on the next screen and click Next to add the field as visible on the standard permission sets.
+Again, leave the default values to add the field to the applicable Page Layout - either the Change Order or Quality Page Layout. Click Save.
+Position the Custom Field in the Page Layouts
+When you added the custom field in the previous step you added it to the corresponding page layout. However, you will probably want to change the position of the field on the page, rather than leaving the default position. You can also go to our Customize Field Page Layouts article for more detailed instructions.
+Still in the Manufacturer Item of Manufacturer Part object, select Page Layout.
+Select the name of the Page Layout.
+In the bottom section of the page, locate the custom field that you just created. Click and drag it to the required location. Or, drag it up into the Available Fields section at the top to remove it from the Page Layout.
+Click Save. 
+Add the Custom Field to a Field Set
+This section looks at adding the custom field to any field set. For instructions on adding the new field to the Manufacturers tab on an Item record, go to the Display Custom Fields on Item Manufacturer Tab article.
+Still in the Manufacturer Item of Manufacturer Part object, select Field Sets.
+Click the name of the Field Set you want to update. There is a description explaining where each Field Set is used within Propel.
+Note: Only Manufacturer Item fields should go into the Manufacturer Item Quick Add to AML Fields Field Set. If you want to add Manufacturer Part fields to the Quick Add AML screen, go to the Manufacturer Part object and add your field to the Quick Add AML field set for that object.
+The left panel of the Field Set screen lets you choose the location of your field. In the example below, the Manufacturer Item object is the parent with the lookups listed below as the children (the Item Revision and Manufacturer Part objects). If you created your custom field on the Manufacturer Item object, then it should appear on the right panel when you select the Manufacturer Item option on the left.
+Once you’ve located your field, drag it from the list of available fields down to the In this Field Set section. You can order it anywhere in the list you like.
+Click Save.
+Add the Custom Field to Permission Sets
+If you haven’t already done so, you will need to add any custom fields you created to applicable Permission Sets so that your users can view them. Go to our Add a Custom Field to a Permission Set article for detailed instructions.
+Refresh Page Layouts
+Once you’ve updated any field sets or page layouts, you need to refresh the page layouts so that the changes can be viewed by the users.
+Select Propel Setup from the navigation bar.
+Under User Settings click Refresh Page Layouts.
+See Also
+Configure a Change, Quality, or Declaration Phase
+Display Custom Fields on Item Manufacturer Tab
+Add a Custom Field to a Permission Set

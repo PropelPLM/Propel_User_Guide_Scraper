@@ -1,0 +1,23 @@
+Perform a Salesforce Security Health Check
+The Salesforce Security Health Check lets you identify and fix potential vulnerabilities in your security settings, all from a single page. A summary score shows how your org measures against a security baseline, like the Salesforce Baseline Standard. You can, however, upload up to five custom baselines to use instead of the Salesforce Baseline Standard.
+Run the Health Check
+Go to Setup > Security > Health Check.
+By navigating to this page you initiate the Security Health Check. This may take a moment depending on the size of your org and network speed.
+Once the Health Check completes, you’ll be presented with an overall security score followed by a list of findings. The score is calculated based on the number and criticality of the potential issues found - the more potential vulnerabilities it finds, and the higher the level of criticality of those issues, the lower your score.
+Based on your rating, Salesforce offers recommendations to mitigate the potential issues:
+0% to 33%: Remediate high risks immediately.
+34%–66%: Remediate high risks in the short term, and medium risks in the long term.
+67%–100%: Review Health Check periodically to remediate risks.
+Remediate a Security Risk
+The actions you take to remediate, or resolve, a potential risk depend on the risk itself. On the Health Check, Salesforce categorizes the risks - High, Medium, and Low - and then further categorizes them by status - Critical, Warning, and Compliant.
+
+On the Health Check screen, you’ll also see Your Value for the setting, compared to the Standard Value. To resolve an issue individually, you can click the Edit link for the issue to go directly to the issues settings where you can make the necessary adjustments.
+To resolve multiple issues at the same time, complete the following steps.
+Click Fix Risks just above the green bar depicting your score.
+The Fix Security Risks screen appears, listing the security settings that can be automatically changed.
+Note: Not all security settings are eligible for changing through this method. You may still have to resolve some individually as shown earlier.
+Select the settings that you would like to automatically fix and click Change Settings.
+A confirmation screen appears. If you want to continue, click Yes, Change Settings.
+See Also
+Salesforce Security Basics
+Salesforce Health Check

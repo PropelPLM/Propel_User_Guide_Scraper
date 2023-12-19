@@ -1,0 +1,26 @@
+Display Custom Fields on the Item Details Tab
+There are two ways to add fields to the Item Details tab on an Item record. 
+Add the custom field to a specific Categories Overview (or multiple categories). This gives you the most amount of flexibility in ensuring your custom fields appear on applicable records and is the recommended method.
+Go to the Configure a Category article for steps.
+Add the custom field directly on the Item Details Page field set. This method lets you add the field on every Item record. Users will always see the field, regardless of the Item record’s category. You would only use this method if you have global information that you want to display or gather on ALL Item records.
+This article covers adding your custom field to the Item Details Page field set.
+Before You Begin
+This article assumes that you have already created your custom field as shown on the Add Custom Fields to the Item Object article.
+Add Custom Fields to the Details Tab
+As noted, adding your custom field will have the field display on the Details tab on all Item records, regardless of which category they are in.
+Go to Setup > Object Manager and select the Item Revision object.
+Select Field Sets and select the Item Details Tab field set. This will set the fields to display on the Item page. 
+
+Note: There are two other field sets you may also want to update:
+Export: Sets fields that will be included in the export file.
+Affected Items: Sets fields on the Affected Items tab.
+Drag the custom field from the right panel down to the desired location on the In the Field Set section.
+Click Save.
+Refresh Page Layouts
+Once you’ve updated any field sets or page layouts, you need to refresh the page layouts so that the changes can be viewed by the users.
+Select Propel Setup from the navigation bar.
+Under User Settings click Refresh Page Layouts.
+See Also
+Categories Overview
+Configure a Category 
+Add Custom Fields to the Item Object

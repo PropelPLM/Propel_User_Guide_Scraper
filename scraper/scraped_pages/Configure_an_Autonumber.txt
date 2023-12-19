@@ -1,0 +1,52 @@
+Configure an Autonumber
+Propel’s Autonumbers feature lets you specify how a numbering sequence for a Change, Quality or Item record will be formatted. Once an Autonumber is configured and associated with a Category, when the end users create a Change, Quality, or Item record with that Category, Propel will automatically generate a sequential number in the specified format. Go to our Autonumbers Overview article for detailed information on how workflow Autonumbers work.
+Note: Declaration records do not currently support Propel’s Autonumber feature. Instead, Declarations use a Salesforce auto-number field to name the records.
+You can create Autonumbers in advance of creating Categories, or you can create them while you are configuring Categories. This article will walk through both methods. To see how existing Autonumbers get attached to a Category, go to our Configure a Category article.
+Configure an Autonumber Before Setting up your Category
+You may want to set up your Autonumbers prior to creating Categories. With this method, when you create a Category you simply associate an existing Autonumber to the Category. You may choose this method if you want to set up several Autonumbers at the same time and/or use the same Autonumber for multiple Categories.
+By default, the Autonumbers tab is not displayed on the navigation bar. To add it, click the App Launcher icon.
+Enter “Autonumber” in the Search field and select Autonumbers from the list. The tab will open and display the existing Autonumbers in the system.
+To create a new Autonumber, click New. To edit an existing Autonumber, click the name of the Autonumber and then click Edit.
+Note: When you select an existing Autonumber, you’ll be able to see the Categories that are associated with that Autonumber in the related list.
+ Configure the following fields as required:
+Autonumber Name: Enter a unique name for your Autonumber. This field is required.
+Prefix: If desired, enter a string that you want to prepend to your Autonumber. This can be letters or numbers and will always remain static, even if you use numbers. If you want a dash or other character between the prefix and the generated number, you need to add it here. For example “CO-”.
+Suffix: If desired, you can also append a string to your Autonumber. Again, this can be numbers or letters and will remain static. If you want a dash or other character between the suffix and the generated number, you need to add it here. For example “:2020”.
+Length: Enter the number of digits you want the generated number portion to be. This field is required. The recommended best practice is to use 5 or 6 digits to ensure enough space for large numbers of records.
+Next Number: Enter the number that will be used the next time the Autonumber is generated in the system. This is useful if you are transitioning from another system and you do not want to restart your sequence back at one. This field is required.
+Once you’ve completed your Autonumber setup, click Save & New to start another autonumber, or Save to return to the previous screen.
+Configure an Autonumber when you Create a Category
+If you are configuring only one or two Categories and Autonumbers, then to save time you might want to just create them both at the same time. These instructions will cover the basics of configuring a Category as it pertains to Autonumbers, but for detailed instructions on setting up Categories go to our Configure a Category article.
+As there are two ways to set up a Category, through the Propel Setup tab and through the Categories tab, both methods will be shown here.
+Configure a Category and Autonumber through Propel Setup
+Note: Rather than creating a New Category from scratch, we recommend Cloning an existing Category that is similar and then making changes.
+To clone a Category, select the Propel Setup tab from the navigation bar.
+Select Admin Settings and then select either Changes, Quality, or Items depending on the type of Category you are creating.
+Hover your mouse over the Clone icons to the right of the Category names and the Clone <Category Name> option will appear. Click the Clone option and a new Category will appear below the one you cloned from, with the original Category name followed by “Copy”. For example, “ECO Copy”.
+Ensure the cloned Category is selected.
+Click the Autonumber Details header to expand the section and click New.
+Note: This will overwrite any Autonumber defined for the Category, so double-check you have the correct Category selected.
+Configure the following fields as required:
+Autonumber Name
+Prefix
+Suffix
+Length
+Next Number
+Click Create to save your Autonumber for that Category. 
+Note: The Autonumber you just created can now be used in other Categories that you create.
+Configure a Category and Autonumber through the Categories Tab
+Note: Rather than creating a New Category from scratch, we recommend Cloning an existing Category that is similar and then making changes.
+To clone a Category, select the Categories tab from the navigation bar.
+Click the name of the Category you want to clone and then click Clone.
+In the Autonumbers field, click the X to remove the existing Autonumber and select + New Autonumber from the list.
+Configure the following fields as required:
+Autonumber Name
+Prefix
+Suffix
+Length
+Next Number
+Click Save to save your Autonumber for that Category. 
+See Also
+Categories Overview
+Autonumbers Overview
+Configure a Category

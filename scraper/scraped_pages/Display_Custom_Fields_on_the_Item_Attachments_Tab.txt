@@ -1,0 +1,16 @@
+Display Custom Fields on the Item Attachments Tab
+The Attachments tab on an Item record displays the attached files that have been added to an Item record. You can customize the fields that display on the tab.
+
+Before You Begin
+This article assumes that you have already created your custom field on the Attachment object.
+Add Custom Fields to the Attachments Tab
+Go to Setup > Object Manager and select the Attachment object.
+Select Field Sets and select the Dfault_ATT_View field set. This will set the fields to display on the Attachments tab.
+Drag the custom field from the right panel down to the desired location on the In the Field Set section.
+Click Save.
+Refresh Page Layouts
+Once you’ve updated any field sets or page layouts, you need to refresh the page layouts so that the changes can be viewed by the users.
+Select Propel Setup from the navigation bar.
+Under User Settings click Refresh Page Layouts.
+
+ 

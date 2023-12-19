@@ -1,0 +1,117 @@
+Watermark Item Attachments with Flow
+As of Summer '21 (7.0.11)
+Available for Cloud Integration as of Winter '23 
+
+Propel gives you the ability to automatically generate a PDF with a watermark - such as “In Review” or “Latest Release” to help identify different versions of documents that are produced or modified at different points of the change process. Supported file types for this are: PDF, Word (DOCX and DOC), Excel (XLSX and XLS), and PowerPoint (PPTX and PPT).
+How It Works
+At the designated time, such as on release of a Change, the system goes through each of the Affected Items on the Change. If there are any supported files attached to the Items, the system generates a watermarked PDF version of the file and attaches the PDF to the Affected Item. Note that for the new files, Propel will add a “watermarked_” prefix to the file names so you can easily differentiate system-generated, watermarked PDFs from the original files. 
+If designated to watermark superseded revisions, the system goes to the previous revision and generates a watermarked PDF version of the files on the previous revision and attaches it to the previous revision. For example, given the structure A (Released) and B (Draft), when B is Released then the Superseded PDF is generated on A. 
+  Notes
+Previews of a watermarked document will ALWAYS show the latest version, even if viewing a superseded version. Downloading the file will provide correct superseded version.
+The final approver MUST NOT HAVE Override Business Rules permission set, otherwise superseded revision will have incorrect watermark version.
+The final approver must have access to Read, Create, and Edit Attachments.
+The files in a watermarking event have a collective size limit of ~300mb.
+Blank documents will not be watermarked.
+The file name length must be 68 characters maximum (including the ".[file_type]" suffix.) In order to prevent accidental errors, you can add the following Validation Rule to the Propel Attachment object.
+Rule Name: Name_Length_Condition_for_Watermarking
+Error Condition Formula: LEN(Name) > 68
+Error Message: File Name cannot exceed 68 characters.
+Example Use Cases
+On the release of a Change Order, you could attach a PDF watermarked with “Latest Release” to the Affected Items for each Attachment on the newly released revision. Optionally, you could also attach a watermarked PDF to the superseded revisions and/or append a list of approvers to each PDF. 
+As an additional example, when a change moves into an approval phase or other phase, you could attach a PDF watermarked with “In Review" to the Affected Items for each Attachment on the Change.
+Configure Attachment Watermarks
+There are several steps to configure this feature. Complete the following steps in the order specified to set up watermarking. If you previously watermarked your files using a Process Builder, you will still need to set up the new Custom Setting and Remote Site Setting as per the instructions below.
+Add a New Custom Settings
+Go to Setup > Custom Code > Custom Settings.
+Click Manage beside the Configuration setting.
+Click New and add the following:
+Name: HerokuPDFWatermarkBinaryAPIDomain
+Value: propel-document-java-prod.herokuapp.com
+Name: DocumentMerge
+Value: true
+Click Save.
+Add New Remote Site Settings
+Go to Setup > Security > Remote Site Settings.
+Click New Remote Site and add the following:
+Remote Site Name: DocumentGenerationHerokuService
+Remote Site URL: https://propel-document-java-prod.herokuapp.com
+Remote Site Name: HerokuDocument
+Remote Site URL: https://propel-document-prod.herokuapp.com
+Remote Site Name: Aspose
+Remote Site URL: https://api.aspose.com
+Click Save.
+Create a New Cloud File Storage Setting
+This step will need to be performed by a user who has access to the PDLM.CloudFileStorage VisualForce page (i.e. a System Administrator.) If you'd like to manage this setting via permission sets, you can create a custom permission set labeled "Propel Cloud File Storage Access" and only provide this VisualForce page permission. This is only applicable for Spring '22 and beyond -- if you are still on Summer '21, skip to next step.
+User must be in Salesforce Lightning and have access to the PDLM.CloudFileStorage VisualForce Page
+Navigate to a modifiable page layout (e.g. an App Home Page)
+Click the gear icon in the top-right corner, then Edit Page
+On the left-hand panel, find the VisualForce standard component and drag it into the bottom of the page layout 
+On the right-hand side select "Cloud File Storage" for the Visualforce Page Name
+Click 'Save'
+TIP: Set up a filter to only show this component to specific users, like System Administrators
+Navigate back to the page using the back arrow in the top-left corner
+Find the new Cloud File Storage component and click Create
+Enter in the following values
+Name = AsposeApp
+** Important as the name for the Cloud File Storage custom setting will be used directly in the integration
+Client ID: 4c6d1b09-03c6-470c-a158-f90153b8e2db
+Client Secret: 1e7f622a0b8a2db5ac581812d84baa7f
+Click Save
+Now that the private Cloud File Storage setting has been created, you can remove the VisualForce page component from the page layout by going back to the Edit Page and clicking the trashcan icon on the component
+Create a Platform Event Flow
+Note: We recommend you have some familiarity with Flows before setting this up.
+
+Go to Setup > Process Automation > Flows and click New Flow.
+Select Platform Event--Triggered Flow and click Next.
+In the Start box, click Choose Platform Event.
+Set the Platform Event field to Change Event and click Done.
+Add a Get Records Element. 
+Enter a Label, such as “Get Change”. The API Name will auto-populate.
+Under Get Records of This Object, select the Change object. 
+Leave the Condition Requirements at “All Conditions are Met (AND)”.  Set the conditions as follows:
+Field: Id
+Operator: Equals
+Value: {!$Record.PDLM__Record_Id__c}
+Ensure the following options are selected:
+How Many Records to Store: Only the first record
+How to Store Record Data: Automatically store all fields
+Click Done.
+Add a Decision Element.
+Enter a Label, such as “Criteria”. The API Name will auto-populate.
+For the New Outcome, add a Label, such as “Watermark!”. The API Name will auto-populate.
+Leave the Condition Requirements to Execute Outcome at “All Conditions are Met (AND)”. Set the Criteria needed for the Apex Action (next step) to fire. Typical requirements are:
+{!$Record.PDLM__Is_Approved__c} Equals {!$GlobalConstant.True}
+{!Get_Change.PDLM__Category__r.Name} Equals [Your Category Name]
+Add an Action Element.
+In the Filter By field, select Type and then select Apex Action.
+In the Action field, select Change: Watermark/Stamp Words To PDFs.
+Add a Label, such as “Watermarking”. The API Name will auto-populate.
+Under Set Input Values, make sure you have the following fields filled out:
+Include Approval: Set to True ({!$GlobalConstant.True}) if you want an Approvals page appended to the watermarked PDF.
+Record Id: {!$Record.PDLM__Record_Id__c}
+Session Info: {!$Record.PDLM__Session__c}
+Watermark Superseded Revision: Set to True ({!$GlobalConstant.True}) if you want to also watermark the superseded document and only if you are watermarking on release of the Change.
+Watermark Text: (String) The text to watermark diagonally across each page of the current version of the document**
+**Note: Although required, this field can be made blank by referencing an Item Revision text field that is blank. Requires creating a new custom Item Revision field that will always be blank (removed from page layout, not included in detail fieldsets or as a Category-Specific field.) Use the double curly-brace syntax like: {{Item_Revision__c.Blank_Custom_Field__c}}
+The remaining options you define will be determined by how you want the watermarking to appear, whether you want the Superseded version to also be watermarked, and where in the document(s) you would like different elements to appear.
+Footer Text (Left): (String) Text to display in the left side of the footer
+Footer Text (Center): (String) Text to display in the center of the footer
+Footer Text (Right): (String) Text to display in the right side of the footer
+Left Margin Text: (String) Text to display in the left margin (sideways up the left)
+Right Margin Text: (String) Text to display in the right margin (sideways down the right)
+Superseded Watermark Text: (String) The text to watermark diagonally across each page of the superseded document
+Superseded Footer Text (Left): (String) Text to display in the left side of the superseded document's footer
+Superseded Footer Text (Center): (String) Text to display in the center of the superseded document's footer
+Superseded Footer Text (Right): (String) Text to display in the right side of the superseded document's footer
+Superseded Left Margin Text: (String) Text to display in the left margin (sideways up the left) of the superseded document
+Superseded Right Margin Text: (String) Text to display in the right margin (sideways down the right) of the superseded document
+SYNTAX: You have the option to bring in field values from the Change and/or Item Revision into your watermarking. There are two types of syntax to use, depending on the field's object. Use the double curly-brace syntax for Item Revision fields, or the flow variable syntax for Change fields. Below are some examples:
+Right Margin Text: {{Item_Revision__c.Name}} - {{Item_Revision__c.Lifecycle_Phase__c}}
+Footer Left: Released by {!Get_Change.Name}
+Footer Right: Effective Date: {!Get_Change.PDLM__Approved_Date__c}
+Left Margin Text: This is a controlled Document. Log into Propel to view most current versions.
+Once you’ve completed your action, click Done.
+If necessary, connect the nodes of the flow in the following order:
+Start > Get Records > Decision > (“Go” outcome) > Action
+Click Save and then click Activate.
+   

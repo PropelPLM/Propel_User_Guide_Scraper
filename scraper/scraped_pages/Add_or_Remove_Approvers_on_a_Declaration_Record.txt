@@ -1,0 +1,49 @@
+Add or Remove Approvers on a Declaration Record
+Depending on your configuration, approvers may be added to a Declaration record automatically, or you may need to to manually add them. Even if approvers are automatically added, you can still manually add additional approvers, or remove approvers, as necessary.
+Approvers can be added individually or as part of existing Groups that have been configured in your org. Propel Administrators can define multiple Public Groups that can be used for approvals.
+Once your Declaration record moves into an Approval Phase, you can still add approvers; however, the process is slightly different. Additionally, when a Declaration record is in an Approval Phase, you can’t remove approvers, but you can replace them. Instructions for both are included in this article.
+Before a Declaration is in an Approval Phase
+While a Declaration is in an Approval Phase
+Before a Declaration is in an Approval Phase
+Before a record can move into an Approval Phase, you must select approvers. If you try to move a record without approvers into an Approval Phase, you will get a message stating that you must first add approvers for that Lifecycle Phase.
+Add an Approver to a Declaration Record
+Select the Declarations tab from the navigation bar and click the Name of the Declaration you want to modify.
+Select the Approvers tab and click the Edit button in the top right of the record. You will not be able to add approvers unless the record is in edit mode.
+As mentioned, there may already be approvers on your record. But you can still add more approvers as needed. Additionally, if your Declaration record has multiple Approval steps in its workflow, you will see the screen divided into multiple sections - one for each Approval Phase in the workflow.
+To add individual users as approvers, click in the Search field in the Ad Hoc section. Enter your search term and select your approver from the available list. You can repeat this as often as you like, adding as many approvers as desired.
+To add a Group, click the Add Group button. This will create an Add Group section with a second Search field.
+Click in the Search field and search for, enter your search term, and select your Group from the available list. 
+Click Add. This will replace the group name with the names of the individual users.
+
+Note: To add more groups, click Add Group to search for and select additional groups. You can repeat this process to add as many groups as desired. Each time you click Add the group will be converted to individual users.
+For each Approval section that you’ve configured where you have multiple approvers, you’ll need to choose an approval method - either First Response or Unanimous - from the drop down list. First Response means that the first person in the group to complete the review determines the outcome. Once they approve or reject the Declaration, no further approvals are necessary from the rest of the group. Unanimous means that all approvers must approve the record for the Declaration to get approved.
+Click Save on the Approvers tab. Until you Save your changes, you’ll see a Warning symbol on your tab.
+Once you’re done making changes, click Done Editing.
+Remove an Approver on a Declaration Record
+On the Declaration record, select the Approvers tab and click the Edit button in the top right of the record. You will not be able to remove approvers unless the record is in edit mode.
+To remove an individual user, click the X beside any of the listed approvers.
+To remove a group, click X Remove in the group section.
+
+Note: you can remove individual users from the group by clicking on the X beside their name.
+Click Save on the tab to save your changes.
+Once you’re done making changes, click Done Editing.
+While a Declaration is in an Approval Phase
+If the record is in an Approval Phase, then there will already be approvers assigned for that Lifecycle Phase as you cannot move a record into an Approval Phase without approvers assigned. Because of this, your options are limited to either adding additional approvers, or replacing (reassigning) the approvers that have already been assigned.
+Add More Approvers to a Declaration Record
+Once on the Declaration record, select the Approvers tab and click Edit.
+Click Add More Approvers.
+The Add Additional Approvers window appears. Click in the Search field, enter your search criteria, and select your approver.
+Repeat the above steps to add as many additional approvers as desired and then click Add.
+Click Save on the tab to save your changes.
+Once you’re done making changes, click Done Editing.
+Reassign Approvers on a Declaration Record
+Once on the Declaration record, select the Approvers tab and click Edit.
+On the row for the Original Approver, click the dropdown icon and select Reassign.
+Click in the Search field, enter your search criteria, and select your replacement approver.
+Click Reassign.
+The record will now show both the original and reassigned approver.
+Your changes will save automatically. Once you’re done making changes, click Done Editing.
+See Also
+Approve, Reject, or Reassign a Declaration Record
+Configure a Public Group
+Configure an Approver Definition

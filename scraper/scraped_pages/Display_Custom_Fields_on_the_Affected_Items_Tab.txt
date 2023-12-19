@@ -1,0 +1,30 @@
+Display Custom Fields on the Affected Items Tab
+For Change, Quality, and Declaration records, you can choose which fields will display in the list on the Affected Items tab. This article details how to customize the fields that appear based on a Change, Quality, or Declaration record’s Category, so users will always see the most relevant information for that category.
+There are two steps to this process:
+Creating a new field set for the Affected Item object
+Mapping that field set to a Category
+Before you begin
+To add a field to the tab, the field you are using must already exist on the object. Only fields from the Affected Item, Item Revision, Change, or Quality objects can be included on the Affected Items tab. 
+Creating a new field set for the Affected Item object
+Go to Setup > Object Manager and select the Affected Item object.
+Select Field Sets and then click New.
+Enter a Field Set Label to give the field set a unique name. The Field Set Name, which is the API Name for the field set, will auto-populate.
+In the Where is this used? field, add a description of the field set.
+
+Note: Copy the Field Set Name as you’ll need this later when we add it to a Category.
+Click Save.
+As this is a new field set, there are no fields in the field set yet. The left pane of the field set builder lets you determine what fields you will have available to add to the field set. The top level lets you see the fields on the Affected Items object. Beneath that are lookups that the Affected Items object has to other objects. Selecting one of those will let you add fields to display from those other objects. In the example below, we’re bringing in fields from the item Revision tab.
+Drag the fields you want to display in the Affected tab for this category from the top section into the In the Field Set section at the bottom. You can arrange them Top to Bottom in the order you want to see them Left to Right on the Affected Items tab.
+Once you’ve added and arranged all of the fields for the field set, click Save.
+Map your new Field Set to a Category
+Select the Category tab from the navigation bar.
+Select the Category you want to add your new Affected Items field set to.
+Click Edit.
+In AI Fieldset field in the CHANGE / QUALITY Details section, enter the Field Set Name, the API name, of your new field set.
+Click Save.
+Refresh page layouts
+The final step in the process is to refresh the page layouts for Propel objects to ensure everything displays correctly.
+Select the Propel Setup tab from the navigation bar.
+Under User Settings in the Cached Data section, click Refresh Page Layouts.
+
+ 

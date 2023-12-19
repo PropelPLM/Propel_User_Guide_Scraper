@@ -1,0 +1,58 @@
+Configure a Category through Propel Setup
+This article covers using the Propel Setup Tab to configure Item, Change, or Quality categories. You can also use the Categories Tab, which will let you set up Declaration, Change, Quality, and Item categories.
+For more information, go to our Configure a Category article.
+Configure a Category
+Note: Rather than creating a New Category from scratch, we recommend Cloning an existing Category that is similar and then making changes.
+Select the Propel Setup tab from the navigation bar.
+Select Admin Settings and then select either Items, Changes, or Quality, depending on which category you want to create.
+To clone a Category, hover your mouse over the Clone icons to the right of the Category names and the Clone <Category Name> option will appear. For example, if you hover over the clone icon for the ECO Category, Clone ECO appears. Make sure you have the correct category targeted and click the Clone option. A new Category will appear below the one you cloned from, with the original category name followed by “Copy”. For example, “ECO Copy”.
+Click the name of the cloned Category or, to modify an existing category, select the category you want to modify. With the Category selected, click Edit in the Category Details section that appears. Depending on the type of category you’re working with, you will see different options in this section. Each of these is covered below.
+
+Note: You can also click the pencil icon beside each field. This will also bring up the Edit Category page. 
+Enter a Category Name. Remember to change this if you cloned a category. 
+Choose an existing Lifecycle, which is what will determine the Phases that your workflow or Item will use. To replace an existing Lifecycle, click the X and then search for and select a different Lifecycle.
+Note: Although the Lifecycle field is not marked as required, you will need to enter one unless you have specified this as a Category Group Name. 
+If applicable, enter a Parent category. This will make your category a child and will inherit the parent’s autonumber and category specific fields. Category-specific fields that are inherited cannot be changed. You can add additional category-specific fields to child categories, but any parent category-specific field is also category-specific for the child.
+Select the Use as Category Group Name checkbox to use this category to group sub-categories. If you select this, you will not be able to specify a lifecycle for this category, nor will users be able to select the Category when they create a new record.
+To limit who can create a record with this Category, enter a comma-separated list of Public Group API Names in the Create Allow Groups field. Only members of those groups will be able to create records using this Category.
+To ensure that users cannot enter their own custom Autonumber for the record, select the Restrict Autonumber Override checkbox.
+To change the Autonumber, click the X and then search for and select a different existing Autonumber. If you want to create a New autonumber, go to the Autonumber Details section below.
+For Change and Quality Categories only: 
+If you are planning on tracking workflows of this category with a Propel Project and want to use an existing project as a template, enter it in the Default Project Template field. 
+For Change Categories only: 
+Select the Is Descriptive Change checkbox where the Affected Items in the change are not being revisioned or updated as a part of the change. An example of this would be an Engineering Change Request (ECR) - there would be Affected items, but you would not make any updates to the items during this workflow. Additionally, you can set this when you don’t want the workflow to have an expiry, such as you might with a Deviation type of Change workflow.
+For Item categories only: 
+Select the PIM Product checkbox to enable SKUs and Attributes for PIM Products.
+Once you’re done with this section, click Save. You can then continue to update the other sections.
+Autonumber Details
+To configure the Autonumber setup for the Category, click the Autonumber Details header to expand the section.
+Click Edit to modify the existing autonumber setup and click New to create a new autonumber for the category.
+Note: If you create a New autonumber, the existing autonumber details will be replaced.
+Enter the details of the autonumber accordingly. For help on autonumbers, go to the Configure and Autonumber article.
+Once you’re done updating or creating the autonumber, click Save.
+Add Category Criteria-Based Approver Rules
+Criteria-Based Approver Rules are for Change and Quality categories only.
+Go to the Create Criteria-Based Approver Rules article for instructions on setting these up.
+Add Category Specific Fields
+Fields added here will only show up on records created with this category. This gives you added flexibility to customize your records and the data you display and capture.
+Click the Category Specific Fields header to expand the section. If there are any that have already been added, there will be a number in brackets displayed on the header before you expand it.
+Click Add for a new field. To edit the settings for an existing field, click the dropdown icon at the end of the field’s line and select Edit.
+In the API Name field, search for and select the API Name of the field you want to add.
+If you are adding multiple fields AND selecting them to be Visible on Header (see below), you can have them display on the record’s header in a specific order by entering a numeric value in the Order field. The order you specify will also determine how they appear in the Category-Specific Fields section. However, it does not affect the overall page layout.
+To have the field and its value display on the record’s header, which is the top section of the record above the flow chevrons, select the Visible on Header checkbox. If you are adding multiple values to the header and want them to appear in a specific order, ensure you enter the Order as indicated above.
+To prevent the field from displaying on the initial screen when the user creates a new record, select the Exclude from Create New Page checkbox. You would leave this deselected for fields where you might want the user to complete when they’re creating a new record. 
+Click Save.
+Configure Tabs
+In the Configure Tabs section, you can customize the tabs that will appear on the category’s record. You can set the tabs that will display, determine where they will display, and (in some cases) rename the tabs altogether.
+To add a new tab, click Create New in the Hidden Tabs section. The Create New Tab screen appears with a list of available lists you can add as tabs.
+Enter a New Tab Name. this is what will display on the tab, even if the related list name is different.
+Select the related list you want to add from the Available Related Lists section and use the right arrow to move it to the Visible Related Lists section. The list is based on the related lists configured on the default page layout.
+Note: You can combine multiple related lists into a single tab.
+Click Save.
+When you add a new tab it will be in the Hidden Tabs section. To move and reorder tabs, drag and drop the tabs into the Left Panel, Right Panel, and Hidden Tabs sections. You can also set the order in which the tabs in a section will be displayed. Click Save when you’re done.
+The tabs you can edit are marked with a pencil icon. To make changes, click the pencil icon, make your changes, and click Update.
+The tabs you can delete are marked with a trash can icon. To delete a tab, click the trash can icon and click Remove to confirm. This does not delete the related list, just the tab on which it is displayed.
+See Also
+Categories Overview
+Configure a Category
+Configure a Category through the Categories Tab

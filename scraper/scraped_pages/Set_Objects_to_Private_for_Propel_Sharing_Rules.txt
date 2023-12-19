@@ -1,0 +1,15 @@
+Set Objects to Private for Propel Sharing Rules
+This short article covers how to set applicable objects as “Private” which will restrict their access to the users you’ve set up with the preceding Propel Sharing Rules configuration steps.
+Depending on your org and Propel Sharing Rules configuration, applicable objects will include Manufacturer Parts, Items, Item Attachments, Changes and Quality. However, you can also make other objects private and manage sharing manually or with Salesforce Sharing Rules.
+Best Practice: We recommend that you keep the Assembly, Manufacturer Items, and Affected Items objects public. Propel Sharing Rules are still enforced as the system automatically displays only the records where the user can see the underlying Item or Manufacturer Part. For example, if an item has 20 items on the BOM, but users can only see 5 of those items, then the users will only see the 5 assembly rows for the Items they can see. This is the same for Item AML and Where Used tabs, as well as for the Affected Items tab on Change and Quality records.
+For more information on Salesforce Sharing Settings, go to their Sharing Settings documentation.
+Make Objects Private
+Go to Setup > Security > Sharing Settings.
+In the Organization-Wide Defaults section click Edit.
+From the list of objects, locate the object(s) you want to make private.
+Click the dropdown for Default Internal Access and select Private. If you have users who access your org through an external Community, do the same for Default External Access.
+Once you’ve updated each of the applicable objects, click Save.
+See Also
+Create a Custom Field for a Propel Sharing Rule
+Configure a Propel Sharing Rule
+Propel Sharing Rules and Reporting Overview

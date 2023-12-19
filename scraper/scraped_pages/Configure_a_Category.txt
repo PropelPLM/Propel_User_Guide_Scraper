@@ -1,0 +1,20 @@
+Configure a Category
+When end users create an Item, or when they create a Change, Quality or Declaration workflow, they start by selecting a category. If you are unfamiliar with how categories work, and how they relate to Lifecycles, go to our Categories Overview and our Lifecycles Overview articles.
+This article walks through creating a new Category or editing an existing one, for items as well as change, quality, and declaration workflows. 
+There are two different ways that you can create or edit categories - through the Propel Setup tab or through the Categories tab - with each method offering slightly different configuration options. Both methods are covered in separate articles.
+Configure a Category through Propel Setup: This is the recommended method for most cases. Use this method if you are creating a Change, Quality, or Item category and are configuring any of the following:
+Category-specific fields
+Tab order and placement
+Criteria-based approvers (Change and Quality Categories only)
+Autonumbers (can also be configured on their own)
+Variant Dimensions, Attributes, and Attribute Groups (PIM Product Item Categories only)
+Configure a Category through the Categories Tab: Use this method if you are creating a Declaration category, or you need to configure the following:
+On an Item category:
+Setting your BOM tab to use a custom fieldset (rather than the default).
+On a Change or Quality category:
+Setting your Affected Items tab to use a custom fieldset (rather than the default)
+Note: You can combine both methods as well. So once you’ve created a category using one method, you can edit it using the other method and make the necessary updates. The exception to this is Declaration categories, which can only be done through the Categories tab.
+See Also
+Categories Overview
+Configure a Category through Propel Setup
+Configure a Category through the Categories Tab

@@ -1,0 +1,14 @@
+Configure a Permission Set
+A permission set is a collection of settings and permissions that give users access to various tools and functions in the Propel application. Cloning an existing permission set, rather than creating one from scratch, saves time by copying all of the settings from the original permission set to the cloned one. Then you just modify the settings you want to change. For more information on what permission sets are, how to update them, and how they are best utilized, go to the Permission Sets article from Salesforce.
+This article walks you through cloning the Propel Full Use permission set, which is a part of the out of the box Propel configuration. You can, however, clone any existing permission set. Once you’ve cloned and modified the permission set, you’ll then need to Assign a Propel Permission Set to the users.
+Clone the Propel Full Use Permission Set
+Go to Setup > Users > Permission Sets.
+Locate the Propel Full Use permission set and click Clone beside it.
+In the Label field, enter a unique name for your permission set. The API Name should auto-populate. We also recommend entering a Description of your permission set so that other administrators can determine its purpose.
+Click Save. You’ll be taken back to the main list of existing permission sets.
+Click the name of your cloned permission set.
+To update the permission set, select any of the links on the page and then click Edit to make your changes. We recommend that administrators have a strong knowledge of Salesforce before making changes to permission sets. For further assistance, contact Propel Support.
+Once you’ve completed your changes for that section, click Save. You can then select any other link and continue to modify your permission set.
+See Also
+Assign a Propel Permission Set
+Salesforce Permission Sets

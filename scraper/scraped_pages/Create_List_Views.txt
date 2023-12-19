@@ -1,0 +1,27 @@
+Create List Views
+List Views are a powerful tool that lets you customize how you see lists of records in the system - such as Items, Item Revisions, Changes, Quality Records, Declarations - to ensure you have easy access to the records you need.
+Note: You can use these instructions to create and modify list views on any object in Propel.
+Create a New List View 
+Select the tab for which you want to create a list view, such as Item, Item Revision, or Changes.
+The default, or Pinned, list view for that object appears. There are always at least two list views set for each object: All and Recently Viewed. These are created when Propel is installed.
+On the top right, click the List View Controls icon, which is the gear icon, and select New.
+Enter a List Name that’s descriptive enough for you to tell what you’ll find in the list.
+Under Who sees this list? you’ll have different options, depending on your user privileges. If you don’t see that option, then you can only create the list view for yourself. Otherwise, you can set it for just yourself, all users that have access to that object, or specific Groups. You can also change this later if you like.
+Click Save. The Filter section appears in the right panel.
+The first filter is to only show records that belong to you as the owner. To change that, click on the filter name: Filter by Owner. The filter options appear.
+Change it to the All option if you like. This will increase the records that you see from only the ones you own to all of the records that match this list view. Click Done.
+Click Add Filter to add another filter to your list view. The filter options appear.
+Here, you can filter by criteria in different applicable fields on the object. In this example, we’re creating a list view to only show Item revisions that have the category Assembly. Click Done once you’ve finished adding your criteria.
+Continue to add as many filters as you like. Each filter will narrow the results that you’ll see in the list view. The number of filters and the criteria that you use will depend on the records that you want to quickly bring up. Once you’ve added all your filters, click Save.
+The list view is created, but with only a single Name column. Click the List View Controls icon again and select Select Fields to Display.
+You can add as many fields as you like by selecting the field in the left side of the picklist and using the right arrow to move them into the right side. You can also change the order of the fields by selecting the field on the right side, and then using the up and down arrows to reposition the field.
+Once you’ve moved all of the fields over and positioned them in the list, click Save.
+If you want this to be the default list view you see when you open this object, click the Pin icon beside the List View Name. This will become the new “Pinned” list view.
+Modify an Existing a List View
+Make sure you are viewing the List View that you want to edit. To do so, click on the current List View Name and select your desired list view from the options.
+To change the Filters that are on the list view, click the Filter icon in the top right. The Filters panel appears.
+To edit an existing filter, click the name of the filter and make your changes.
+To add a new filter, click Add filter.
+To remove a filter, hover over the filter and then click the X that appears in the top right. You cannot remove the Filter by Owner filter.
+To change the fields displayed, click the List View Controls icon and select Select Fields to Display. You can then add new fields, remove fields from the view, or rearrange the order of the fields.
+To change who has access to this list view, click the List View Controls icon and select Sharing Settings. You can then change it to a different option.

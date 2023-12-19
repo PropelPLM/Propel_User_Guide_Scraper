@@ -1,0 +1,28 @@
+Create and Assign a Training Quiz
+Training Quizzes allow the training manager to require trainees to complete and pass a quiz in order to complete and sign-off on their training assignments.
+The training manager has control over which training items require a quiz. When Training Required is enabled on an assignment, the training manager can optionally associate the Item revision with a Training Quiz. If there is a Training Quiz associated with the item revision, when Propel generates the training assignments the trainees are required to take and pass the quiz.
+This article covers how to create a Training Quiz and then assign it to an Item Revision. The Quiz Author may or may not be the Training Manager; however, whoever creates or edits quizzes will need to be assigned the Propel Training Quiz Author permission set, which is generally done by a Salesforce Administrator. 
+For instructions on how to assign the permission set, as well as configure training for your org, go to our Configure the Training Records Module article. To see how to make training required for an Item, go to our Set an Item Draft to Require Training article.
+When creating quizzes, we suggest the following best practices:
+Use a new quiz (new or cloned) for each Item. It’s not expected that the same quiz would apply to multiple Items. 
+You can use the same quiz for different revisions of one Item. If you revise a training Item and want to retrain with the same quiz, you can. 
+If you want to retrain on a subsequent revision with a new but similar quiz, you can clone a quiz.
+Create a Training Quiz
+This section shows how to set up a Training Quiz when you have an Item draft with Training Required checked and you want to require a quiz. The quizzes you’ll be adding will all have multiple choice questions where there is only one correct answer per question.
+Select the Training Quizzes tab from the navigation bar and click New.
+Enter a Quiz Name, Quiz Description and the Passing Percentage the trainees must achieve on the quiz.
+Click Add Question.
+Enter the quiz Question. For the Answer fields, you enter all of the multiple choice answers that you want to appear for the question. To add more Answer fields, click Add Answer.
+Click Save to save and return to the quiz, or Save & Add Another to add more quiz questions. If you click Save, you can go back and edit the questions or add more at any time.
+Once you’re back in the quiz view, you’ll see a list of all of the questions you created, along with all of the potential answers. For each question, select the answer that is correct. There can only be one correct answer per question.
+Once you’ve completed all of your questions and assigned the correct answer to each, click Save.
+Assign a Training Quiz to an Item Revision
+To assign a quiz to an Item Revision Draft, navigate to the Item, and click Edit Draft.
+Note: You must have a Draft Revision in order to assign the quiz.
+On the Details tab, click in the Training Quiz field to search for and select the Training Quiz you want to assign.
+Click Done Editing when complete.
+If the Draft Revision of the Item has not yet been added to a Training Plan, go to our Create and Manage a Training Plan article for instructions.
+See Also
+Configure the Training Records Module
+Set an Item Draft to Require Training  
+Create and Manage a Training Plan

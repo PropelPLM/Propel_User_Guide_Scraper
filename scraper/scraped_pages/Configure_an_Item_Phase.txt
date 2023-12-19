@@ -1,0 +1,73 @@
+Configure an Item Phase
+This article walks you through setting up an Item Lifecycle Phase. For more information on Propel Lifecycle Phases, go to one of the following articles:
+Lifecycle Phases
+Configure a Change, Quality, or Declaration Phase
+A record’s Phases are the different steps that the record goes through in its Lifecycle. When you configure a Lifecycle Phase, you determine the specific behaviors of the record while it is in that Phase, as well as many of the user actions that can occur during that Phase.
+Configure an Item Phase
+There are several sections to setting up a Lifecycle Phase and they are all listed on the same screen, which you can easily scroll through.
+Note: In most cases we recommend cloning a Lifecycle Phase rather than creating a new one to save on configuration time. However, if you cloned the entire Lifecycle as recommended, which would have included the Phases, then you will probably only have to Edit the Phases that exist in the cloned Lifecycle.
+Select the Lifecycles tab from the navigation bar. 
+Click the name of the Lifecycle on which you want to add or edit a Phase.
+Locate the Phases section on the Lifecycle screen. Even a newly created Lifecycle will have a Phases related list, although it will be empty.
+Click New to create a new Phase. Or click the name of the Lifecycle Phase you want to clone or edit, then click Clone or Edit.
+The New Phase or Edit Phase screen appears.
+Complete the Information Section
+This section lets you set the name of the Lifecycle Phase and its order.
+Configure the following fields as applicable. Required fields are marked with a red asterisk.
+Phase Name: Enter in an easily identifiable name for your Phase that makes sense to your users. This field is required.
+Is First Phase: Select this checkbox if you intend this Phase to be the first one in the workflow. You should have one, and only one, Phase in the Lifecycle with this selected.
+Order: Enter a number to specify the order that this Phase will sit in relation to the other Phases in the Lifecycle. For the initial Phase, you can use the number “1”. However, for subsequent Phases, we suggest incrementing by 5, rather than only incrementing by 1. This allows you some room to enter additional Phases without having to change the Order field on all the existing Phases. This field is required.
+Complete the Required Fields Section
+This section lets you set the required fields for your Phase.
+It’s important to note that you will have to enter the API Names for the fields, which you can find on the Item or Item Revision Objects. For Propel Packaged fields, these usually start with the PDLM namespace and end with __c (note the two underscores before the c): PDLM__Field_Name__c. Custom fields don’t have the PDLM namespace, but still end in __c: Field_Name__c.
+
+Note: A recommended Best Practice for required fields is to carry forward the previous Phase’s required fields. This prevents users from accidentally removing required data later in the process. 
+Required Fields: Enter the API names of the fields that must be completed on the Details tab in order to exit this Phase. Enter them using a comma-separated list, such as: Description__c, Implementation_Notes__c. Note that these fields must also be configured on the Category as Category-Specific Fields.
+Complete the ITEM Phase Details Section
+Configure the following fields as applicable.
+Next Phases: Enter the Phases an Item can progress to from this Phase. Enter the Phase Names in a comma-separated list, such as: Initial, Prototype, Production, Inactive, Obsolete.
+Child Phases: Enter the Lifecycle Phases that an Item’s child record is allowed to be in when the parent item is in this Phase. For example, if an Assembly is in the Prototype Phase, you could allow its components to be in either the Prototype or Production Phase, or you could limit them to being in the Prototype phase. Enter the Phase Names in a comma-separated list. You can also have children that have different Lifecycles from the parent. If that is the case, you can preface each Phase Name with “Lifecycle:”. For example, you could have “Lifecycle:Phase”, replacing “Lifecycle” with the actual Name of the Lifecycle, and “Phase” with the Name of the Phase, such as “Assembly:Prototype” or “Part:Production”.
+Revision Sequence: Enter in a sequential list of revision names that the system will automatically use to name the next draft revision of the item. If no valid next name in the sequence is found, the system will name the draft “Draft”. Enter a comma-separated list with no spaces between the values. (In the example below, note that the “I” and “O” values have been intentionally omitted to avoid confusion.)
+Complete the ITEM Change Control Behavior Section
+Item revisions are generally managed through Change records. This section allows you to determine whether that is required for an item in this Phase and the general behavior of the Change record. This section configures the Default behavior for Item records in this Phase. The next section configures the Overrides, or exceptions, to the default behavior.
+Configure the following fields as applicable. Note that you only select one option.
+No Change Control (Default): Select this checkbox if you DO NOT want to force change control for Items in this Phase. This means users will be able to edit all fields of an Item at this Phase and release the Item with no Change Order, or subsequent approvals, and no new revision is required. One might use this option for an Initial phase before the item is under strict change control. NOTE: If you have a released rev 01, and publish a draft for 01 again, the system will apply the updates to the existing revision and only one 01 revision will exist.
+New Revision Required (Default): Similar to the previous checkbox, if you select this checkbox, change control will not be required to revise an Item in this Phase. However, when this is selected, a new revision is required to release the Item. Again, this might be used for an Initial phase, before the item is under strict change control.
+Approval Required (Default): Select this checkbox to make approvals on a Change record required for an Item to either enter this Phase or to issue a new revision within this Phase. For example, if an item is at Rev A (in the Production Phase), approval is required to go to an additional Rev A (Production Phase) or to Rev B (Production Phase). If you want the flexibility to make certain changes for minor error correction across the item, and you have a thorough change analyst to catch that a new revision is issued when you want, then you might use this option.
+New Rev and Approval Required (Default): Select this checkbox if you want to require approval on a Change record AND a new revision for an Item to enter this Phase or to stay within this Phase. Recommended best practice option for strict change control. If you want to support releasing manufacturer changes without a new revision, enter "AML" in the Approval Required override. For example, an approved Change record would be required for the following scenarios:
+Rev A (Production Phase) to Rev B (Production Phase)
+Rev 1 (Prototype Phase) to Rev A (Production Phase)
+Approval for Entry: Select this checkbox if you want to require approval on a Change record for the Item to enter this Phase, regardless of whether there have been modifications to it. For example, if an Item is at the Prototype Phase and has not undergone any modifications, approval will still be required to move the Item into the Production Phase.
+Complete the ITEM Change Control Behavior (Overrides) Section
+In the ITEM Change Control Behavior section (previous section in this article), you set the default behavior for an Item in this Phase. However, there are times when you may want to override that default behavior. These overrides happen at the tab level. For each of the fields below, you enter a list of tabs so that if a modification happens on only one of those tabs, then the specified default behavior will not occur. Instead, the behavior where you entered the tab would occur.
+
+The supported override values are:
+Attributes (for the Details tab)
+BOM
+AML (for the Manufacturers tab)
+Attachments
+For example, you may want to let users make changes to the Manufacturers tab without affecting the Item’s revision, even though you’ve selected New Rev and Approval Required as the default. If you enter in “AML” (which is the label for the Manufacturers tab), in the overrides Approval Required field. Then, when a user only makes changes to the Manufacturers tab, those changes will only require an approval, not a new revision. However, any other changes would still need an approval AND a new revision.
+Configure the following fields as applicable.
+No Change Control: Enter a list of tabs where, if modifications occurred on one of those tabs, neither an approval or new revision would be required. Enter the tab names in a comma-separated list. For example: AML, Attributes, BOM.
+New Revision: Enter a list of tabs where, if modifications only occurred on any of those tabs, a new revision would be required, but not an approval. If any modifications occurred on other tabs not listed, then the default behavior would be used. Enter the tab names in a comma-separated list. 
+Approval Required: Enter a list of tabs where if modifications only occurred on any of those tabs, an approval would be required, but not a new revision. Enter the tab names in a comma-separated list. 
+New Revision and Approval Required: Enter a list of tabs where if modifications only occurred on any of those tabs, both a new revision and approval would be required. Enter the object names in a comma-separated list. 
+Best Practice Recommendation: If there are cases, where you want New Revision and Approval Required, make that be your default, and do the overrides for others like Approval Required = AML. NOTE: We do not recommend making Approval Required and having the override for New Revision and Approval Required. For example, if you enter BOM as the override, if there are updates in the BOM and Details tab, then the default behavior occurs, which is only Approval required.
+
+Good configuration (New Revision & Approval Override setting is empty):
+
+
+Bad Configuration (New Revision & Approval Override is being used):
+
+  Save the Lifecycle Phase
+Once you have completed all of your configurations for the Phase, click Save.
+If you want to create another new Phase, click Save & New instead.
+Recommended Next Steps
+Once you’ve configured your Item Phases, you’ll want to ensure that your Categories are set up properly.
+Categories Overview
+Configure a Category
+See Also
+Configure a Change, Quality, or Declaration Phase
+Lifecycles Overview
+Lifecycle Phases
+ 

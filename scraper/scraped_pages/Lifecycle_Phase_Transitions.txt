@@ -1,0 +1,38 @@
+Lifecycle Phase Transitions
+This article provides an overview of Propel Lifecycle Phase Transitions. If you have a solid understanding of Phase Transitions and want to dive right into setup, go to our Configure a Lifecycle Phase Transition article.
+Once you’ve configured the Phases for a Change, Quality, or Declaration Lifecycle, you can configure the Lifecycle Phase Transitions, which determine how the Phases in a record will progress from one to another. Certain Lifecycle Phases may be able to transition into multiple Phases, whereas other Phases may be more limited in their transitions.
+When you set up your Phases for a specific Lifecycle, you set an overall order - which Phase would come first, which would come second and so on. In a very simple process that progresses without any issues, users may progress through the different Phases linearly, following the overall order you set up. 
+However, more complex processes may require more flexibility and a less linear path where users are able to jump from the fourth Phase to the sixth when necessary, and then back to the fifth Phase. Plus, reality dictates that even in a simple process issues can occur where a change is rejected and has to go backwards in the process, or maybe the process needs to just be cancelled. 
+Let’s look at an example:
+You have the following Lifecycle Phases set up in the order below:
+Initial
+Doc Control
+In Approval
+Approved
+Implemented
+Cancelled
+In a perfect workflow, the process would progress through the Phases from step (a) to step (e). However, you need to make sure that the change order can be cancelled at any Phase, except for in the Approved or Implemented Phases. And you need to account that a change may be rejected and have to go back to the Doc Control Phase from the In Approval Phase.
+You would then set up the following transitions.
+From Initial to Doc Control
+From Initial to Cancelled
+From Doc Control to In Approval
+From Doc Control to Cancelled
+From In Approval to Doc Control
+From In Approval to Cancelled
+From In Approval to Initial
+From In Approval to Approved
+From Approved to Implemented
+The above example is a simple, linear structure. However, you can use transitions to allow users to jump around in the workflow - moving ahead or behind several steps - as needed to follow your business processes.
+Auto Advance Phase and Auto Reject Phase
+When you set up your Lifecycle Phases, there are fields for Auto Advance Phase and Auto Reject Phase, which are specific to Phases where there is an approval step. In the fields you would specify the Phase the workflow would move to if it was approved or rejected. When you set either of these, you need to ensure that you DO NOT set the Phase Transition up for this step as it creates a conflict. 
+In the example above, if you specified that the Auto Advance Phase for the In Approval Phase was Approved, then you would eliminate the following transition:
+From In Approval to Approved
+The same would hold true if you had the Auto Reject Phase field set to Doc Control. However, if you did not specify the Auto Reject Phase then the record would no longer be in an “Approval” phase and you would still need to add a Phase Transition so that the user could move it from In Approval back to Doc Control.
+Recommended Next Steps
+If you have created your Phases, then you are ready to create your Lifecycle Phase Transitions with the following article. 
+Configure a Lifecycle Phase Transition
+See Also
+Lifecycles Overview
+Lifecycle Phases
+Configure an Item Phase
+Configure a Change, Quality, or Declaration Phase

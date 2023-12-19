@@ -1,0 +1,54 @@
+Configure a Category through the Categories Tab
+This article covers using the Categories Tab to configure Declaration, Change, Quality, and Item categories. You can also use the Propel Setup Tab, which will let you configure Item, Change, or Quality categories.
+Note: You cannot configure Criteria-Based Approver Rules or add/reorder tabs displayed on the record using the Categories Tab. This can only be done through the Propel Setup Tab.
+For more information, go to our Configure a Category article.
+Configure a Category
+Note: Rather than creating a New Category from scratch, we recommend Cloning an existing Category that is similar and then making changes.
+Select the Categories tab from the navigation bar.
+Click the name of the Category you want to clone or edit. Then, click Clone for a new Category, or click Edit to modify an existing Category. Before proceeding, ensure you are on the Details tab for the Category record.
+Enter a Category Name. Remember to change this if you cloned a category. 
+Select the Type of Category you want this to be.
+Choose an existing Lifecycle, which is what will determine the phases that your workflow or Item will use. To replace an existing Lifecycle, click the X and then search for and select a different Lifecycle.
+Note: Although the Lifecycle field is not marked as required, you will get an error if you try to save a category without one, unless you have specified this as a Category Group Name. 
+If applicable, enter a Parent category. This will make your category a child and will inherit the parent’s autonumber and category specific fields. However, change the autonumber and add category-specific fields for child categories.
+Select the Use as Category Group Name checkbox to use this category to group sub-categories. If you select this, you will not be able to specify a lifecycle for this category, nor will users be able to select it when they create a record.
+For Change and Quality Categories only: 
+If you are planning on tracking workflows of this category with a Propel Project and want to use an existing project as a template, enter it in the Default Project Template field. 
+For Change Categories only: 
+Select the Is Descriptive Change checkbox where the Affected Items in the change are not being revisioned or updated as a part of the change. An example of this would be an Engineering Change Request (ECR) - there would be Affected items, but you would not make any updates to the items during this workflow. Additionally, you can set this when you don’t want the workflow to have an expiry, such as you might with a Deviation type of Change workflow.
+Note: You should ALWAYS select this for a Quality Category. In Propel Setup, this is the default for Quality Categories; however, this is not the case when you are in the Categories tab.
+For Item categories only: 
+Select the PIM Product checkbox to enable SKUs and Attributes for public PIM products.
+To limit who can create a record with this Category, enter a comma-separated list of Public Group API Names in the Create Allow Groups field. Only members of those groups will be able to create records using this Category.
+To ensure that users cannot enter their own custom Autonumber for the workflow, select the Restrict Autonumber Override checkbox.
+Select an existing Autonumber. To replace an existing Autonumber, click the X and then search for and select a different Autonumber.
+If you choose + New Autonumber from the search list, then you will have to create a new autonumber on the fly. Go to the Configure an Autonumber article for help on this.
+Note: There is no option here to Skip the autonumber. If you don’t want to use an Autonumber for this category, leave this field blank.
+You can now Save the record, or continue to configure the Item Category Details or Change / Quality Details before saving.
+If you want to change the default view for the Category, you can enter a Field Set or a Page Layout. The Details tab on the Category record will use this to display the record data.
+Configure the Item Category Details
+To update the default tabs that appear in an Item record, simply enter in a new name in any of the following fields. Remember that this is specific to this category and will not affect any item records in other categories.
+BOM Tab Title
+Manufacturers Tab Title
+Attachments Tab Title
+Related Tab Title
+To change the field set that is used to display fields on the BOM tab for an item record, enter the API name of the field set you want to use in the BOM Fieldset field. For help on defining this field set, go to our Display Custom Fields on the Item BOM Tab article. If you leave this field blank, the default field set will be used.
+You can now Save the record.
+Configure the Change / Quality Details
+To change  the field set that is used to display fields on the Affected Items tab for a Quality or Change record, enter the API name of the field set you want to use in the AI Fieldset field. For help on defining this field set, go to our Display Custom Fields on the Affected Items Tab article. If you leave this field blank, the default field set will be used. 
+You can now Save the record.
+Add Custom Fields
+Click the Related tab to go to the Category record’s related lists.
+In the Fields section, click Add.
+The Category field will already be populated. Leave this at it’s default value.
+Enter the name of the Object where this field exists, such as the Item Revision or Declaration object. 
+Enter the API Name of the field. You can find this on the object record, under Fields & Relationships. The API Name will be in the Field Name field.
+If you are adding multiple fields AND selecting them to be Visible on Header (see below), you can have them display on the record’s header in a specific order by entering a numeric value in the Order field. The order you specify will also determine how they appear in the Category-Specific Fields page. However, it does not affect the overall page layout.
+To have the field and its value display on the record’s header, which is the top section of the record above the flow chevrons, select the Visible on Header checkbox. If you are adding multiple values to the header and want them to appear in a specific order, ensure you enter the Order as indicated above.
+To have the field and its value display on the record’s header, which is the top section of the record above the flow chevrons, select the Visible on Header checkbox.
+To prevent the field from displaying on the initial screen when the user creates a new record, select the Exclude from Create New Page checkbox. You would leave this deselected for fields where you might want the user to complete when they’re creating a new workflow. 
+Click Save.
+See Also
+Categories Overview
+Configure a Category
+Configure a Category through Propel Setup

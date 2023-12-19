@@ -1,0 +1,22 @@
+Configure a Lifecycle
+Lifecycles provide a structure to help you manage your business practices. You can create Lifecycles for Items or for Change, Quality, or Declaration workflows. To learn more about Lifecycles and how they fit in the overall structure of Propel, go to our Lifecycles Overview article.
+This short article walks through creating a new lifecycle or editing an existing one.
+Clone or Edit a Lifecycle
+Note: Rather than creating a New Lifecycle from scratch, we recommend Cloning an existing Lifecycle that is similar and then making changes. This will clone all of the Lifecycle's Phases and (if applicable) Lifecycle Phase Transitions and Approver Definitions.
+Select the Lifecycles tab from the navigation bar. 
+Click the name of the Lifecycle you want to clone or edit. 
+For a new Lifecycle, click Clone once the Lifecycle record appears. After a few moments the cloned record appears. Click Edit.
+For an existing Lifecycle, click Edit once the Lifecycle record appears.
+Complete the following fields:
+Lifecycle Name: A unique name based on the type of lifecycle you are creating. This field is required. A cloned Lifecycle name will contain the date and time it was cloned and will need to be changed.
+Type: Choose the type of Lifecycle from the dropdown menu. This determines which Categories this Lifecycle can be used by. For example, Change Type Lifecycles can only be used for Change Type Categories.
+Note: When cloning, it’s best to clone a Lifecycle that is of the same type as your new Lifecycle. This will make updates to the rest of your related records - Phases, Phase Transitions, Approval Definitions, etc. - much easier.
+Click Save. 
+Recommended Next Step
+Once you’ve completed your Lifecycle, we recommend that you work on the Phases for that Lifecycle, especially if you’ve cloned it. Phases for Items are somewhat different from Phases for Change, Quality, and Declaration workflows. Both are covered in the Phases Overview article, but they have different articles for configuring them.
+Lifecycle Phases
+Configure an Item Phase
+Configure a Change, Quality, or Declaration Phase
+See Also
+Lifecycles Overview
+Categories Overview

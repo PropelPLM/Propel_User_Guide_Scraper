@@ -1,0 +1,55 @@
+Create a Custom Field for a Propel Sharing Rule
+For the majority of the Propel Sharing Rules that you set up, you will need to create a custom field on the applicable object. These custom fields will then be populated with the Group Names of the internal and external groups of users you want the rule to apply to. For example, if you wanted to share an Item record with three Manufacturer partners, then you would add those Manufacturers through the custom field that you created on the Items object, using the Public Group names that you configured. For instructions on configuring the rules and implementing the field you create, go to our Configure a Propel Sharing Rule article.
+The Propel Sharing Rules for which you need to create a custom field include the following:
+Share Items with Field
+Share Changes with Field
+Share Changes with AI Field
+Share Quality with Field
+Share Quality with AI Field
+Share Mfr Parts with Field
+The two rules - Share Items with Mfrs and Distributors and Share Mfr Parts with Mfrs and Distributors - work based on a match to the name of the external partner’s account. Or, you can optionally create a custom field on the Account/Manufacturer object to match to that field's value instead of the Account Name.
+
+The two rules - Share Change with Users Who Can Access Affected Items and Share Quality with Users Who Can Access Affected Items - work based on how the affected items were shared and do not require any additional custom fields.
+It’s important to note that you can create multiple custom fields on each object. These can then be populated with different values and used by different sharing rules in different scenarios. For example, you may want to grant read access to some users and write access to others. 
+Important: We recommend that you create a Global Picklist Value Set for use in the custom field you create on your object. This way, you only have to populate the picklist once, and can then implement it on different objects, such as Items, Change, Quality, and Account. This article assumes you will create and use a Global Value Set for your Propel Sharing Rules configuration.
+Create a Global Picklist Value Set
+The values you set for your picklist will need to match the Public Group names that you have already created. However, if you add more Groups later, you can update the picklist values to include them.
+Go to Setup > Objects and Fields > Picklist Value Sets and click New.
+Enter a Label for your Global Value Set; the Name field will auto populate. You can also add a Description for your value set.
+Note: Copy down the Name that gets auto populated as this is your API Name and will be used when you configure your sharing rule.
+For your Values, enter each of the Public Group names - one per line - that you have configured for your Propel Sharing Rules. These will need to match those Group names exactly.
+Depending on the size of your list, you may want to select Display values alphabetically, not in the order entered to make finding the values easier. However, we recommend against selecting Use first value as default value to guard against errors.
+Once you’ve added all of your values, click Save.
+Any updates to your Global Picklist Value Set will be done in the Values section, using either the New or Replace buttons. You can also Deactivate any values that are no longer applicable.
+Create a Custom Field on an Object
+Depending on your Sharing Strategy, you may be creating custom fields on any or all of the following objects:
+Item
+Attachment
+Change
+Quality
+Manufacturer Part
+Account/Manufacturer
+Note: We recommend that the fields you create are multi-picklist, rather than single picklist fields. This lets you select multiple values for your Sharing Rules, which is the more common use case. For Account/Manufacturer, you should create a single picklist.
+Go to Setup > Object Manager and select the applicable object from the list above.
+Select Fields & Relationships and click New.
+Select Picklist (Multi-Select) and click Next.
+Enter a Field Label for your field; the Field Name will auto populate.
+For Values, select Use global picklist value set, and then select the Global Picklist you created earlier.
+Complete the rest of the fields as applicable to your org and click Next.
+For the Field-Level Security setting, select ONLY the Profile(s) that will be editing this field as Visible. This will most likely be your System Administrator profile. Only the users managing your Sharing Rules need access to this field. You may want certain internal users to have Read-Only access to the field so they know who a record is being shared with, but you probably don’t want any external profiles having that access.
+Click Next.
+Add the field to the appropriate Page Layout(s) and click Save.
+Repeat the above steps for each of the objects on which you want to implement Propel Sharing Rules.
+Ensure the Permission Sets are Configured Properly
+If the custom field you set up is visible to external partners, then they will be able to see all of the other external partners you may be sharing the record with. A good practice is to ensure that the Permission Sets you have configured for your external partner profiles will not display the custom field you have set up. If you need help setting up Permission Sets, go to our Configure a Permission Set article. However, to just check for the accessibility of your custom field, complete the steps below.
+Go to Setup > Users > Permission Sets.
+Select the Permission Set you have set up for external partner access. Depending on your configuration you may have to do this for multiple Permission Sets.
+In the Apps section, select Object Settings.
+Select the object on which you’ve created the custom field, such as Item or Change.
+In the Field Permissions section, locate your new custom field and ensure that both Read Access and Edit Access are deselected.
+If either of those settings are selected, scroll back to the top, click Edit Properties, and then deselect the settings as needed. Be sure to Save your changes.
+See Also
+Configure a Public Group for Propel Sharing Rules
+Configure a Propel Sharing Rule
+Configure a Permission Set
+Propel Sharing Rules and Reporting Overview

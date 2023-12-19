@@ -1,0 +1,52 @@
+Configure Additional Cost Fields to Track in Part Cost History
+Cost Roll-Ups sum the costs for materials included in a multi-component structure, such as a Bill of Material (BOM). Propel houses part costs in the Manufacturer Part object, using relationships between Part Costs and Item Revision.
+Note: This article assumes that you already have cost roll-ups configured and deployed in your org and that you want to add more fields to track. If you have not set up cost roll-ups, go to our Configure Cost Roll-Ups article for detailed instructions.
+While you can add fields to track individual part costs, a common scenario is to sum two or more existing cost roll-up fields into another roll-up field. For example, you may have two cost roll-ups, one for Material Costs and another for Fixed Costs. You can create a custom formula field on the Item Revision to calculate the Total Cost (Material + Fixed). Propel can track the history of changes for Total Cost together with Material and Fixed in the Part Costs table.
+Complete the sections below in order to track additional custom fields in part cost history.
+Create Part Cost Types for Each Cost to Roll-up
+For each custom field you create, you need to have a corresponding value in the Part Cost Type picklist.
+Go to Setup > Objects and Fields > Picklist Value Sets.
+Click the name of the Part Cost Types picklist value set.
+In the Values section, click New and add your values. Examples may include Direct, Indirect, Total, and Tariff. Each of your values must go on its own line in the list.
+Click Save.
+You can also, Reorder, Replace, and Deactivate values as desired. Be sure to Deactivate any unwanted values. You should always add new values and delete old ones rather than renaming existing values.
+Note: At least one picklist value must be active. If you don’t want any costs, leave the default value (Test Cost) active.
+Create Item Revision Custom Fields for each Part Cost Type
+For each active Picklist Value that you created earlier, you’ll need to add a corresponding Custom Field on the Item Revision object.
+Note: The properties below assume you are adding a single currency field. If, however, you are adding a field to sum two or more cost roll-up fields, then your Data Type for the field would be Formula and you would then need to define your formula based on the fields you are summing.
+Go to Setup > Object Manager and select the Item Revision object.
+Click Fields & Relationships from the left panel and click New to add a Custom Field with the following properties:
+Data Type: Currency
+Field Label: Enter the name to match the Part Type Cost in the Picklist Values (they don’t have to match exactly, but should be easy to see the relationship)
+Length: 16
+Decimal Places: 2 (or more if desired)
+Make the field visible as appropriate.
+Repeat the above steps as necessary to create all of your fields.
+Copy down the API Names for each field you created as you’ll need them in the next sections.
+Add Custom Fields to the Appropriate Item Categories
+Add the Custom Fields you created on the Item Revision Object to the categories as desired to see the rolled-up costs on certain categories of items.
+For detailed instructions on adding Custom Fields to a Category, go to our Configure a Category article.
+Add Custom Fields to Permission Sets 
+The Custom Fields you created will also need to be added to the applicable permission sets so that your users can see them. 
+Go to our Add a Custom Field to a Permission Set article for configuration instructions.
+Map the Part Cost Types to the Item Revision Fields
+This mapping is for the Calculate Item Revision Costs batch job to write the latest roll-up values to the item revision fields. This is needed if you create any formula fields on the item revision fields.
+Go to Setup > Custom Code > Custom Settings.
+Click Manage beside the Item Cost Mapping setting.
+For each Part Cost Type, create a new mapping.
+Name: [API Name of the Cost Type, from the Part Cost "Type" picklist]
+API Name: [API Name of the corresponding Item Revision custom field]
+Hide from Grid: deselected 
+
+Add Cost Roll-Ups to Item Header
+This step will add the Custom Fields you configured on the Item Revision object to display on the Item Record’s header. This is only required if you want the new custom fields to appear on the header.
+
+Go to Setup > Object Manager and select the Item Revision object.
+Select Field Sets from the left panel and click the Item Header field set to open it.
+Drag the Custom Fields you created on the Item Revision object down into the In the Field Set section.
+Click Save.
+See Also
+Configure Cost Roll-Ups
+Add Custom Fields to the Item Object
+Configure a Category
+Add a Custom Field to a Permission Set

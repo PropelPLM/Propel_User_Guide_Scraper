@@ -1,0 +1,91 @@
+Create and Manage a Training Plan
+Training Plans allow managers to determine what Items need to be trained on, and exactly who needs to be trained on those items. Once a Training Plan is complete and active, when an Item first gets added to a Training Plan, or when an Item that has been set to require training has a new version published, Training Records will automatically be generated for those items and assigned to the users in the Training Plan.
+Training Plans can be modified as training requirements change: Items and users can be added or removed as necessary. You can also create dependencies between training items if training needs to be performed in a specific order. This ensures that you can always meet the training needs of your organization.
+While the most common use of Training Plans is to automatically generate Training Records, you can also manually assign Training based on Items or Trainees. However, you would generally only need to do this if you wanted to modify due dates for training in bulk. For details, go to our Manually Assign Training Records article.
+Note: This article assumes that you have the Training Records Modul Configured as per our recommended best practices. Also, while the Training Records will be automatically generated, you may want to configure Email Notifications for Training Assignments so users know when they have training due. Otherwise, they can go to their Home Page to see and complete any open Training Assignments.
+
+Note: As of the Fall ‘20 Release (v6.4) a Lightning Web Component (LWC) has been introduced for Training Plans. This controls how the page appears and the different sections that display. One thing to note is that the Visualforce component that displayed Training Assignments is no longer used and has been replaced by an LWC. No configuration is needed for this as it has been automatically updated for all instances.
+This article covers the following topics:
+Create a New Training Plan
+Manage Items in a Training Plan
+Create Dependencies for Training Items in a Plan
+Manage Trainees in a Training Plan
+Add Trainees to a Training Plan
+Create a New Training Plan
+If you already have a Training Plan in place, you can skip to the sections on Managing Items and Managing Trainees in Training Plans.
+There are multiple ways to create new Training Plans in Propel. To save time and make configuration easier, if you have existing Training Plans that are similar to the new one you want to create, we recommend that you Clone an existing Plan. This will make a copy that includes all of the original Plan’s Items and Trainees in Pending status. You can then update the details of the plan, and add and remove Items and Trainees as desired.
+To create a new Training Plan, select the Training Plans tab from the navigation bar and click New.
+
+
+OR
+Click the dropdown icon on the Training Plans tab and select New Training Plan.
+To clone an existing Training Plan, select the Training Plans tab from the navigation bar and click the Name of the Training Plan you want to clone. In the top right, click the dropdown icon and select Clone Training Plan. Once the Plan is cloned, you can Edit the record to make changes to the fields below. Or you can Manage Items or Manage Trainees in the Plan.
+The Name of your Training Plan is automatically generated using the Salesforce Autonumber feature, giving it a sequential number formatted as follows: TP-00001. Each new or cloned Training Plan will increase the sequence by one.
+Complete the following fields:
+Description: Enter a unique description to help identify the Training Plan.
+Status: Set this to Active to activate the Training Plan, which will then generate Training Records. Inactive, Pending, or Archive will not generate Training Records.
+Days to Complete: Set the number of days Trainees have to complete the training before it is considered overdue.
+Retraining: Select this to ensure periodic retraining on all items in the plan. At the desired training interval, the system will generate new training assignments for the latest released revision of the training items in the plan, regardless of if they have previously trained on that revision. This setting is good for cases where you want to ensure an annual training refresh on an Item, even if it hasn’t been updated.
+Note: To use Retraining, you must have the Enable Rescheduled Training Records setting on the Propel Setup tab enabled. Go to the Propel Setup article for instructions.
+Retraining Date: The first date Retraining begins. For example, if you create a plan in June, you could specify the first retraining to begin on January 3 of the following year. This is required if you have specified Retraining to occur.
+Retraining Interval: In days, the subsequent intervals that Retraining will take place. For example, if the first Retraining is set for January 3, then you could set the interval to “365” to have all subsequent Retrainings to begin one year from January 3. This is required if you have specified Retraining to occur.
+After the Training Plan is activated, when a new Item Revision in the Plan is published and Training Required is selected on the Item Record, new training assignments will be created for all trainees. If the optional Training Due Date is set on the item revision, and is set to either today or some time in the future, that date determines the training record due date. Otherwise, the Days to Complete on the Training Plan is used to determine the due date. This way, we don’t generate training assignments that would already be late.
+Click Save when you’re done configuring your Training Plan.
+
+Manage Items in a Training Plan
+The instructions below show how to Add, Remove, and Reorder Training Items in the Training Plan.
+Add a Training Item
+With the Training Plan record open, click the dropdown icon in the Training Items section in the top right of the record and select New.
+The New Training Item window appears. Click in the Item field to search for and select the existing Item record you want to add.
+In the Order field, you can enter a number to specify the order in which the Item record will appear on the Training Plan. You can also leave this blank and reorder all of the records at once.
+Leave the Training Plan field at the current Plan. Click Save & New to add another Training Item, or Save to return to the main Training Plan page.
+Remove a Training Item
+With the Training Plan record open, click View All in the Training Items section. With limited space, the Training Items section only displays the first few Items in the Training Plan. In the example below, you can see there are more records than are displayed as the number in parenthesis has a plus sign after it: (3+). This will take you to a List View of all of the Training Items in the Plan.
+  Click the dropdown icon on the row of the Training Item you want to remove and select Delete.
+
+Note: The Delete option is also available by clicking the dropdown icon beside the Item on the main Training Plan page. You just won’t be able to see more than three records.
+Add Dependencies to Training Items
+You have two options for Training Dependencies. First, you can make an entire Training Plan a prerequisite for the selected Training Plan. This means, for example, trainees would have to complete all General HR Training Plan assignments before beginning work on the Machine Shop Training Plan assignments. Second, you can create dependencies between Training Items in the same plan. So, for example, trainees must complete the Safety Manual assignment before completing the Assembly Manual assignment in the Machine Shop Training Plan.
+Note: If you do not see the Dependencies tab on your Training Plan, then you probably need to configure dependencies first. Go to the Configure Training Item Dependencies article for instructions. 
+Create a Dependency Between Plans
+With your Training Plan open, select the Dependencies tab.
+Under Training Plan Dependencies, click Add.
+The window will display recent Training Plans. You can use the checkbox to select the Training Plan, or Plans, you want to create the dependency for. If your desired Training Plan is not in the list, search for it and then select. You can select multiple dependent Training Plans if desired.
+Once you’ve selected your Training Plans, click Add.
+This will add the dependency to the list. You can repeat the steps to add more Training Plans if desired.
+Create a Dependency between Training Items in the same Training Plan
+Note: Before you can create dependencies between items in a Training Plan, the Training Items must have already been added to the plan.
+With your Training Plan open, select the Dependencies tab.
+Under Training Item Dependencies, click Add.
+The first step is to add the Control Training Item. This is the item that must first be completed. Click in the Search field to find and select your Control Training Item. 
+Once you select your Control Training Item, you’ll see any available Training Items that are already in the Plan. You can also narrow your results through the Existing Training Items on Plan search field. Select all of the Training Items that you would like to have as a dependency. You can select multiple Training Items if desired.
+Once you’ve selected your Training Items, click Add.
+This will add the dependency to the list. You can repeat the steps to add more Training Item dependencies if desired.
+Manage Trainees in a Training Plan
+Add Trainees to a Training Plan
+You can add individual users or groups to a Training Plan, or a combination of groups and users. For groups, these are existing Public Groups that have already been set up in Propel. 
+Adding groups has an advantage over individual users in that the members of a group may change over time. Because of this, when the group members are changed, you don’t have to go into the Training Plan and change the Trainees: they are added or removed as Trainees because they were added or removed from the Public Group. However, if you use groups, ensure that you have the Maintain Group Membership Changes setting on the Propel Setup tab enabled. This will automatically generate assignments for users added to the group and obsolete assignments for users removed from the group. Go to the Propel Setup article for instructions on enabling this.
+With the Training Plan open, click the Add Trainees at the top of the page.
+Search for and select either an individual user or a group.
+Once you have added your user or group, click Save. Once you refresh the page, your new addition will display under the Trainees section of the Training Plan. You can repeat the above steps to add more groups and/or users as desired.
+Remove Trainees from a Training Plan
+Removing Trainees from a Training Plan will Obsolete all of their open assignments on that Plan. No new assignments will be created for the removed Trainees.
+With the Training Plan record open, click View All in the Trainees section. With limited space, the Trainees section only displays the first few users and/or groups in the Training Plan. In the example below, you can see there are more records than are displayed as the number in parenthesis has a plus sign after it: (3+). This will take you to a List View of all of the Trainees in the Plan.
+Click the dropdown icon on the row of the Trainee or Group you want to remove and select Delete.
+
+Note: The Delete option is also available by clicking the dropdown icon beside the Trainee or Group on the main Training Plan page. You just won’t be able to see more than three records.
+View Training Plan History
+A detailed view of all of the actions taken on a specific Training Plan are available for the History tab on the Training Plan. You can see details such as Notifications Sent, Quizzes Complete, and Training Sign-Offs. 
+Add Trainers to a Training Plan
+If you have the admin setting Allow Surrogate User to Sign-off On Behalf of Trainee enabled on the Propel Setup tab, Trainers can sign-off on behalf of trainees without being their manager. This will help facilitate training that is conducted in large groups by specific users who aren’t necessarily related to the trainees.
+With the Training Plan open, select the Trainers tab and then click New.
+Leave the Training Plan selected to the current Plan.
+Click in the Search People field to search for and select an individual user.
+Click Save. Your Trainer will be listed on the Related List.
+Repeat the above steps to add additional Trainers to the Training Plan.
+See Also
+Set an Item Revision to Require Training
+Configure Email Notifications for Training Assignments
+Configure the Training Records Module
+Manually Assign Training Records
+Configure Training on Drafts

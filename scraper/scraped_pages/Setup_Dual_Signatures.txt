@@ -1,0 +1,35 @@
+Setup Dual Signatures
+By default, Propel does not require a user's password when they approve or reject a Change, Quality, or Declaration record, or when they complete a Training Assignment.
+You can, however, configure Propel to prompt for a signature (for the user to enter their password), in one or both of the instances above.
+Require Password for Record Approval or Rejection
+This setting applies to ALL approvals or rejections of Change, Quality, and Declaration records.
+Select the Propel Setup tab from the navigation bar and select Admin Settings.
+Select General Settings.
+In the Signature Required on Approval section, click the toggle switch to toggle it to Enabled.
+Now, once you remove the need for a security token, when an approver goes to approve or reject one of the aforementioned records, they will have to enter their login password.
+Require Password for Training Assignment Completion
+You can also require trainees to sign off on Training Assignments.
+Select the Propel Setup tab from the navigation bar and select Admin Settings.
+Select Training Record.
+In the Signature Required on Approval section, click the toggle switch to toggle it to Enabled.
+Now, once you remove the need for a security token, when a trainee goes to complete a training assignment, they will have to enter their login password.
+Add IP Range to Remove Need for Security Token
+You need to add the IP Address or Range of the person entering the signature into the Trusted IP Ranges. Otherwise, the user will get an error and invalid login message when they try to enter their password.
+You can put in an IP Range for an entire company, or for an individual, remote worker. The limitation here is that if a worker logs in from a different location with an IP Address that is not “Trusted”, then they will get the error message when they go to enter their signature.
+Go to Setup > Security > Network Access.
+Click New to start a new Trusted IP Range.
+Enter both the Start IP Address and the End IP Address for the range. If it is for a single IP Address, then enter the same address in both fields.
+Click Save.
+Examples of IP Ranges:
+Start IP Address: 104.10.250.0
+End IP Address: 104.10.250.255
+Description: Corporate Headquarters
+ Start IP Address: 98.202.113.125
+End IP Address: 98.202.113.125
+Description: Susan's Home Office
+To determine an individual’s IP Address
+Go to Setup > Users > Users and select the user’s name.
+Scroll down to the Login History section.
+There you’ll see the IP addresses for each of their recent logins to Propel.
+See Also
+Approvals Overview

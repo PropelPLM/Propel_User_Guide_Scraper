@@ -1,0 +1,32 @@
+Use Chatter to Collaborate with Colleagues
+Chatter is a powerful collaboration tool that lets you collaborate and communicate with your colleagues, as well as stay up to date on the product and company information that’s important to you. Chatter is easy to use and this article covers some of the basics to get you started.
+To get more information about Chatter and it’s advanced features, go to Salesforce’s extensive coverage of the feature.
+View your Chatter feed
+Your Chatter feed lets you see all of the activity and information that’s important to you in one place.
+To start, click the Chatter tab at the top of your screen. If you don’t see the Chatter tab, you can find it through the App Launcher. Go to our Customize Your Navigation Bar Tabs article for detailed instructions.
+Select each of the sections on the left to see the specific information each displays:
+What I Follow: Shows updates from all people, groups, files, and records that you are following.
+To Me: Shows posts that others have made on your profile page or where you’ve been mentioned, as well as comments that have been made on any of your posts.
+Bookmarked: Shows any posts that you’ve bookmarked for later.
+Company Highlights: Shows the most popular posts from across your company.
+My Drafts: Shows posts that you’ve started but haven’t posted them yet.
+Create a post on your profile page
+Once you’ve clicked the Chatter tab, click in the text box under Post. This will let you compose a Chatter post.
+By default, this will be seen by anyone following you. However, you can @mention a specific person to ensure they see your post. Begin by entering the @ symbol. This can be done at the start of the post, or at any time within the post text.
+Enter the first few letters of the person’s first or last name. As you type, you’ll see potential matches appear. Click on the name of the person you want to include. You can repeat this for as many people as you would like to include.
+Use the formatting toolbar to format the text and add links and images. Click the Paperclip icon to attach a file to the post.
+Once you’re done, click Share.
+Collaborate on a specific record
+Chatter also lets you post updates on specific records, such as an Item, Change or Quality record. It allows you to share decisions that have been made about a specific record, ask questions and receive answers, and provide important information to the rest of your team.
+Go to the record you want to post to. For example, go to a specific Item or Change record.
+Depending on the record, the Chatter component may already be expanded on the right side of the screen. If not, click the Expand button to display the component. You can also drag the Expand button to make the component larger or smaller.
+Click in the Write something… text box.
+Write out your post and use the @mention feature explained in the previous section to share the post with specific team members. By default, the post will be shown to anyone following the specific record. 
+Once you’re done, click Share. In addition to being shared with colleagues you @mention and those following the record, the post will always be attached to the record, so anyone that views the record will also be able to see the post.
+Follow a specific record
+In addition to posting on a specific Item, Change, or Quality record, you can also Follow a record. This means that you will be notified every time someone posts on that record, regardless of whether they @mention you.
+Navigate to the record you want to follow.
+Click +Follow in the top right of the screen.
+The button name will change to +Unfollow. Click this if you want to stop following a record.
+See Also
+Salesforce Chatter

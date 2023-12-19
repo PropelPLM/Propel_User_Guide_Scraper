@@ -1,0 +1,86 @@
+Configure a Change, Quality, or Declaration Phase
+This article walks you through setting up a Change, Quality, or Declaration Lifecycle Phase. For more information on Propel Lifecycle Phases, go to one of the following articles:
+Lifecycle Phases
+Configure an Item Phase
+A record’s Phases are the different steps that the record goes through in its Lifecycle. When you configure a Phase, you determine the specific behaviors of the record while it is in that Phase, as well as many of the user actions that can occur during that Phase.
+Important - Before you Begin
+As a Best Practice, we recommend that before you add or remove a Lifecycle Phase from an existing Change, Quality, or Declaration Lifecycle, you close out all open records that use that Lifecycle. If that’s not an option, then we recommend creating a new Lifecycle with a new Category. Any new records would go to the new Category and once all the old records have been processed, you can rename or inactivate the old Category so it can’t be chosen. There are several reasons for this:
+The Lifecycle Phases for a Change, Quality, or Declaration record are inserted when the record is created. If a Phase is added or removed after the record is created, that record won’t automatically adjust; it will always have the same Phases as when it was initially created.
+Each Lifecycle Phase references the Phase record on the Lifecycle. If the Phase settings are changed  (such as Edit Allow Group, Edit Drafts, etc.), those changes take effect immediately.
+Inserting and deleting Lifecycle Phases may make some Phase Transitions invalid. If you are unable to transition a record to the next Phase after adding or deleting a Phase, you may need to go back to the Lifecycle and check your Phase Transitions as the new transitions you set up may not be compatible with both the “old” and the “new” Phase configurations.
+Configure a Lifecycle Phase
+There are several sections to setting up a Lifecycle Phase and they are all listed on the same screen, which you can easily scroll through.
+Note: In most cases we recommend cloning a Lifecycle Phase rather than creating a new one to save on configuration time. However, if you cloned the entire Lifecycle as recommended, which would have included the Phases, then you will probably only have to Edit the Phases that exist in the cloned Lifecycle.
+Select the Lifecycles tab from the navigation bar. 
+Click the name of the Lifecycle on which you want to add or edit a Phase.
+Locate the Phases section on the Lifecycle screen. Even a newly created Lifecycle will have a Phases related list, although it will be empty.
+Click New to create a new Phase. Or click the name of the Phase you want to clone or edit, then click Clone or Edit.
+The New Phase or Edit Phase screen appears.
+Complete the Information Section
+This section lets you set the name of the Phase and its order.
+Configure the following fields as applicable. Required fields are marked with a red asterisk.
+Phase Name: Enter in an easily identifiable name for your Lifecycle Phase that makes sense to your users. This field is required.
+Is First Phase: Select this checkbox if you intend this Phase to be the first one in the workflow. You should have one, and only one, Phase in the Lifecycle with this selected.
+Order: Enter a number to specify the order that this Phase will sit in relation to the other Phases in the Lifecycle. For the initial Phase, you can use the number “1”. However, for subsequent Phases, we suggest incrementing by 5, rather than only incrementing by 1. This allows you some room to enter additional Phases without having to change the Order field on all the existing Phases. This field is required.
+Complete the Required Fields Section
+This section lets you set the required fields for your Lifecycle Phase. 
+It’s important to note that you will have to enter the API Names for the fields, which you can find on the Change, Quality, or Declaration Object. For Propel Packaged fields, these usually start with the PDLM namespace and end with __c (note the two underscores before the c): PDLM__Field_Name__c. Custom fields don’t have the PDLM namespace, but still end in __c: Field_Name__c.
+
+Configure the following fields as applicable.
+Note: A recommended Best Practice for required fields is to carry forward the previous Lifecycle Phase’s required fields. This prevents users from accidentally removing required data later in the process. 
+Required Fields: Enter the API names of the fields that must be completed on the Details tab in order to exit this Phase. Enter them using a comma-separated list, such as: Description__c, Implementation_Notes__c. Note that these fields must also be configured on the Category as Category-Specific Fields.
+Required Affected Items Fields: Enter the API names of the fields that must be completed on the Affected Items tab in order to exit this Phase. Again, use a comma-separated list.
+Required Category AI Fields: This field allows you to specify required Affected Items fields by Category as well as by Phase, giving you added flexibility. This is good if you are going to use the same Lifecycle for multiple categories but have category-specific differences in the required AI fields. Enter the Category Name, followed by a colon, a space, and then a comma-separated list of API names. So if you want the Notes and Disposition fields on the Affected Items tab to be completed to exit this Phase for the ECO category, you would enter the following:
+ECO: Notes__c, Disposition__c
+
+Complete the Phase Behavior Section
+Scroll past the two ITEM specific sections, leaving any default settings, to get to this section. Here, you can enter approval settings, auto advance and reject Lifecycle Phases, and other key behaviors.
+Configure the following fields as applicable.
+Notify Followers: When this checkbox is selected, people following the workflow will get notified when the record enters this Phase.
+No Approval: This checkbox is selected by default. When selected, you will not have to set approvals for the Phase. Deselect this to designate this as an approval Phase.
+Auto Submit for Approval: When this checkbox is selected, your Phase will automatically submit for approval. If you do not select this checkbox, users will have to manually submit the workflow for approval when it gets to this Phase. We recommend having this turned on for Phases requiring approval.
+Auto Advance Phase: If you want your workflow to advance to the next Phase automatically once it is approved, search for and enter that next Phase here. If you don’t enter a Phase here, you will have to manually move the workflow to the next Phase following approval. If you have not yet created the next Phase, you may need to come back to this setting after creating it.
+Auto Reject Phase: If you want your workflow to move to a specific Phase automatically when it is rejected or recalled by your approvers, search for and enter that next Phase here. If you don’t enter a Phase here, you will have to manually move the workflow to the next Phase following the rejection.
+Approve (and Release Affected Items): When you select this checkbox, when a Phase is completed (exits to the next Phase on final approval) all items in the Affected Items tab will be released. This is applicable for non-descriptive changes. "Release" publishes the drafts on the change to be the latest released revisions. Each workflow should have only one Phase where the Affected Items are released. Generally, this is the Phase immediately before the Approved or Released Phase.
+Expire Affected Items: When you select this checkbox, the Affected Items will be expired when this Phase is completed. This means that the released revisions that were released in the Approve (and Release Affected Items) phase will be expired and the previous latest released revisions will again become the latest released.
+Is Closed Phase: Select this checkbox to set the record as Closed during this Phase. This is intended for Quality records. An item revision has an indicator when there is an Open Quality record associated with it. The Closed Phase means that either the complaint has been investigated to completion or all the action items for a Quality record have been done - no more action will be taken on this Quality event. Then the Item record knows it doesn't have any Open Quality records against it.
+First Response: This option is no longer available and the feature has been deprecated. 
+
+Complete the Edit Behavior Section
+This section allows you to specify what can be edited in this Phase, and also allows you to restrict editing capabilities to specific groups.
+Configure the following fields as applicable.
+Edit Allow Groups: If you leave this field blank, any users that already have access to the workflow tabs and fields will be able to make changes based on the other settings you make in this section. However, you can restrict with two options: the "Owner" keyword (restricts to just the current owner of the record), or by Public Groups, which will restrict editing to just the groups you specify. Enter in a comma-separated list of groups using the groups’ API names, such as: Change_Analyst_Group, Regualtory_Review_Group. You can find the API name on the Group Name field on the Public Group record. 
+Edit Details Tab: When you select this checkbox, users - or your specified groups - will be able to edit the fields on the workflow’s Details tab.
+Edit Affected Items Tab: When you select this checkbox, users - or your specified groups - will be able to edit the fields on the workflow’s Affected Items tab.
+Edit Attachments Tab: When you select this checkbox, users - or your specified groups - will be able to edit the fields on the workflow’s Attachments tab.
+Edit Item Drafts: When you select this checkbox, users - or your specified groups - will be able to edit the Item drafts.
+Edit During Approval Allow Groups: This allows you to further restrict editing capabilities when a workflow is set to an “in approval” state. If you leave this field blank, this will first take into account any groups that you specified in the Edit Allow Groups field above. If that field is blank, then any users or that already have access to the workflow tabs and fields will be able to make changes while it’s out for approval. To restrict this to certain groups, again enter a comma-separated list of groups using their API names or the “owner” keyword.  
+Edit Affected Items Tab During Approval: When you select this checkbox, users - or your specified groups - will be able to edit the fields on the workflow’s Affected Items tab while the workflow is in an “in approval” state.
+Edit Item Drafts During Approval: When you select this checkbox, users - or your specified groups - will be able to edit the Item drafts while the workflow is in an “in approval” state.
+Edit Approvers Tab: When you select this checkbox, users - or your specified groups - will be able to edit the approvers fields on the workflow’s Approvers tab. This is important if approvers are being added manually to each workflow rather than through Approver Definitions or Criteria-Based Approvers.
+Note: When a workflow is in an “in approval” state, which happens after submit, approvers can only be added or reassigned, but not removed. Before the workflow is submitted for approval, approvers can be removed or added, but not reassigned.
+Edit Related Tab: When you select this checkbox, users - or your specified groups - will be able to add or remove records on the record’s Relationships table.
+
+Complete the Read-Only Behavior Section
+This section allows you to set specific fields on the workflow’s Details tab as Read Only, which will override normal editing capabilities for those fields.
+Configure the following field, if applicable.
+Read Only Fields: Enter a comma-separated list of fields on the Details tab that you want to set as Read Only. Use the field’s API names, such as: Title__c, Description__c, Severity__c.
+
+Complete the Delete Behavior Section
+This section determines if the workflow can be deleted while in this Phase and, if so, who can delete it.
+Configure the following fields as applicable.
+Delete Allow Groups: If you leave this field blank, any users that have permissions to delete a Change, Quality, or Declaration record will be able to do so - as long as the Delete Object checkbox below is selected. However, you can restrict that using Public Groups, which will restrict deletion to just the groups you specify. Enter in a comma-separated list of groups using the groups’ API names, such as: Change_Analyst_Group, Regualtory_Review_Group. Again, you can enter the keyword “owner” to let the owner of the record delete it.
+Delete Object: Select this checkbox if the specified users are allowed to delete the Change, Quality, or Declaration record while it is in this Phase.
+
+Save the Lifecycle Phase
+Once you have completed all of your configurations for the Phase, click Save.
+If you want to create another new Lifecycle Phase, click Save & New instead.
+Recommended Next Steps
+Once you’ve configured your Lifecycle Phases, you’ll need to set up your Lifecycle Phase Transitions.
+Configure a Lifecycle Phase Transition
+See Also
+Configure an Item Phase
+Lifecycles Overview
+Categories Overview
+Lifecycle Phases
+ 

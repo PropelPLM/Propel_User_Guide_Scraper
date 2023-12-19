@@ -1,0 +1,42 @@
+Add Custom Fields to the Item Object
+Propel’s flexibility makes it easy to add custom fields to different objects to suit your business’ needs. In most cases, adding a custom field is fairly straightforward. However, with Items it’s a little more complex. Items in Propel are actually constructed with two objects:
+Item
+Item Revision
+When users select an Item record, they see one integrated Item. However, the fields they see are actually part of two different objects. This article shows how to create a custom field for an Item/Item Revision. 
+The Item object contains fields that don’t change from revision to revision, such as Item Number and Category. These fields are global to all categories and cannot be made category-specific.
+The Item Revision object is where you typically add custom fields. Even if the field will stay the same from revision to revision its best to add the field to the Item Revision object and not the Item object as you have flexibility to position the field anywhere on the page and you can make it category-specific. And because of the integration between the two objects, users will always see them when they view an Item record.
+WARNING: Do not create a custom field who's API name matches a Propel packaged field (e.g. a custom field named "Notes__c" will match with the Propel packaged field named "PDLM__Notes__c".) This naming duplication can cause a variety of features to fail including: exports, filters, and searches. If you think you want to make a similarly named field, we recommend adding "_custom" to the end of your custom field API name.
+Create the Field on the Item Revision object
+Go to Setup > Object Manager > Item Revision.
+Select Fields & Relationships and click New.
+Select the Data Type for your new field, such as Text, Picklist, Date, etc.. Click Next.
+Enter your unique Field Label The Field Name will auto-populate when you move to another field.
+Complete any other Fields according to the Data Type that you selected.
+Note: DO NOT select Required, even if the field is required.
+Click Next and set the Profiles who will have access to the field.
+Click Next again and ensure that the page layout Item_Rev Layout is selected.
+Click Save.
+Position the Custom Field in the Page Layout
+Still on the Item Revision object, select Page Layouts.
+Select Item_Rev Layout. The Page Layout Editor appears.
+When you added your custom field to the field set in the previous step, it automatically placed it on the layout. Usually, it gets placed at the bottom of the Information section.
+To move the field to a different location, simply drag and drop it. You can move it to a different spot in the Information section, or a different section altogether. Remember, if you need to add a new section to the layout, drag the Section bar from the top of the page to where you want the new section located. Then you can move your custom field there.
+Once you’re done modifying the layout, click Save.
+Add the Custom Field to Permission Sets
+Although you added the field to the page layout, users still can’t see or use the new custom field (you can see it because you are an administrator). To make the field visible to the users that need to see it, you need to add it to the applicable permission sets. 
+We recommend that you add them to at least the Propel Full Use - Custom Fields and Propel Everyone (Read Only) - Custom Fields permission sets. However, you may have different or additional permission sets where you need these to be added.
+To add the fields to the applicable permission sets, go to the Add a Custom Field to a Permission Set article.
+Add the Custom Field the Item Details Page
+Once you’ve created the custom field, you need to configure it to appear on the Item Details page on an Item record. There are two ways to do this:
+Add the custom field to a specific Category (or multiple categories). This gives you the most amount of flexibility in ensuring your custom fields appear on applicable records and is the recommended method.
+Go to the Configure a Category article for steps.
+Add the custom field directly on the Item Details Page field set. This method lets you add the field on every Item record, regardless of its category. You would only use this method if you have global information that you want to display or gather on ALL Item records.
+Go to the Display Custom Fields on the Item Details Tab article for steps.
+Refresh page layouts for Propel objects
+The final step in the process is to refresh the page layouts for Propel objects to ensure the custom fields will now display for the applicable users.
+Select the Propel Setup tab from the navigation bar.
+Under User Settings in the Cached Data section, click Refresh Page Layouts.
+See Also
+Add a Custom Field to a Permission Set
+Display Custom Fields on the Item Details Tab
+Configure a Category

@@ -1,0 +1,31 @@
+Autonumbers Overview
+This article provides an overview of Propel Autonumbers. If you have a solid understanding of Autonumbers and want to dive right into setup, go to our Configure an Autonumber article.
+Propel’s Autonumbers feature lets you specify how a numbering sequence for a Change, Quality or Item record will be formatted. Once an Autonumber is set up and associated with a Category, when the end users create a workflow or item with that Category, Propel will automatically generate a sequential number in the specified format.
+For example, let’s say your Engineering Change Requests use a format of “ECR”, followed by a dash, followed by 5 digits, and the last number used prior to implementing Propel was “17923”. Once your Autonumber is set up, the first ECR created will be ECR-17924, the next will be ECR-17925, then ECR-17926, and so on. It doesn’t matter which user created the Engineering Change Request - the number automatically generates based on when the change record was created in the system.
+This article covers how Autonumbers work for Change, Quality, and Item records, as well as how they get generated.
+Note: Declaration records do not support Propel’s Autonumber feature. Instead, Declarations use a Salesforce auto-number field to name the records. This will still generate a sequential number with a “Dec-” prefix. You can view the Salesforce auto-number configuration on the Declaration object in the field labeled Declaration Number.  
+Autonumber Components
+When you Configure a Category, you’ll be asked to use either an existing Autonumber, create a new one, or to skip Autonumbering all together. If you choose to skip Autonumbering, then the user will have to manually enter the record number. If you choose to create a new one, you will have to create a new Autonumber while you’re creating the Category. If you choose to use an existing Autonumber, then you’ll choose from the Autonumbers that have already been created and may be in use by other Categories. However, there are no restrictions around choosing an Autonumber that is being used by another Category, which means that multiple Categories can share an Autonumber. 
+Autonumbers consist of the following components:
+Prefixes and/or Suffixes: As expected, prefixes display at the beginning of the number while suffixes are appended to the end. These values remain static with each generated Autonumber and are optional.
+Length: The number of digits that are displayed in the generated Autonumber. For example, in ECO-79011 there are 5 digits. The recommended best practice is to use 5 or 6 digits to ensure enough space for large numbers of records.
+Next Number: The first number that will be generated when this Autonumber is used. So if you have a 5 digit Autonumber and you specify it to start at “12”, the first number generated will be “00012”.
+Use the Same Autonumber for Multiple Categories
+You can associate the same Autonumber to multiple Categories, which means Change, Quality, or Item records created in any of those Categories will increment that single Autonumber sequence.
+Let’s look at an example:
+Say you wanted both your ECO and ECR changes to share a more generic Change Order (CO) Autonumber sequence.
+The first step is to set up your Autonumber with a CO- prefix with 5 digits and a next number starting at “1”.
+When you set up your two Categories, you would associate both to the Change Order Autonumber.
+The numbering sequence would then go as follows:
+An ECO is created: CO-00001
+An ECR is then created: CO-00002
+Another ECR is created: CO-00003
+Another ECO is created: CO-00004
+So each time either an ECO or an ECR is created, the Change Order Autonumber increments by one.
+How Autonumbers get Generated on a Record
+When an Autonumber is generated, it gets published on the record’s Name field, which has been renamed to Change Number, Quality Number, and Item Number in the respective objects. (As mentioned, Declarations do not use Propel Autonumbering; however, the Salesforce auto-number is also populated to the Name field, which has been renamed to Declaration Number.)  This is displayed in the List View for each record type as well as on the record itself, as in the image below, and differs from the Title that the user enters (which is not required). Often, the record is referred to by its generated Autonumber rather than the title.
+  Recommended Next Steps
+If you are looking to add or update an Autonumber, go to the article below. You can either create your Autonumbers prior to setting up Categories, or create the applicable Autonumbers as you create the Categories. The article below covers both methods.
+Configure an Autonumber
+See Also
+Categories Overview

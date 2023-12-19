@@ -1,0 +1,43 @@
+Manage Declaration Record Affected Items
+For an organization to be compliant with a Specification, all of the Items that have been associated to the Specification must be designated as compliant (or exempt or not applicable). To officially declare an Item as compliant, it must have been added to a Declaration record that has then been approved and completed.
+Records listed on the Affected Items tab of a Declaration are the Items that have been added to the Declaration to set their adherence to a Specification. Propel makes it easy to add and remove Affected Items. 
+This article covers the following tasks:
+Adding an Affected Item
+Declaring the Compliance Status of an Affected Item
+Removing an Affected Item
+It’s important to note that the changes you make do not affect the actual Item records. For example, if you remove an Item from the Affected Items tab, it remains in the system and does not get deleted. Similarly, when you Add an Affected Item to a Declaration, you are not creating a new Item, you are simply associating an Item that already exists in the system.
+Add an Affected Item
+Select the Declarations tab from the navigation bar and click the Name of the Declaration you want to modify to open the record.
+Click Edit to put the Declaration record into edit mode. You will not be able to make any changes unless you select this first.
+Select the Affected Items tab and click Add.
+Select the Specification that the Declaration record is for and click Next.
+Propel gives you the option of adding Items or Manufacturer Parts. Select the tab for the type of Item you want to add.
+The lower portion of the screen provides a list of Items that you’ve recently worked on or viewed. If the Item you want to add is listed here, you can select one or more Items to add using the checkboxes to the left of the Item Numbers. Only the Items associated with the Specification will appear in the list.
+
+Note: You can’t add Items that are in another Declaration for the same Specification. The checkbox will not be enabled for these Items and the system will present a message letting you know the reason you can’t select the record.
+If your Item is not in the Recent Items list, you can search for it by clicking in the Search items by visible fields field and entering your search terms. Again, you can select one or more Items using the checkboxes.
+
+Note: If you select an Item and then enter a new search term, even though the search results get replaced, the Item you previously selected stays selected. You can see the total number of Items that you have selected on the Add Items button. For example, if you have selected 2 Items, the button text will read Add 2 Items. And if you selected 5 Items, it will read Add 5 Items.
+Once you’ve selected all of the Items you want to add, click Add Items.
+When you return to the Declaration record, the new Items are added and saved automatically. The only time you will have to click the Save button on the tab is when you make inline edits to the Item, such as changing its Compliance Status.
+Declare an Affected Item’s Compliance Status
+Once an Affected Item has been added to a Declaration record, you will need to complete it’s Declared Status so that the system can determine whether it is compliant. You can update the Declared Status any time up until the Declaration Record is Approved.  
+Select the Declarations tab from the navigation bar and click the Name of the Declaration you want to modify to open the record.
+Click Edit to put the Declaration record into edit mode. You will not be able to make any changes unless you select this first.
+Select the Affected Items tab.
+For the Item you want to update, click the dropdown icon in the Declared Status field.
+Select the appropriate Status.
+If you chose “Exempt” as the Declared Status, you will need to choose the applicable Exemption, otherwise you will not be able to save your changes. Double-click in the Exemption field to display the list of available, active exemptions and select the appropriate one. 
+Once you’re done updating the Declared Statuses for the Affected Items, click Save.
+
+Note: The system will not let you save if you have not specified an Exemption for an Exempt Item.
+Once you’re done making changes to your Declaration, click Done Editing.
+Remove an Affected Item
+Note: Removing an Affected Item only removes it from the Declaration record; it does not remove it from the system.
+Click Edit to put the Declaration record into edit mode. You will not be able to make any changes unless you select this first.
+Select the Affected Items tab.
+Use the checkboxes to the left of the Affected Items to select one or more Items to delete. Then click Delete.
+The Affected Item is removed from the Declaration.
+See Also
+Declarations Overview
+Configure Filters on the Declaration Affected Items Tab

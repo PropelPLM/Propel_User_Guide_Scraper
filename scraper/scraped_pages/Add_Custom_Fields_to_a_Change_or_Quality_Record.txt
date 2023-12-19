@@ -1,0 +1,35 @@
+Add Custom Fields to a Change or Quality Record
+This article walks through the steps of adding a custom field to a Change or Quality object and then ensuring that it displays on the necessary records. You can also make the fields Category specific to further customize the information that your users see and work with.
+For more detailed information on custom fields, go to Salesforce’s Custom Fields documentation.
+WARNING: Do not create a custom field who's API name matches a Propel packaged field (e.g. a custom field named "Notes__c" will match with the Propel packaged field named "PDLM__Notes__c".) This naming duplication can cause a variety of features to fail including: exports, filters, and searches. If you think you want to make a similarly named field, we recommend adding "_custom" to the end of your custom field API name.
+Create the Custom Field on the Change or Quality Object
+Go to Setup > Object Manager and select either the Change or Quality object, depending on where you want to add your custom field.
+Select Fields & Relationships and click New.
+Select a Data Type for the field, such as Text, Picklist, Formula, etc. Click Next.
+
+Note: For detailed information on Data Types, go to Salesforce’s Custom Field Types article.
+The specific properties you configure for the field will depend on the Data Type you selected. However, all fields will require a Field Label and Field Name. The Field Name is generally auto-populated and often referred to as the API Name. Do not create an API Name that duplicates a Propel packaged field Name.
+Note: We strongly recommend that you DO NOT select the Required checkbox for a custom field. Instead, this should be set on the required Lifecycle Phase. Go to our Configure a Change, Quality, or Declaration Phase article for more information. 
+Once you’ve configured the properties for your field, click Next.
+Leave the default values on the next screen and click Next to add the field as visible on the standard permission sets.
+Again, leave the default values to add the field to the applicable Page Layout - either the Change Order or Quality Page Layout. Click Save.
+Position the Custom Field in the Page Layouts
+When you added the custom field in the previous step you added it to the corresponding page layout. However, you will probably want to change the position of the field on the page, rather than leaving the default position. You can also go to our Customize a Page Layout article for more detailed instructions.
+Still in the Change or Quality object, select Page Layout.
+Select the name of the Page Layout.
+In the bottom section of the page, locate the custom field that you just created. Click and drag it to the required location. Or, drag it up into the Available Fields section at the top to remove it from the Page Layout.
+Click Save. 
+Add the Custom Field to Permission Sets
+If you haven’t already done so, you will need to add any custom fields you created to applicable Permission Sets so that your users can view them. Go to our Add a Custom Field to a Permission Set article for detailed instructions.
+Add the Custom Field to One or More Categories
+Propel allows you to make custom fields Category-specific. This means that when a user starts a new Change or Quality record, they will only see the custom fields associated with that category, providing a much better user experience.
+For instructions on adding custom fields to a category, go to our Configure a Category article. For Change and Quality records you can add them through either the Propel Setup or Categories tab. However, for Declarations, you need to add custom fields through the Categories tab.
+Refresh Page Layouts
+Once you’ve updated any field sets or page layouts, you need to refresh the page layouts so that the changes can be viewed by the users.
+Select Propel Setup from the navigation bar.
+Under User Settings click Refresh Page Layouts.
+See Also
+Configure a Change, Quality, or Declaration Phase
+Customize a Page Layout
+Add a Custom Field to a Permission Set
+Configure a Category

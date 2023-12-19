@@ -1,0 +1,187 @@
+Configure PDF Generation from a Word Template
+Propel gives you the ability to generate formatted PDF documents from the data contained on Change, Quality, Item, and Training Plan records. These PDF documents can then be shared with people that do not have access to Propel.
+For example, in the event of a regulatory audit, it’s not necessarily feasible to provide auditors access to the system and all of its data. However, using the PDF generation feature, you can provide soft copies (or printed copies) of requested records that display the required data. This means that you only share the information you want to share.
+Setting this up does require a PDF Generation subscription through Salesforce. You will also need a Microsoft Office license as it uses Microsoft Word DOCX files as templates to determine what data will be included and to properly format your data.
+Setting this feature up is a multi-step process for Propel Administrators and we recommend walking through the steps below in the order provided. Depending on your org and configuration, some of the steps below might already be complete. If you are unsure of what might already be configured, we recommend walking through the steps to ensure that the configuration matches. 
+Note: When you refresh a sandbox, the templates will not be referenced correctly on the new sandbox. Please contact Propel Support to assist you in copying your Production template files over to the new sandbox org.
+Enable Documents Administration
+This section will make the Documents section visible in the Admin Setting on the Propel Setup tab.
+Go to Setup > Custom Code > Custom Settings. 
+Click Manage beside the Configuration setting.
+Click New and enter the following:
+Name: DocumentMerge
+Value: true
+Click Save.
+Add Remote Sites
+This will enable communication with Heroku and Aspose for creating the PDFs.
+Go to Settings > Security > Remote Site Settings and click New Remote Site.
+Enter the following for the Heroku site:
+Remote Site Name: Heroku
+Remote Site Url: https://propel-document-prod.herokuapp.com
+Click Save & New.
+Enter the following for the Aspose site:
+Remote Site Name: Aspose
+Remote Site Url: https://api.aspose.com
+Click Save.
+Create Cloud File Storage Custom Setting
+This step will need to be performed by a user who has access to the PDLM.CloudFileStorage VisualForce page (i.e. a System Administrator.) If you'd like to manage this setting via permission sets, you can create a custom permission set labeled "Propel Cloud File Storage Access" and only provide this VisualForce page permission. This is only available for Spring '22 -- for prior releases skip to next step.
+User must be in Salesforce Lightning and have access to the PDLM.CloudFileStorage VisualForce Page
+Navigate to a modifiable page layout (e.g. an App Home Page)
+Click the gear icon in the top-right corner, then Edit Page
+On the left-hand panel, find the VisualForce standard component and drag it into the bottom of the page layout 
+On the right-hand side select "Cloud File Storage" for the Visualforce Page Name
+Click 'Save'
+TIP: Set up a filter to only show this component to specific users, like System Administrators
+Navigate back to the page using the back arrow in the top-left corner
+Find the new Cloud File Storage component and click Create
+Enter in the following values
+Name = AsposeApp
+** Important as the name for the Cloud File Storage custom setting will be used directly in the integration
+Client ID: 4c6d1b09-03c6-470c-a158-f90153b8e2db
+Client Secret: 1e7f622a0b8a2db5ac581812d84baa7f
+Click Save
+Now that the private Cloud File Storage setting has been created, you can remove the VisualForce page component from the page layout by going back to the Edit Page and clicking the trashcan icon on the component
+
+Upload Sample Microsoft Word Templates
+Note: The sample template files for you to use are at the bottom of this article.
+Select the Propel Setup tab from the navigation bar and select Admin Settings.
+Click Documents in the left panel.
+In the Templates section, click Upload Templates.
+Select the MS Word template files that you downloaded.
+Configure Buttons for Testing
+As noted earlier, you can add the PDF Generation feature to the following Propel Objects:  Changes, Quality, Items, and Training Plans. During your PDF generation setup, we recommend setting up two buttons for testing on each of the objects that you plan on using the PDF Generation feature.
+The first button - Test PDF - will not generate a PDF; rather, it will show you all of the data that is available to include in the template. This will help you to understand the data layout for walking through nested data. For this, the action on the button will be “ImplementTest=true”. See the examples later in this section.
+The second button - Generate PDF - will actually generate the PDF; you will end up keeping this button after testing is complete. The action on this button will be “ImplementTest=false”.
+ Having both buttons lets you complete the setup iteratively: 
+View the available data (with the Test PDF button).
+Update your Word template accordingly.
+Re-upload the revised Word template.
+Generate the new PDF.
+Evaluate your output and make changes as necessary, going back to step 1.
+Once you’ve completed your testing, you can delete the Test PDF button, leaving only the Generate PDF button for the users.
+Create the Generate PDF Button
+Go to Setup > Object Manager and select the object on which you want to add the PDF Generation feature: Changes, Quality, Items, or Training Plans.
+Click the Buttons, Links, & Actions option from the left panel and then click New Button or Link.
+Enter the following information:
+Label: Generate PDF
+Display Type: Detail Page Button
+Behavior: Display in new window
+Content Source: URL
+For the Action, the code will depend on the object you’re in, as it references the correct object, accesses the name of the appropriate template, and sets the outputted file name. Copy the appropriate Action into your button:
+For Quality: /apex/PDLM__TemplatePdfQuality?Id={!PDLM__Quality__c.Id}&TemplateName=Propel Quality Template.docx&OutputName=Quality_{!PDLM__Quality__c.Name}.pdf&ImplementTest=false
+For Changes: /apex/PDLM__TemplatePdfChange?Id={!PDLM__Change__c.Id}&TemplateName=Propel Change Template.docx&OutputName=Change_{!PDLM__Change__c.Name}.pdf&ImplementTest=false
+For Items (add to Item object): /apex/PDLM__TemplatePdfItem?Id={!PDLM__Item__c.Id}&ItemRevId={!PDLM__Item__c.PDLM__Latest_RevisionId__c}&TemplateName=Propel Item Template.docx&OutputName=Item_{!PDLM__Item__c.Name}.pdf&ImplementTest=false
+For Training Plan: /apex/PDLM__TemplatePdfTrainingPlan?Id={!PDLM__Training_Plan__c.Id}&TemplateName=Propel Training Template.docx&OutputName=TrainingPlan_{!PDLM__Training_Plan__c.Name}.pdf&ImplementTest=false
+Click Save.
+NOTE: If you want to review the data that will be sent over the wire, change the "false" at the end to "true" (so, "ImplementTest=true"). Make sure to change back to false for production use.
+Customize the Buttons for Categories
+You can use different templates for different categories without adding different buttons for each category. Below is an example of how to configure the Button Action code for Quality and the Categories of “CAPA” and “SCAR”:
+{!CASE(PDLM__Quality__c.PDLM__Category__c
+
+,'CAPA'
+
+,URLFOR('/apex/PDLM__TemplatePdfQuality', null, [id=PDLM__Quality__c.Id, TemplateName='CAPA.docx', OutputName='CAPA.pdf'])
+
+,'SCAR'
+
+,URLFOR('/apex/PDLM__TemplatePdfQuality', null, [id=PDLM__Quality__c.Id, TemplateName='SCAR.docx', OutputName='SCAR.pdf'])
+
+,URLFOR('/apex/PDLM__TemplatePdfQuality', null, [id=PDLM__Quality__c.Id, TemplateName='Quality Template.docx', OutputName='Generic Quality.pdf'])
+
+)
+
+}
+  Add the Buttons To the Page Layout
+Before the buttons will appear on the appropriate record, you need to add them to the object’s Page Layout.
+Still in the object where you created the buttons, click Page Layouts from the left panel and select the available layout.
+Select Buttons from the left side to display the available buttons.
+Drag the Generate PDF and Test PDF buttons down to the Custom Buttons section in the Training Detail area.
+
+Note: You can also go to the Mobile & Lightning Actions and drag the buttons onto the Salesforce Mobile & Lightning Experience Actions section.
+Click Save.
+Customize the Microsoft Word Template
+In this section you’ll be working with the available data and reformatting the template provided so that the PDF shows the data that you want and in the way you want it displayed. As mentioned, this can be an iterative process where you examine the available data, make changes to the template, and then see how those changes impact the final output.
+For this exercise, you can use any existing record on the object where you previously set up the buttons.
+Open a record of the object type you created the test button for and click Test PDF.
+Propel opens a new browser window. Wait on that page until the system displays all of the possible data that can be included in the PDF. This can take several minutes, depending on the object.
+Use the output from the test button to see how the available data is structured.
+Leverage the logic and syntax from the sample templates to format your own custom template, using the template provided as a starting point.
+Re-upload the updated template. Go to Propel Setup > Admin Settings > Documents.
+Click Generate PDF to see the output.
+Repeat the above steps until you’re comfortable with the final output.
+Nested Related Lists
+When you have nested related lists and want for your PDF to include data from deeper related lists, the system adds a level number to the related list that needs to be referenced in the template.
+For example, if you have a Quality record with a list of related Quality records, each of those related Quality records can have its own list of related Quality records.
+{{#foreach RelatedLists}}{{#foreach  Quality__c.quality__c}}
+
+{{Name}}
+
+{{Id}}
+
+{{#foreach RelatedLists1}}{{#foreach Quality__c.quality__c1}}
+
+{{name}}
+
+{{id}}
+
+{{#foreach RelatedLists2}}{{#foreach Quality__c.quality__c2}}
+
+{{Id}}
+
+{{Name}}
+
+{{/foreach Quality__c.quality__c2}}
+
+{{/foreach RelatedLists2}}
+
+{{/foreach Quality__c.quality__c1}}{{/foreach RelatedLists1}}
+
+{{/foreach  Quality__c.quality__c}}{{/foreach RelatedLists}}
+Limitations for Item Revisions
+The following are known limitations for Item and Item Revisions: 
+BOM only includes the first level children.
+Some fields (% Allocation, Include in Cost Rollup, the cost fields etc.) only show their Database value, not the value on the user interface.
+Part Cost records do not get displayed
+No Related Tables
+No Where Used data
+Remove the Test PDF Button
+Once you’re happy with the generated PDF, you can remove the Test PDF button from the Page Layout. You don’t want to delete it all together as you may want to update your PDF in the future.
+Go to Setup > Object Manager and select the object on which you added the buttons.
+Click on Page Layouts on the left panel and then click the Name of the page layout to open it.
+Drag the Test PDF button back to the top area to remove it.
+Click Save.
+Additional Configuration for Training Plans
+The following steps are only required if you added the PDF Generation feature to the Training Plan object.
+In addition to setting up the button and adding it to the layout, you need to enable Feed Tracking. 
+Go to Setup > Chatter > Feet Tracking.
+Select Training Plan from the list of objects.
+Select Enable Feed Tracking and click Save.
+Additionally, because the PDF is attached to Chatter, you need for Chatter to be visible on the page to download the PDF.
+Go to Setup > Object Manager and select Training Plan.
+Click Lightning record Pages from the left panel and then click Training Plan Record Page.
+Click Edit.
+Drag the Chatter component from the list of components on the left panel, onto the center panel.
+Click Save.
+Example Templates
+Item Template
+Change Template
+Quality Template
+Training Plan Template
+  Common Errors and Troubleshooting
+Template cannot be found
+Sometimes caused by the Mac file-type conversion for DOCX files, sometimes the instance is a sandbox so the template doesn’t carry over, sometimes caused by the Aspose system not being able to find the file
+Recommended you retain a known instance of the DOCX file (we recommend releasing a Document Item in Propel that houses your template as an Attachment)
+Notes & Attachments error
+Remove Notes & Attachments related list from the various objects being called in the wire (e.g. Assembly, Manufacturer Item)
+Related list table not coming through
+Review the object’s Page Layout – ensure the table is present
+Review the Related tab on Propel Setup (Propel Setup > Admin Settings > [e.g. Item] > Category) – the list you want should be placed on an Related tab in the left-hand panel. The query has some older relationships based on the React UX.
+Related list table only displaying a single record
+Ensure the syntax uses absolutely correct "camel-casing" (upper-cases where needed, and lower-cases where needed)
+Item Revision info (and related tables) not appearing for Item
+In Propel version 8.1.1 and beyond, you have to include the ItemRev ID in the URL. The URL provided above in this article includes the Item Revision Id line.
+See Also
+Items Overview
+Changes Overview
+Quality Records Overview
+Training Records Overview

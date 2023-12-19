@@ -1,0 +1,12 @@
+Configure a Public Group
+Groups are sets of users that share a particular role. Having users in a group allows you to set sharing rules for the group and can be used for Approval groups, Email notification groups, and other functions.
+This article covers creating and configuring a new public group. If you have an existing group that you want to assign or remove users from, go to our Assign a User to a Public Group article. 
+Go to Setup > Administration > Users > Public Groups.
+Click New. 
+Add a Label to name the new group; the Group Name field will auto-populate.
+NOTE: Do not use semi-colons (";") in public group names to avoid parsing issues. 
+In the Search field, select Users to see a list of users that can be added to that group. You can also add other complete Groups into the Public Group.
+Select the users you want to add from the Available Members section of the multi picklist. Click Add move them to the Selected Members section.
+5. Click Save once complete.
+See Also
+Assign a User to a Public Group

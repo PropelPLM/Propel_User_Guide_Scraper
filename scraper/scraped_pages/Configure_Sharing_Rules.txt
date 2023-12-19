@@ -1,0 +1,27 @@
+Configure Sharing Rules
+Sharing rules help customize security. They can authorize object access to specific public groups and/or roles, based on record ownership or field criteria.
+For more information, go to the Salesforce Sharing Rules article.
+Configure Organization-Wide Defaults
+Go to Setup > Security > Sharing Settings.
+In the Manage Sharing Settings for field, select the object you want to configure.
+Click Edit in the Organization-Wide Defaults section.
+For each object, you can set the Default Internal Access and Default External Access levels.
+For maximum security, set the access levels to Private. Only the record owner and users above that role in the hierarchy will be able to view, edit, and report on those records.
+For limited restrictions, set the  access levels to Public Read Only. All users can view and report on records but not edit them. Only the owner, and users above that role in the hierarchy, can edit those records.
+Click Save.
+Note: Editing Organization-Wide settings will initiate a change operation, restricting you from creating sharing rules until the operation has been completed. You will receive an email update when it has finished.
+Configure Sharing Rules
+Still Sharing Settings for the object you want to configure, click New In the Sharing Rules section.
+
+Note: The title of the sharing rules will change based on which object you have selected. In the above example, we’ve selected the Quality object, so the title reads “Quality Sharing Rules”.
+Enter a Label to give your rule a unique name. The Rule Name field (API name) will auto-populate.
+It’s also recommended that you give your rule a good Description so that others can understand the intent of the rule.
+The next step is to set the Rule Type, which determines if the rule is Based on Record Owner or Based on Criteria.
+If you select Based on Record Owner, you will select either the Group or Role that specify the records to be shared and the users to share with. In the example below, only Quality records owned by the members of the QA Group will be shared, and only the QA Group will get access to those records.
+ If you select Based on Criteria, then you enter the criteria that will determine what records will be shared, and then the users to share it with. In the example below, only Quality records that have been approved will be shared, and only the QA Group will get access to those records.
+Select the Access Level for the users, either Read Only or Read/Write.
+Click Save.
+A message stating that the recalculation of sharing access will continue in the background should appear. Click OK.
+If you don’t see the message, you can click Recalculate in the Sharing Rules section to manually recalculate your org.
+See Also
+Salesforce Sharing Rules

@@ -1,0 +1,31 @@
+Manage Item and Category Specifications
+Item Specifications and Category Specifications let you determine which Items need to comply with a Specification. Item Specifications let you pick and choose Items individually, while Category Specifications allow you to add entire Categories of items. To achieve compliance, all of the Items in the Items Specification and/or all (or at least most) of the Items in the Category Specification must be compliant. To be compliant, the Item must have a “Compliant” status on a Declaration that has been approved and completed.
+You can add just Items, just Categories, or use a combination of the two. How you specify the Items in your Specification will depend on your business processes and how you have your Items and Categories configured. One advantage of using Categories as that future Items of this Category will also be added to the Specification, without you having to manually add the new Item.
+This article walks you through adding and removing both Item Specifications and Category specification. For more information on Item Categories, go to our Categories Overview article.
+Manage Item Specifications
+The instructions below assume that you have already created a Specification.
+Add an Item Specification
+Select the Specifications tab from the navigation bar and click the Name of the Specification you want to modify.
+Select the Items tab from within the Specification. Then click New.
+Click in the Item field to search for and select the Item that you want to add.
+Click Save & New to add another Item, or click Save to return to the Specification. Your Item will be listed under the Item Specifications.
+Remove an Item Specification
+Select the Specifications tab from the navigation bar and click the Name of the Specification you want to modify.
+Select the Items tab from within the Specification.
+Click the dropdown icon for the Item and select Delete.
+Click Delete on the confirmation message that appears.
+Manage Category Specifications
+When you add a Category, Propel associates all of the Items within that particular Category with the Specification, meaning that all of the Items in that Category (or at least most, as some Items may not be applicable) must be compliant with that specification.
+Add a Category Specification
+Select the Specifications tab from the navigation bar and click the Name of the Specification you want to modify.
+Select the Categories tab from within the Specification. Then click New.
+Click in the Category field to search for and select the 
+If you want Propel to automatically copy the Compliance Status to a new Item draft version when a new Item Revision is created, select the Create on Draft checkbox.
+ Click Save & New to add another Category, or click Save to return to the Specification. Your Category will be listed under the Category Specifications.
+Remove a Category Specification
+Select the Specifications tab from the navigation bar and click the Name of the Specification you want to modify.
+Select the Categories tab from within the Specification.
+Click the dropdown icon for the Category and select Delete.
+Click Delete on the confirmation message that appears.
+  See Also
+Create or Clone a Specification Record

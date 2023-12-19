@@ -1,0 +1,13 @@
+Override Field Labels for Propel Packaged Fields
+Propel delivers a number of packaged objects with fields. The field labels are not editable for packaged fields. You can relabel a packaged field label with the Translation Workbench Override.
+For example, in our Manufacturer Part object, we use a Distributor field that is a lookup to a Manufacturer (or Account). Sometimes customers want to change the label to Partner or Contract Manufacturer. 
+Go to Setup > User Interface > Translation Workbench > Override
+Package = Propel PLM
+Language = English (or whatever language you want to override)
+Setup Component, can be any, but for field labels, select Custom Field
+Object, select the desired object, in this example, Manufacturer Part
+Aspect = Field Label
+Locate the field label that you want to update and double-click into the Field Label Override cell for that label. 
+Enter the new desired label
+Click Save.
+     

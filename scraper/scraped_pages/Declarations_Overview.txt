@@ -1,0 +1,50 @@
+Declarations Overview
+In Propel, Declarations are where you declare the compliance status of an Item or group of Items. The Declaration is controlled through a change workflow to ensure that the statuses are properly reviewed and approved.
+Items and Manufacturer Parts are added into a Declaration through the Affected Items tab, which is also where the status declaration is set. Once a Declaration is prepared with the necessary information, Items, Manufacturer Parts, and Attachments, it goes through an Approval process to ensure compliance. Until the Approval process is complete, the set compliance statuses of the Items and Manufacturer Parts in the Declaration are considered “pending”; when the Approval is complete, the statuses are “Activated” and will count towards Specification compliance.
+Below is a typical Declaration record:
+Note: Depending on your org and Propel setup, your Declaration record may look slightly different. The image depicted above is typical, but different organizations have different configurations depending on their unique needs.
+Declaration Record Number: This is an auto-generated number. Declarations will always have the “DEC-” prefix followed by 4 digits, such as “DEC-0178”.
+Declaration Record Title: This is manually entered on the Description field when the Declaration is created. 
+Action Buttons: Shows the available actions on this record. Click Edit to make changes to the record. Click the dropdown icon to see additional action options.
+Status: Shows the current Lifecycle Phases the Declaration record is in for its Workflow. The workflow can be customized to meet an organization’s business needs.
+Record Header Fields: Fields specific to the Category that have been configured to display on the header of the record. These can be configured when the Declaration record’s Category is set up.
+Workflow: This bar displays all of the Lifecycle Phases possible for this Declaration record, depicted in a linear flow. Green indicates the Phases that have been completed, Light Blue indicates the current Phase, and Gray indicates Phases that haven’t been completed. When you hover over the bar, Phases that you can move the record to will display in Dark Blue, which you can then click on to transition the record to that Phase.
+Left Panel Tabs: The tabs that are displayed here include:
+Details: Main page for the Declaration record. Fields displayed here may appear on all Declaration records, or they may appear based on the Declaration’s Category, depending on how the org is configured.
+Affected Items: Items that have been added to the Declaration record. The number in brackets indicates the number of Affected Items on the record.
+Approvers: This tab lets you add or modify approvers prior to an Approval phase. Once an approval has been completed, you can see the approval history details. The number in brackets indicates the total number of Approvers on all approval phases on the record.
+Attachments: Shows the files that have been attached to this Declaration record, such as specifications or instructions. You can also switch views in this tab to view Affected Item attachments. Again, the number in brackets indicates how many Attachments there are.
+Right Panel Tabs: The tabs that are displayed here include:
+Chatter: Posts that have been made on this Declaration. You can also add new posts from this tab.
+Activities: These are tasks and activities that you may want to track for the Declaration. These are also related to Propel's Projects feature.
+History: Displays an ongoing list of actions that have been taken on this Declaration.
+Followers: Shows the users Following this Declaration record. They will get notified when Posts are made or Actions are taken, such as when the record moves into a new Phase.
+Configure Declaration Records
+Setting up Declaration records includes configuring multiple components, such as Categories, Lifecycles, and Lifecycle Phases (for your Workflow). The setup of these and other components determine what information and tabs will be available on a Declaration record and the specific behaviors of a Declaration record as it goes through its Workflow.
+The Propel System Overview article outlines Declaration records (along with Change and Quality records) from a configuration perspective with links to relevant configuration articles. This is intended for Propel Administrators. Other key articles include:
+Lifecycles Overview
+Categories Overview
+Propel Setup
+Declaration Workflow
+A major component of a Declaration record involves working through its Workflow - transitioning the record to the different allowable Lifecycle Phases. While moving a record to a different Phase can happen with a single click, it’s important to understand the rules and constraints around those changes.
+Transition a Declaration Record to a Different Lifecycle Phase (Workflow)
+Declaration Record Details
+The main Declaration record page provides information that may have been filled out when the Declaration record was created and/or may need to be modified at different Phases. Propel Administrators can customize the fields that are displayed on different types of Declaration records.
+Create or Edit a Declaration Record
+Affected Items
+Affected Items can be added to or removed from Declaration records. You can also use filters to easily find individual Items and then view the Item record details.
+Manage Declaration Record Affected Items
+Configure Filters on the Declaration Affected Items Tab
+Associate an Item to a New or Existing Declaration
+Approvers
+Approvals are an integral part of a Declaration workflow that determines whether a record can proceed in a workflow or it needs to go back a step for revisions. Approvers must be specified before a Declaration goes into an Approval Phase and then the approvers will use the Declaration record to approve or reject the Phase. Using the flexibility of public groups, you can easily assign approvers to a Declaration and automatically notify those approvers when they need to review it.
+Add or Remove Approvers on a Declaration Record
+Approve, Reject, or Reassign a Declaration Record
+Attachments
+You can attach any electronic file to a Declaration record. Often, these are supporting documents that provide more information on a Declaration or the Specification.
+Manage Declaration Record Attachments (Add/Remove)
+Download Declaration Record Attachments
+See Also
+Propel System Overview
+Items Overview
+Specifications Overview

@@ -1,0 +1,19 @@
+Locked Costs
+If your supplier splits are consistent across all BOMs, you can lock the costs to always use the splits defined on the item's manufacturers tab. Or, keep the costs unlocked where you can define unique splits on different BOMs. To configure costs, see Configure Cost Roll-Ups. 
+Example 1: Simple Supplier Split
+Locked costs do not come into play until you add Item 1 to a BOM.
+In this example, Item 1 has two manufacturer parts on AML -- Mfr Part A and Mfr Part B.
+Let's say the cost of Mfr Part A is $4 and Mfr Part B is $6.
+On the Manufacturers tab of Item 1, if you check Use Cost for both parts and set the Use Cost % Allocation to a 50-50% split, then (assuming there are no items on the BOM), the rolled-up cost for Item 1 would be ($4*50%)+($6*50%)= $5.
+Example 2: Unlocked Costs allows different supplier splits in the context of a BOM
+When you use Item 1 on a BOM, and costs are unlocked, you can specify different supplier splits in the context of this BOM.
+In this example, Item 1 is the only child of Assy X. With costs unlocked, you can define the supplier splits on the BOM tab with the Include in Cost Roll-up and % Allocation fields. For Assy X, you might say Include in Cost Roll-up at 100% allocation for Mfr Part A, and the rolled-up total for Assy X would be $4, instead of the $5 you see on Item 1 itself.
+Also, you can have Item 1 on Assy Y, and have a different supplier split on that assembly. For example, you might say Include in Cost Roll-up at 25% allocation for Mfr Part A and 75% allocation for Mfr Part B, so the rolled-up total for Assy Y would be ($4*25%)+($6*75%)=$5.50, which is different from the $4 on Assy X and from the $5 on Item 1, even though we've only factored in the costs of the two manufacturer parts.
+Example 3: Locked Costs use the same supplier splits everywhere
+When costs are locked, then the same splits on Item 1 are used in all contexts, so the total for Item 1, Assy X, and Assy Y would be $5. In this case, you'd see Use Cost and Use Cost % Allocation columns in the BOM tab, and those values would be the same on every BOM that Item 1 is used in. If you change the allocations on Item 1, Assy X, or Assy Y, it would change on Item 1 and every other assembly Item 1 is used in.
+Example 4: Unlocked costs are only for the first level assembly items
+In the example above, Assy X is on the BOM of both TLA 1 and TLA 2.
+From either BOM, TLA 1 or TLA 2, you can modify the supplier splits for Item 1, but it will affect both TLA 1 and TLA 2. In effect, you are modifying the splits defined in Assy X.
+If you modify the Include in Cost Roll-up and % Allocation fields on the BOM tab of Assy X, TLA 1, or TLA 2, it will affect all the others. 
+In Example 3, Item 1 is also on Assy Y, and the supplier splits defined on Assy Y, will not be affected by changes to the splits on Assy X, TLA 1, or TLA 2.
+If you change the supplier splits in Item 1 on the manufacturers tab, that has no effect on the Include in Cost Roll-up or % Allocation fields on the BOM tab of Assy X.

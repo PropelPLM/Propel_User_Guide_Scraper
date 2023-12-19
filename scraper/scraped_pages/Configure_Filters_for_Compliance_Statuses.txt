@@ -1,0 +1,22 @@
+Configure Filters for Compliance Statuses
+The Compliance Status section lets you see the declared and/or calculated statuses of all the Items in your Specification. However, when you have potentially hundreds of Items in a Specification, it can be difficult to find the data you need. The Filters in the Compliance Statuses section makes that easy.
+Configure Filters
+Select the Specifications tab from the navigation bar and click the Name of the Specification you want to open.
+Select the Compliance Statuses tab within the Specification and click View All at the bottom of the list of displayed Compliance Status records.
+In the top right, click the filters icon to display the Quick Filters dialog.
+The following fields let you enter partial text to find matching records on your Compliance Statuses page. For example, if you enter “170” in the Item Revision field, the system will return all Compliance Status records that contain “170” in the Item Revision column:
+Compliance Status Name: This will appear as a number, such as “CS-00053”.
+Item Revision: This is the Item Number followed by it’s revision number, such as “170-96906:B”. 
+Manufacturer Part: The part number from the Manufacturer, such as “JMK105BJ225MV-F”. This will only apply to Manufacturer Part records.
+Declaration: The Declaration that the Item has been added to, such as “DEC-0025”.
+The following fields let you select values from a picklist. You can select multiple values within each section.
+Declared Status: The Declared Status is completed on the Declaration. If the Item has not been added to a Declaration it will have a value here of “No Data”.
+Calculated Status: This status gets calculated based on the Compliance Status of its children.
+Phase: This is the Phase of the Compliance Status. It will either be “Draft”, “Active”, or “Historical”.
+
+Note: If there are more options available in the list, you can click Show More to select options that aren’t shown.
+Once you’ve set your options, click Apply at the bottom of the page. This will filter your current view.
+To remove values from your filter, click again on the Filter icon (if the filters are no longer displayed) and then click Clear for the value you want to remove, or click Clear All at the bottom of the page to clear all values.
+Once you’ve made any changes to the filters, click Apply again to reapply the updated filters
+See Also
+Specifications Overview

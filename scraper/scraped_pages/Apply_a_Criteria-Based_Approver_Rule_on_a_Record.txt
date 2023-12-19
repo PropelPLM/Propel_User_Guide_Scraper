@@ -1,0 +1,21 @@
+Apply a Criteria-Based Approver Rule on a Record
+Criteria-Based Approver Rules allow you to assign approvers based on data contained in specific fields on a Change or Quality record. When the criteria you have defined for a rule evaluates to “True”, the rule will get applied to the record.
+Once a Criteria-Based Approver Rule for a Change or Quality record matches the criteria that’s been defined for it, you may still have to apply that rule to the record to add the approvers - it depends on how that rule was configured. Rules can be configured to automatically apply the approvers to the record, or they can be configured to require a user to manually apply them to the record.
+This article covers the steps to apply the rule and add the approvers to a record. If, however, your approvers were automatically applied, go to our Add or Remove Approvers on a Change Record our to see how to make changes to the approvers.
+To learn how to create a criteria-based approver rule for a record, go to our Create Criteria-Based Approver Rules article.
+Note: To apply a rule rule, you will need to be assigned to a permission set with the Apply Suggested Approvers custom permission. This will need to be set up by your System Administrator.
+Apply a Criteria-Based Approver Rule
+Depending on your record type, select either the Change or Quality tab from the navigation bar. Then select the Change or Quality record where you want to apply criteria-based approvers.
+When the record appears, select the Approvers tab and then click Edit in the top right to put the record into edit mode.
+Click View Criteria-based Approvers. The Criteria-Based Approvers screen appears with a list of all of the potential approval groups.
+By default, each group will be set to All Approvers In Group. If you want to have all of the approvers in all of the groups added, click Apply.
+If you want to select a subset of users from a group, click in the Search field for the group and select the individual users. Once you’ve completed this for each of the groups, you can click Apply.
+If you want to remove any of the groups, click the dropdown icon at the end of its row and select Remove. Once you’ve removed all of the groups you want to remove, click Apply.
+Note: This group will continue to be suggested if you or another user clicks View Criteria-based Approvers again.
+When you return to the Approvers screen, you’ll see that the users in the selected group(s) have been added to the applicable phase.
+When you’ve finished making changes to the record, click Done Editing. 
+See Also
+Approvals Overview
+Categories Overview
+Configure a Category
+Create Criteria-Based Approver Rules

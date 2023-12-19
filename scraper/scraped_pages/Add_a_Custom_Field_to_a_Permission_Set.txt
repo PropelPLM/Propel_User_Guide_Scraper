@@ -1,0 +1,17 @@
+Add a Custom Field to a Permission Set
+With the flexibility of Propel comes the ability to custom fields just about anywhere in the application. However, once those fields are created, they still need to be added to the relevant Permission Sets so that users can view and edit them. This article covers how to do this.
+Before You Begin
+You need to ensure that you have editable Permission Sets available, as the Propel managed Permission Sets that are installed with the package can’t be changed. We generally recommend that during setup you create at least two editable permission sets specifically for custom fields: Propel Full Use - Custom Fields and Propel Everyone (Read Only) - Custom Fields. However, you can also create any of your own custom permission sets as well. Creating these is covered in our Configure a Permission Set article.
+If these are not available, and you’re unsure which permission sets to use, contact your Salesforce Administrator.
+Add Custom Fields to Permission Sets
+Go to Setup > Users > Permission Sets.
+Select the editable Permission Set you want to modify, such as Propel Full Use - Custom Fields or Propel Everyone (Read Only) - Custom Fields. Editable Permission Sets will have Del as an Action option.
+In the Apps section, select Object Settings.
+Select the Object on which you created the custom field, such as Item, Change, Quality, etc.
+Click Edit.
+In the Field Permissions section, for the field(s) you created, select the Read Access option if this permission set is applicable to users who are only able to view the fields. If this permission set is applicable to users who will create and edit the contents of a field, select both the Read Access  and Edit Access options. Leave the settings for all other fields as is.
+ Click Save.
+Repeat the above steps for any additional Permission Sets you need to update, or for any additional custom fields that you have created.
+See Also
+Assign a Propel Permission Set
+Configure a Permission Set

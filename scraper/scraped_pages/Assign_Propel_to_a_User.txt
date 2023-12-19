@@ -1,0 +1,18 @@
+Assign Propel to a User
+Before users can access and start working with Propel, you need to grant them access to the application.
+This article assumes the users you want to assign to Propel already exist in Salesforce. If not, go to the Create a New Propel User article.
+Assign Propel to existing users
+Go to Setup > Apps > Packaging > Installed Packages to show a list of all installed packages.
+Click Propel PLM.
+Click Manage Licenses. 
+Note: This button will be greyed out if you have no available licenses. Contact Propel Support for assistance.
+Select the individual users to which you want to assign Propel and click Add. Alternately, if you want to add all the users, click Add All Users then click OK.
+Test the New User
+You can test the new user by logging in as the user and opening the Propel App.
+Go to Setup > Users > Users.
+Click Login beside the new user.
+Click the App Launcher icon and select the Propel App you assigned to that user. If you don’t see the app in the initial list, select View All.
+Verify that the Propel app loaded.
+Once you’ve Assigned Propel to your users, you can direct them to our Login and Launch Propel article.
+See Also
+Create a New Propel User

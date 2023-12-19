@@ -1,0 +1,20 @@
+Manage Specification Exemptions
+Many Specifications have Exemption Lists that state conditions where an Item may be exempt, either permanently or temporarily, from the compliance requirements of that Specification. You can add these exemptions into Propel to ensure that your exempt Items are properly identified and tracked. Then, when an Item is added to a Declaration record, it can be given a Compliance Status of “Exempt” and linked to the correct Exemption.
+This article walks through the steps to create or update a Specification Exemption. To see how to add the Exemption to an Item in a Declaration, go to our Manage Declaration Affected Items article.
+Create an Exemption
+Select the Specifications tab from the navigation bar and click the Name of the Specification you want to modify to open it.
+Select the Exemptions tab from within the Specification and click New.
+Enter the Name of the Exemption and a Description.
+Select the Active checkbox if you want this Exemption to be available. If the checkbox is not selected, then users will not be able to choose this Exemption in the Declaration.
+You can also set an Expiration Date if this Exemption is set to expire.
+Note: The Active checkbox will not automatically get deselected when the Expiration Date occurs. You need to manually deactivate an Exemption.
+Click Save & New to create another Exemption, or click Save to view your Exemption record.
+  Update or Delete a Specification Exemption
+You can update the information on an Exemption, as well as deactivate the Exemption. Or you can delete an Exemption.
+Select the Specifications tab from the navigation bar and click the Name of the Specification you want to modify to open it.
+Select the Exemptions tab from within the Specification.
+Click the dropdown icon for the Exemption you want to edit and select either Edit or Delete.
+To edit: Make the required changes and click Save.
+To delete, click Delete on the confirmation page that appears.
+See Also
+Manage Declaration Record Affected Items

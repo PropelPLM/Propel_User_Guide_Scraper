@@ -1,0 +1,18 @@
+Customize a Page Layout
+For just about any record in Propel - Item, Change, Quality, Declaration, Project, etc. - you can customize how the record looks. This includes what sections are displayed, which fields are available, and where those elements are located on the page. This ensures that users have access to relevant data, and can easily find and work with that data.
+This article walks through customizing a Page Layout. As noted, these instructions can be applied to most records in Propel.
+Customize a Page Layout
+Go to Setup > Object Manager and select the object with the Page Layout you want to update.
+Select Page Layout and then click the name of the page layout record you want to update.
+When the Page Layout record appears, ensure that Fields is selected in the left panel. 
+You can add a new section by dragging the Section header on the right panel down to a spot on the page layout. Sections let you logically group fields together. When you drop the header you’ll be able to name it and determine some of the basic layouts of the section.
+When you hover over a field in a section, your cursor will change to one with four arrows. When this occurs, you can click and drag that field into a new position in the section, or on a different section on the page.
+To add fields not currently in the layout, drag the field name from the top right panel down into the desired section.
+Depending on the object you’re in, there may or may not be Related Lists on the page layout. If there are, you can drag a related list to reposition it within the Related Lists section of the page layout. Additionally, you can click the wrench icon to change the fields displayed on the related list.
+Click Save to save all of your updates.
+Refresh Page Layouts
+Once you’ve updated any field sets or page layouts, you need to refresh the page layouts so that the changes can be viewed by the users.
+Select Propel Setup from the navigation bar.
+Under User Settings click Refresh Page Layouts.
+
+ 

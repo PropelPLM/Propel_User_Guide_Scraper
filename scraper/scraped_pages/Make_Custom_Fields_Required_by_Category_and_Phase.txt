@@ -1,0 +1,28 @@
+Make Custom Fields Required by Category and Phase
+With the flexibility of Propel comes the ability to add custom fields just about anywhere in the application, and especially as part of an Item record, or during a Change, Quality, or Declaration workflow to follow your specific business processes. To ensure users complete certain fields, you can make them required. However, we recommend that you DO NOT make fields required when you create them on an object (i.e. don't use the Required option when creating custom fields from Salesforce Object Manager.) 
+Instead, follow the steps in this article to make them required by Lifecycle Phases for specific Lifecycles and Categories.
+
+NOTE: You must add the fields as direct Category-Specific Fields in order to use the Required Fields feature. Inherited fields will not enforce required field phase settings. Adding fields to specific Categories is covered in our Configure a Category article.
+For example, say you have a Category called Capacitor that is associated with the Parts Lifecycle. When you add the custom field "Capacitance" to only the Capacitor Category, only Items with that Category will display the “Capacitance” field. Meanwhile, there’s a Phase on the Parts Lifecycle called Production, and it’s here that you specify the “Capacitance” field as required. Because the Parts Lifecycle is associated with the Capacitor Category, the field will display on the Item record AND be required on the Production Phase. If the Item had a different Category, the field would not display. And if the Item was in a different Phase, it would display but not be required. 
+This article focuses on adding field requirements to Phases. These fields must be added as Category-Specific Fields. Adding fields to specific Categories is covered in our Configure a Category article.
+Before
+Before you can complete the steps in this article, the custom field you are using must already exist on the object. For steps on how to create a custom field on an object, go one of the following articles:
+Add Custom Fields to the Item Object
+Add Custom Fields to a Manufacturer Item or Manufacturer Part Record
+Display Custom Fields on the Item BOM Tab
+Add Custom Fields to a Change or Quality Record
+When you create your custom field, make sure to record the API Name, which is the Field Name followed by __c (note there are 2 underscores before the “c”). The Field Name is auto-populated based on the Field Label. So if your Field Label is “Primary or Alternate”, then the API Name will most likely be “Primary_or_Alternate__c”.
+Make a Custom Field Required
+Note: A recommended Best Practice for required fields is to carry-forward the previous Phase’s required fields. This prevents users from accidentally removing required data later in the process. 
+Select the Lifecycle tab from the navigation bar and click the name of the Lifecycle where you want to make your field required.
+In the Phases section, click the name of the Phase where the field will be required and click Edit. Or, click the dropdown icon for the Phase and select Edit.
+In the ITEM and CHANGE Behavior section, enter the API Name in the Required Fields field. You can use commas to separate multiple required fields.
+
+Note: Although the label on this field reads only “ITEM” and “CHANGE”, it pertains to Quality and Declaration records as well.
+Scroll down to the bottom of the page and click Save. 
+Repeat the above steps for any additional Phases.
+See Also
+Add Custom Fields to the Item Object
+Add Custom Fields to a Manufacturer Item or Manufacturer Part Record
+Display Custom Fields on the Item BOM Tab
+Add Custom Fields to a Change or Quality Record
