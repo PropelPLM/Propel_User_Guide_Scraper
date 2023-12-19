@@ -1,0 +1,18 @@
+Workspace Overview
+Workspace provides predefined, complex searches to help you quickly find the data you’re looking for and take immediate action on it. Unlike the standard global search that generally searches across all Propel and Salesforce objects, Workspace can provide a very targeted search to find specific information, such as “Show Me All Resistors between 1 and 100 Ohms that Were Created in the Last 30 Days by Janice.” Propel Administrators can configure the searches to ensure that they fit the needs of your organization. 
+Note: To use any Workspace features, you must be using Salesforce Lightning and have My Domain enabled.
+There are three different types of searches that can be configured:
+Parametric (No Code)
+SOQL (Low Code)
+Apex (Full Code)
+The type of search you configure and use will depend on the needs of your organization.
+Configure Searches
+Propel Administrators must first create and configure the searches .
+Configure Workspace Parametric Searches
+Configure Workspace SOQL Searches
+Configure Workspace Apex Searches
+Apex Adapters for Workspace Searches
+Configure a Workspace Lightning Web Component
+Perform Searches
+Once the searches have been configured, users can go in and run them
+Search Propel Using Workspace 

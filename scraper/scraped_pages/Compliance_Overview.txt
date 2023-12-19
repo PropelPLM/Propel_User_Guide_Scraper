@@ -1,0 +1,26 @@
+Compliance Overview
+Many products need to comply with a variety of different regulations, such as Restriction of Hazardous Substances (RoHS), UL Standards, Food and Drug Administration (FDA), and various ISO standards. You can manage the compliance status for your items in Propel using Specifications and Declarations. 
+In the Specification, you define the level at which you report compliance. In the Declaration, through a change control process, you declare the compliance status.
+Specifications
+In the Specification, you determine the Items and Manufacturer Parts that must comply with a Specification, as well as any exemptions that may apply. Depending on your processes, your specification can apply to the Top-level Assemblies / Finished Goods, or at the component level and the system can roll-up the compliance status.
+Specifications Overview
+Configure Specifications (for Propel Administrators)
+Calculate Compliance Status
+Create or Clone a Specification Record
+Manage Item and Category Specifications
+Manage Specification Exemptions
+Configure Filters for Compliance Statuses
+Declarations
+In Propel, Declarations are where you declare the compliance status of an Item or group of Items. The Declaration is controlled through a change workflow to ensure that the statuses are properly reviewed and approved. 
+Declarations Overview
+Configure Declarations (for Propel Administrators)
+See the Change, Quality, and Declaration Records section in our Propel System Overview article for links to configuration articles
+Create or Edit a Declaration Record
+Transition a Declaration Record to a Different Lifecycle Phase (Workflow)
+Manage Declaration Record Affected Items
+Configure Filters on the Declaration Affected Items Tab
+Add or Remove Approvers on a Declaration Record
+Approve, Reject, or Reassign a Declaration Record
+Manage Declaration Record Attachments (Add/Remove)
+Download Declaration Record Attachments
+Associate an Item to a New or Existing Declaration

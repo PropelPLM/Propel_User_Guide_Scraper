@@ -1,0 +1,17 @@
+Reports and Dashboards
+Propel Reports and Dashboards are powerful, customizable tools that let you view and share data that provides insights into your business and activities.
+Reports
+You can create a report to extract information on just about anything in Propel. These reports are quick and easy to create, letting you add and order fields you want to report on, group the data in meaningful ways, and update them as you data evolves. We’ve also included a few examples of popular reports.
+Create a Report
+Share a Report or Dashboard
+Subscribe to a Report
+Change Visibility for Propel Reports
+Sample Reports
+List of Available Propel Reports
+Create a Report to Identify Late Changes or Quality Records
+Create an Item Assemblies Report (Top Where Used)
+Dashboards
+Dashboards give you quick, visual insight into trends and data that are important to you. Once a report is created, you can set your dashboard to display the data in a meaningful way. A dashboard is also not limited to a single report, letting you set it up to display multiple reports in a single view. Plus you can create multiple dashboards that you can toggle between to see different sets of like data.
+Create a Dashboard
+Share a Report or Dashboard
+Subscribe to a Dashboard

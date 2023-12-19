@@ -1,0 +1,109 @@
+Quality Management System (QMS) Overview
+Companies in regulated industries require an extra level of rigor in managing processes and training. Quality records let you manage processes such as complaints and Corrective and Preventive Actions (CAPAs), ensuring necessary data is documented and applicable reviews and approvals are completed. Propel’s Training Records module  allows you to set and maintain training plans, set up training quizzes, and manage training records.
+Each of the sections below lets you drill down for more information on the different aspects of Propel’s QMS, where you’ll also find links to setup articles and how to articles on working with Propel.
+Quality
+Propel’s Quality Management ensures that companies can track and report on quality processes such as Corrective and Preventive Actions (CAPAs), Supplier Corrective Action Requests (SCARs), Defects and Complaints. Like Changes, Quality records let you add Affected Items to the process to ensure that all products related to the potential issue are identified and tracked.
+Quality Records
+Quality Records Overview
+Create or Clone a Quality Record
+Edit a Quality Record
+Transition a Quality Record to a Different Lifecycle Phase (Workflow)
+Share a Quality Record
+Affected Items
+Manage Affected Items on a Quality Record
+View Affected Item Details from a Quality Record
+Configure Filters on the Affected Items Tab
+Approvers
+Add or Remove Approvers on a Quality Record
+Apply a Criteria-Based Approver Rule on a Record
+Approve, Reject or Reassign a Quality Record
+Recall a Quality Record Approval Request
+Related Records
+Create a Related Change or Quality Record
+Relate an Existing Change or Quality Record
+Remove a Related Change or Quality Record
+Attachments
+Manage Quality Record Attachments (Add/Remove)
+Download Quality Record Attachments
+Training Records
+Propel’s Training Records Module lets you ensure everyone is up to date on the latest product changes and processes. Single, unified training plans developed directly from product information helps create effective training that decreases risk for your company, employees, and customers. Propel’s comprehensive training record management solution includes full employee training transcripts, document-based training and quizzes, automated retraining, and training analytics.
+Training Records Overview
+Configuration (for Propel Administrators)
+Configure the Training Records Module
+Configure Training Quizzes
+Configure Email Notifications for Training Assignments
+Configure Workflow Rule Email Alerts or Notifications
+Add Training Plan Visibility for Training Items
+Configure the Propel Training App
+Create and Manage a Training Plan
+Create and Assign a Training Quiz
+Set an Item Draft to Require Training
+Manually Assign Training Records
+Complete a Training Assignment
+Changes
+Change records let you manage the various change and revision processes used by your organization, along with the Items that are included with or affected by the change. Examples of change processes include Engineering Change Orders (ECOs), Engineering Change Requests (ECRs), Stop Ships, and Deviations.
+Note: Depending on licensing and configuration, not all features listed below with Change records may be available. 
+Changes
+Changes Overview
+Create or Clone a Change Record
+Edit a Change Record
+Transition a Change Record to a Different Lifecycle Phase
+Share a Change Record
+Affected Items
+Manage Change Record Affected Items
+View and Edit Affected Item Record Details
+Configure Filters on the Affected Items Tab
+Add Unpublished Children to to a Change Record
+Add Parent Items to a Change Record
+Approvers
+Add or Remove Approvers on a Change Record
+Apply a Criteria-Based Approver Rule on a Record
+Approve, Reject or Reassign a Change Record
+Recall a Change Record Approval Request
+Related Records
+Create a Related Quality Record
+Relate an Existing Change or Quality Record
+Remove a Related Change or Quality Record
+Manage Deviations
+Deviations FAQ
+Attachments
+Manage Change Attachments (Add/Remove)
+Download Change Attachments
+Items
+Items are the individual parts, assemblies, documents, and anything else associated with your products that you track in Propel during the PLM lifecycle. Item records let you track and manage item revisions, as well as related change orders and quality records. 
+Note: Depending on licensing and configuration, not all features listed below with Item records may be available.
+Items
+Items Overview
+Create or Clone an Item Record
+Edit an Item Record
+Update an Item’s Lifecycle Phase
+Create a New Item Revision
+Publish an Item
+Manage Multiple Item Drafts
+Delete Items and Item Drafts
+Manage Where Used
+Associate an Item to New or Existing Quality Record
+Associate an Item to a New or Existing Declaration
+Share an Item and its Related Objects (Supplier Portal)
+Bills of Material (BOMs)
+Manage BOMs (Add/Replace/Remove)
+Make Bulk Changes to BOMs (Add/Replace/Remove)
+Create Custom BOM Views
+Configure Filters on the BOM Tab
+Export a BOM
+Compare BOM to Another Item
+Manage BOM Costs
+Edit Costs on Released BOMs
+Manufacturer Parts and Items
+Manage Manufacturers (Add/Remove)
+Attachments
+Manage Item Attachments (Add/Remove)
+Download Item Attachments
+Export Item Attachments
+Common Propel Features
+The articles below cover common Propel features that can be used in multiple areas of the system. As Propel is built on the Salesforce platform, you can also find additional help for common tasks on Salesforce’s Documentation Portal.
+Login and Launch Propel
+Use Chatter to Collaborate with Colleagues
+Customize Your Navigation Bar Tabs
+Search for a Record in Propel
+Create List Views

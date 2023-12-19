@@ -1,0 +1,73 @@
+Product Lifecycle Management (PLM) Overview
+Propel lets you manage your product lifecycle as you go from product inception all the way through to the hands of your customers. You can create and manage hierarchical relationships between all of the items (parts and documents) that you produce as well as those you procure from outside manufacturers. It also provides flexible version control for all of your items and lets you easily standardize your processes across your organization.
+Each of the sections below lets you drill down for more information on the different aspects of Propel’s PLM, where you’ll also find links to setup articles and how to articles on working with Propel.
+Items
+Items are the individual parts, assemblies, documents, and anything else associated with your products that you track in Propel during the PLM lifecycle. Item records let you track and manage item revisions, bills of material (BOMs), manufacturer parts and related change orders and quality records. 
+Items
+Items Overview
+Create or Clone an Item Record
+Edit an Item Record
+Update an Item’s Lifecycle Phase
+Create a New Item Revision
+Publish an Item
+Manage Multiple Item Drafts
+Delete Items and Item Drafts
+Manage Where Used
+Associate an Item to New or Existing Quality Record
+Associate an Item to a New or Existing Declaration
+Share an Item and its Related Objects (Supplier Portal)
+Bills of Material (BOMs)
+Manage BOMs (Add/Replace/Remove)
+Make Bulk Changes to BOMs (Add/Replace/Remove)
+Create Custom BOM Views
+Configure Filters on the BOM Tab
+Export a BOM
+Compare BOM to Another Item
+Manage BOM Costs
+Edit Costs on Released BOMs
+Item Substitutes in a BOM
+Locked Costs
+Quoted Costs and other Roll-Up Types  
+Manufacturer Parts and Items
+Manage Manufacturers (Add/Remove)
+Attachments
+Manage Item Attachments (Add/Remove)
+Download Item Attachments
+Export Item Attachments
+Changes
+Change records let you manage the various change and revision processes used by your organization, along with the items that are included with or affected by the change. Examples of change processes include Engineering Change Orders (ECOs), Engineering Change Requests (ECRs), Stop Ships, and Deviations.
+Changes
+Changes Overview
+Create or Clone a Change Record
+Edit a Change Record
+Transition a Change Record to a Different Lifecycle Phase
+Share a Change Record
+Affected Items
+Manage Change Record Affected Items
+View and Edit Affected Item Record Details
+Configure Filters on the Affected Items Tab
+Add Unpublished Children to to a Change Record
+Add Parent Items to a Change Record
+Approvers
+Add or Remove Approvers on a Change Record
+Apply a Criteria-Based Approver Rule on a Record
+Approve, Reject or Reassign a Change Record
+Recall a Change Record Approval Request
+Related Records
+Create a Related Quality Record
+Relate an Existing Change or Quality Record
+Remove a Related Change or Quality Record
+Manage Deviations
+Deviations FAQ
+Attachments
+Manage Change Attachments (Add/Remove)
+Download Change Attachments
+Common Propel Features
+The articles below cover common Propel features that can be used in multiple areas of the system. As Propel is built on the Salesforce platform, you can also find additional help for common tasks on Salesforce’s Documentation Portal.
+Login and Launch Propel
+Use Chatter to Collaborate with Colleagues
+Customize Your Navigation Bar Tabs
+Search for a Record in Propel
+Create List Views
+
+ 

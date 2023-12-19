@@ -1,0 +1,29 @@
+Propel Lightning Web Components (LWC)
+Introduced in our Fall ‘20 release for Change and Quality records, and then followed by Item records in Beta in our Spring ’21 release, Lightning Web Components (LWCs) give you an incredible amount of flexibility in how you configure the records that end users will see and work with. Because of this flexibility and configurability, as well as the increased performance they offer end users, LWCs are gradually replacing our old React code that Propel was previously built on.
+The articles below will help you get familiar with Propel LWCs and give you detailed instructions on how to configure the various components to take advantage of Propel’s features and functionality.
+Configure LWCs
+Configure Change and Quality Records
+Propel LWC Overview - Change and Quality Records
+Configure an LWC Highlights Panel
+Configure Actions on an LWC Page
+Configure a Compact Layout for an LWC Page
+Configure a Tab Component for an LWC Page
+Configure the Details Component for LWC Pages
+Split Details Across Multiple LWC Tabs
+Configure Component Filters for LWC Pages
+Configure Item Records
+Propel LWC Overview - Item Records
+Configure an LWC Highlights Panel
+Configure Actions on an LWC Page
+Configure a Compact Layout for an LWC Page
+Configure Fields on an Item's Record Toolbar Component
+Configure a Tab Component for an LWC Page
+Configure Component Filters for LWC Pages
+General Configuration
+Clone a Propel Lighting Page
+Create a Lightning App for Propel LWC Testing
+Activate a Lightning Page
+Changes for End Users
+Propel LWC Updates - Change and Quality Records
+Propel LWC Updates - Item Records
+Propel LWC Updates - BOM Navigator Overview  

@@ -1,0 +1,52 @@
+Cloud Document Integration Overview
+As of Winter ‘23
+  Note: If you are looking to create Document records such as SOPs and Work Instructions, this is done through Item Records, generally with a specific Category for the type of document that you are working with. Go to the Items Overview and Categories Overview articles for more information. 
+  Foundation - Files and Storage
+Files are data records, often viewed, sometimes end-users create and edit them too
+I.e. You don’t create or edit an XML debug log yourself, but you probably create and edit DOCX or XLSX files often
+Just like paper files, electronic files must be stored somewhere
+This is critical. I’ll say it again -- files must be stored somewhere. Storage location influences all sorts of behaviors and functions
+For Propel files can be stored in one of two places:
+Directly on Salesforce, or
+In a separate cloud system
+  Files stored on Salesforce
+Are static (have to be downloaded to be edited)
+Must be created in a Content Authoring System
+Have change control (e.g. cannot edit (upload) while your DCO is being reviewed)
+Can have their content searched with SFDC Search
+  Files stored via separate Cloud Systems
+Allow users to click through and access them in the separate system
+Some files can be created from Propel and then stored externally (e.g. DOCXs)
+Are not available to be searched and selected directly from Propel
+Cannot have their content searched with SFDC Search
+  General How Do These Things Work?
+Propel collaborates with your Content Authoring Systems to make your Document Management easy, simple, and compliant. 
+We offer two integrations: Google Workspace and Office 365
+For Google, there are currently two tiers: Cloud Document Management and also Cloud File Storage
+For Microsoft, there is currently one tier: Cloud Document Management
+Cloud Document Management
+Create collaborative documents, apply automatic change control, and generate watermarked files after approval with Cloud Document Management.
+Directly from Propel create (Docx/GDoc, Xlsx/GSheet, Pptx/GSlide) files and support quick, seamless collaboration on your documents
+As you route your Documents through your Change workflow, Propel automatically applies Change Control (write vs. read access) to the files stored externally.
+Cloud File Storage let’s you connect Propel to your file storage system, allowing Propel to act as a courrier between you and your storage system. With Cloud File Storage, when you go to “upload files”, Propel passes the files over to your Cloud system where they are stored. In return, Propel gets a “receipt” URL to connect users with the externally stored documents.
+Google Workspace (formerly G Suite) Integration
+With Propel’s Google Workspace Integration (formerly known as G Suite), you can easily create new Google Files (Docs, Sheets, and Slides) directly from Propel. 
+Configure the Integration (Propel Administrators)
+Configure the Google Document Management Integration
+Configure the Google Cloud File Storage Integration
+Google Workspace Permissions and Release Management
+Create a New Google File in Propel
+View or Edit a Google File in Propel
+Microsoft 365 Integration
+The Microsoft 365 Integration lets you create and edit Microsoft Word Documents, Excel Spreadsheets, and PowerPoint Presentations all from within Propel.
+Configure the Integration (Propel Administrators)
+Configure the Microsoft 365 Integration
+Microsoft 365 Integration Permissions
+Create a New Microsoft 365 File in Propel
+View or Edit a Microsoft 365 File in Propel
+Advanced Configuration
+The following articles offer more advanced configuration options for generating documents within Propel.
+Watermark Item Attachments with Flow
+Configure PDF Generation from a Word Template
+Note: If you are looking to create Document records such as SOPs and Work Instructions, this is done through Item Records, generally with a specific Category for the type of document that you are working with. Go to the Items Overview and Categories Overview articles for more information. 
+ 

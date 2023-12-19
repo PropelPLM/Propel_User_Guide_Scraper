@@ -1,0 +1,450 @@
+Change Log
+Changes Date
+Initial guide build v1.0 12/20/2022
+Guide Updated v1.1 05/07/2023
+Guide Updated v1.2 07/14/2023
+
+NOTICE: This guide is for use with Propel PIM packages released December 2022 or later. Previous versions of PIM were deprecated from the Propel PLM package with the Winter ’23 (8.1.1) release in November 2022. Please contact your CSM or support@propelsoftware.com for help with prior versions.
+Introduction
+Software Description
+Propel Software, Inc. (Propel) - leveraging the power of Salesforce as a platform, has deployed a Product Information Management (PIM) application to augment its already existing Product Lifecycle Management (PLM) and Quality Management System (QMS) platforms to further deploy against their new Product Value Management (PVM) software solution.
+General Usage
+The general intended usage of the PIM system offered by Propel is to act as a system that helps businesses centralize and manage their product data. This data can include information such as product descriptions, images, pricing, and other details that are used to market and sell products. Propel PIM provides a number of benefits to businesses, including improved efficiency and accuracy, better customer experience, and increased sales.
+Table of Contents
+Change Log
+Introduction
+Software Description
+General Usage
+Table of Contents
+Propel PIM Categories
+What are Categories?
+Classification Structure
+Creating Categories
+Deleting Categories
+Uncategorized records
+Propel PIM Variant Layout
+What is a Variant Layout?
+Setting up a new Variant Layout
+Deleting a Variant Layout
+Propel PIM Attributes
+What are Attributes?
+Attribute Tab/Group/Label Usage
+Attribute Classification
+Attribute Type Options
+Attribute Category Assignments
+Creating Attribute Tabs/Groups/Labels
+Deleting Attribute Tabs/Groups/Labels
+Propel PIM List Pages
+Product Versus Digital Assets
+Page Components
+Filtering Component
+List Table component
+Exporting data
+Propel PIM Products and Variants
+What is a product?
+Creating Products (Manual and Importing)
+The Content Composer
+Propel PIM Tasks
+What are Tasks?
+Creating, Working, and Approving Tasks
+Creating a Task
+Working a Task
+Approving a Task
+Propel PIM Digital Assets
+What are Digital Assets in Propel PIM?
+How are Digital Assets Handled in Propel PIM?
+Digital Asset Storage
+Creating Digital Asset Records
+Propel PIM Product Data Page
+Page Layout and Functionality
+Exporting Data
+Propel PIM Digital Asset Data Page
+Page Layout and Functionality
+Exporting Digital Assets
+Propel PIM Export Templates
+What are Custom Export Templates?
+Configuring an Export Template
+Calling Propel PIM Attributes
+Using Blank or Static data
+Loading an Export Template
+Using the Export Templates
+Propel PIM User Administration
+What is User Administration?
+The Different Options for User Administration
+Permissions
+Category
+Attributes
+Membership
+Propel PIM Categories
+What are Categories?
+Categories offer companies a way to classify products and digital assets based on various criteria like types, business units, or brands, and may be further segmented into subcategories as necessary.
+
+Propel offers several types of categories for classification purposes:
+Primary vs Alternate Product / Digital Asset
+For Products, Propel utilizes “Primary Product Category” and “Alternate Product Categories”.
+The Primary Product Category acts as the primary location for Products housed within Propel PIM. Each Product must reside in a single location within the Primary Product Category in order to be properly classified within the PIM and receive base level attribution.
+The purpose of the Primary Product Category is to align Products in a way that allows for the efficient distribution of content or information. As such, using the Primary Product Category layout efficiently may mean setting up the hierarchy in a way that differs from, for example, a Product Lifecycle Management (PLM) system, which is typically set up to prioritize engineering product development.
+Propel PIM also offers Alternate Product Categories that act as additional methods for classifying products and can be used for many different use cases. Although a product cannot be in one spot in an Alternate Category more than once, it can be in multiple locations within an Alternate Category. An example would be a Product in its normal location on a B2C website, and also added to the Clearance category for the B2C website.
+Similar to Products, Digital Assets Categories are also available for use, and can provide a unique way in which to structure a company’s Product related Digital Assets. Some examples might be a category for classifying Product Photography versus Lifestyle Photos. Another could be a category for Product Documentation or Highlight Videos.
+Classification Structure
+Categories can be built out in a hierarchical structure, with “folders and subfolders” to create the overall classification. This structure is defined within the PIM as having a Parent relationship, where Top Level Nodes have no Parent, but every subsequent node would have its parent assigned in order to build a “tree” structure.
+Creating Categories
+
+
+Categories can be created in one of two ways
+Categories can be created manually within the PIM Admin by those who have a permission set that allows them to do so. There are three separate tabs to denote the three different category types (Primary/Alternate/Digital Asset) and each has their own specific list table that contains information about the category record.
+Each category tab has the option to create “new” - where certain information like Name, Parent, and an option to select a custom Category Icon are available.
+Categories can also be imported via a specific template in PIM Admin, creating the classification structure in bulk.
+Note regarding importing Categories: only Primary Product Categories can be imported at this time.
+Note regarding “reparenting” Categories: only Categories that have NO Product or Digital Asset records associated with them (or any subsequent subcategories) may be “reparented” to another category. This is important due to the nature of attribution being linked to category structures.
+Deleting Categories
+Categories can be deleted as well, however a Category must be empty of any associated Product or Digital Asset records in order for the delete to be successful.
+
+At this time, products can be associated with a new category via the Manage Product option, but any category specific attributes that contain data will be wiped out if the product is associated with a category that has different Attribute sets.
+  Uncategorized records
+
+
+Although rare, if a Product ends up without a Category association, it will land in a new category called Uncategorized Records. Products will need to be moved to their appropriate category in order to receive the proper attribution, after which the Uncategorized Records category node will disappear.
+Propel PIM Variant Layout
+
+What is a Variant Layout?
+Propel PIM makes use of a concept called Variants (explained in further detail in Propel PIM Products and Variants) to accompany Products within the platform. Simply put, Variants are selectors on a product that help drive to a finished good or similar “end result” product concept. These variant “Options” can be things like a “Size” or “Color”, or could be a selling “Region” or “Channel”, and then the ‘Labels” that can be created under those options would be things like “Large” or “Blue”.
+
+The Variant Layout is the concept of setting these layout options at a category level within Propel PIM, such that any Products that are associated with that category will receive the same options.
+
+
+
+In the above example, “Region” and “Finish” options have been assigned to the “Remote Control Products” category.
+Setting up a new Variant Layout
+
+
+Variant Layout setup is found in PIM Admin, where all created Variant Layouts are listed in a table that shows the Layout and the Category assignments. From here you can edit an existing layout, or create a new layout.
+
+Variant Layouts function in the following ways:
+Variant Layouts have three inputs:
+Name of the Option
+Level (Order) in which they are structured
+Category where they are applicable
+Variant Layouts observe the Category hierarchy structure, and child categories will inherit the Variant Layout of their parent unless specifically overridden by a new layout.
+It is OK for a Category to have a Variant Layout that has no options - this means that the structure is ONLY a Product record, with no variants.
+If Products exist in a Category that has a Variant Layout assigned, either directly or via inheritance, you are unable to add, remove, or re-order variant options. You can however rename the variant option labels.
+Deleting a Variant Layout
+Variant Layouts can be deleted, however Products that are tied to the Category or child Categories must be either moved to new categories that respect the same Variant Layout structure, or those Products must be deleted as well.
+Propel PIM Attributes
+What are Attributes?
+Propel PIM utilizes attributes for both Product and Digital Asset records to manage and organize product information for an organization. This typically includes various attributes, such as product name, description, price, availability, and images. These attributes are used to describe the product and provide important information to customers and other stakeholders. All Attributes, Groups, and Tabs are customer driven to align to an organization’s business goals.
+
+Some common product information attributes that may be included in Propel PIM include:
+Product name: The name of the product.
+Product description: A detailed description of the product, including its features and benefits.
+Price: The price of the product.
+Availability: Whether the product is currently in stock or out of stock.
+Images: Photos or graphics of the product.
+Dimensions: The size and weight of the product.
+Material: The materials used to make the product.
+Color: The color of the product.
+Brand: The brand or manufacturer of the product.
+SKU: A unique identifier for the product, typically used for inventory management.
+Product information attributes can vary depending on the type of product and the needs of the organization. The goal of a PIM system is to provide a centralized repository of accurate and up-to-date product information that can be easily accessed and used by various stakeholders, such as sales teams, marketing departments, and e-commerce platforms.
+Attribute Tab/Group/Label Usage
+Propel PIM has a unique take on the categorization of attributes as it pertains to the layout of the information on the Product and Digital Asset data pages. All aspects of the attributes are customer driven, including the layout.
+
+Propel utilizes a three-tier hierarchy structure to help segment product information:
+
+Tabs
+Top level of the structure, segmenting the data pages into logical “tabs” that can be switched between. Tabs can contain many…
+
+Groups
+Which act as segmentation of attributes within a tab that can be expanded or collapsed depending on the use case. Each Attribute Group can contain one or more…
+
+Attribute Labels
+Which are the main containers of information tied to the product or digital asset record.
+Attribute Classification
+Attribute Tabs, Groups, and Labels can all be classified to either show up on Product Data Pages, or Digital Asset Data Pages, allowing further segmentation of attribution.
+Attribute Type Options
+Attribute Labels can be set as one of several different types upon creation of the Attribute - types include:
+Text
+Checkbox
+Picklist
+MultiPicklist
+Date/Time
+Link/URL
+Product Reference
+Digital Asset
+Note that the type of the Attribute cannot be changed once the Attribute is created.
+
+Note that additional attribute types are on the Product Roadmap to be released.
+Attribute Category Assignments
+
+
+When creating any of the Tabs, Groups, or Attribute Labels, they can be assigned to one or multiple Categories within Propel. The following lays out the logic used for category assignments:
+Having no assignment defaults to “always available”
+Child assignments will override the Parent assignment (meaning if Attribute Tab A is assigned to a different category, but Attribute Group B is assigned to the present category, then Attribute Tab A will be forced to display.
+Note that although Tab A will be forced, only Group B under Tab A will show (unless other Groups are also assigned, or have no assignment).
+The ideal use cases for these types of assignments are to facilitate different departments within a business, and different access levels to attributes based on business function. Speak with your CSM to lay out a use case that works best for your business.
+Creating Attribute Tabs/Groups/Labels
+Attribute Tabs, Groups, and Labels can be created within PIM Admin by someone with the proper permission assignment. By navigating the Attribute location within PIM Admin, a user can:
+Create a Tab with the following information
+Attribute Tab Name
+Rank - Used to determine the order in which the tabs are displayed on the Data Pages
+Classification - Used to determine if the Tab is used for Product or Digital Asset Data Pages
+Linked Categories/Alternate Categories - Used to determine the Attribute Tab/Group/Label display permissions depending on the Category.
+Create a Group with the following information
+Attribute Tab - Used to parent the Group to a Tab
+Attribute Group Name
+Rank - Used to determine the order in which the Groups are displayed on the Data Pages
+Classification - Used to determine if the Group is used for Product or Digital Asset Data Pages
+Linked Categories/Alternate Categories - Used to determine the Attribute Tab/Group/Label display permissions depending on the Category.
+Create a Label with the following information
+Attribute Group - Used to parent the Label to a Group
+Attribute Label Name
+Rank - Used to determine the order in which the Labels are displayed on the Data Pages
+Classification - Used to determine if the Label is used for Product or Digital Asset Data Pages
+Type - Used to determine the type of attribute used
+Linked Categories/Alternate Categories - Used to determine the Attribute Tab/Group/Label display permissions depending on the Category.
+Note that each Attribute Label also has the following selections:
+Is Localizable - although currently Propel PIM is not offering localization at an attribute level, it is on the Product Roadmap - and as such it would be good practice to mark attributes that should be localized as such for an easier transition (on Product Roadmap to add).
+Is Searchable - this triggers whether or not the Attribute shows up in the filter options on the Product or Digital Asset list page.
+Deleting Attribute Tabs/Groups/Labels
+Attribute Tabs/Groups/Labels can be deleted, however each level must have its children moved/deleted before it can be deleted itself.
+
+Deleting an attribute will remove its stored value from ALL products or digital assets where it is assigned.
+Propel PIM List Pages
+Product Versus Digital Assets
+Propel PIM uses two custom List Pages for both Product records as well as Digital Asset records. Although the List Pages are separate, they function largely the same and are set up in such a way that knowing how to navigate one will apply to both.
+Page Components
+The List pages consist of two main components:
+Filtering Component
+
+
+The Left hand component on the List Pages contains “filtering” options for the List results.
+
+For Product records, the Categories that are displayed are Main Product Categories and Alternate Product Categories (types explained in Propel PIM Categories). Traversing the categories will change what is displayed in the List table.
+
+The Filtering component also contains an Attribute Filter tab where a user can select an attribute and then filter results based on the parameters given.
+
+Note: At this time, attribute filters function off of an AND operator.
+List Table component
+
+
+The List Table component is composed of the results from the Filter component selections, displaying both rows of records and columns of attributes.
+
+Initially only the record ID column will be displayed, however the user can add additional columns to the display by navigating to the column selector in the List Table header area.
+
+Note that while the user is not restricted to the number of columns that will be displayed - the performance of the results area may be impacted if many columns are inserted. This is especially true as the user adds attributes of type Digital Asset, as the images will render directly within the table.
+
+Although in the Filter component only the top level Products are displayed under their respective categories - all Variant levels of a Product are displayed in the results, as each level can contain its own unique data (explained further in Propel PIM Products).
+Exporting data
+For the Product List page, information can be exported in several different methods:
+Exporting each result with all columns within the PIM system.
+Exporting the results with a curated selection of Attributes/Attribute Groups.
+Exporting the results to a previously loaded export template (explained in Propel PIM Export Templates).
+Note that if a Digital Asset type attribute is selected in any of the above scenarios, the user will also receive a Zip file containing the digital asset files.
+For the Digital Asset List page, information can be exported in 
+
+In each scenario, the exports are delivered to Chatter.
+Propel PIM Products and Variants
+What is a product?
+In Propel PIM, a product is a distinct item that is sold or offered for sale to customers. It can be a standalone offering that has its own set of characteristics, such as a unique name, description, and price, or it can include variants of the main product.
+
+A variant is a specific version of a product that differs in some way from other versions of the same product. For example, a shirt might be available in different sizes, colors, or styles, and each of these variations would be considered a variant.
+
+In Propel PIM, each product and variant is typically represented as a separate entity with its own set of attributes and metadata. This allows businesses to manage and organize their product offerings in a structured and consistent way, making it easier to accurately represent and sell their products to customers.
+Creating Products (Manual and Importing)
+
+
+There are two ways to create products:
+Manually via the Product List page, where a user will enter both the Product ID as well as the Category the Product should be tied to, or;
+Imported either individually or in bulk via a template through the PIM Admin Data Import tab.
+When imported, attribute values can also be imported at the same time to quickly fill out product information for a product all at once.
+Similarly, there are two methods to create variants:
+Manually via the Product Data page, where a user will enter the Product ID, Name, Variant Label and the level at which the Variant will be assigned, or;
+Imported either individually or in bulk via a template through the PIM Admin Data Import tab.
+Variants can be imported at the same time as Product level records, and can also have their own attribute values assigned.
+The Content Composer
+Propel PIM uses a method of information inheritance that is unique, where every variant level of a product can contain its own data set. Because of this, every variant level has its own record. This allows for a truly efficient use of attribute values to build out product information that saves time and resources.
+
+Allowing for Customer Driven variant layouts (like Style, Color, and Size for a T-Shirt) and attribution that is specific category by category, users can have complete control over their data model. This, coupled with inheriting information from Parent to Child (Product to Variant), and the ability to break that inheritance chain to have Variant specific information, creates a powerful, flexible product information schema.
+
+For example, the below image displays three different ways that content is stored and displayed on a product data page:
+
+Shows that information has been inherited on this record from a parent level via the black chain-link icon.
+Shows that information is available at a parent level, but that inheritance has been broken via the crossed chain-link icon, and overwritten with new information.
+Shows no chain-link icon, meaning that data for this attribute is authored specifically at this record level and is neither inherited nor overwritten.
+For a finer understanding of the way Attributes and Categories interact with Products and Variants, please refer to the Propel PIM Attributes and Propel PIM Categories sections of the guide.
+Propel PIM Tasks
+What are Tasks?
+In Propel PIM, tasks are a set of activities that involve an assignee and an approver to provide values to Product attributes so that the data can be used by the broader business.
+
+While a PIM System Administrator may edit product information at any time, anyone else within the application must utilize tasks to make edits to attribute data. All in progress Tasks utilize a draft mode that is invisible to other users until the information has been fully approved.
+
+A Task Administrator may make changes to a task that is in progress, like due dates or assignees, or delete tasks, but may not make changes to the list of assigned attributes on a task.
+Creating, Working, and Approving Tasks
+A task will consist of a few non-editable statuses depending on their place in the Task workflow cycle, including:
+Not Started
+In Progress
+Completed
+Rejected
+Approved
+A task can cycle between Completed and Rejected multiple times before being Approved and the draft data is merged with the live Product Data Page.
+
+Creating a task will set the status to Not Started by default, but all other statuses will be updated based on the assignee or approver doing work towards the task.
+Creating a Task
+To create a task, a user with the appropriate privileges will navigate to the Product Data Page for the Product or Variant in which the task should be assigned and click “New Task” in the sidebar component “Task” tab.
+
+
+
+During the creation of a task the user should fill out the following fields:
+Assignee | Required
+Approver | Required
+Subject (this is the Task name) | Required
+Priority
+Due Date
+Comment (this is a brief description of the task if necessary)
+After filling out this information, the task creator will then be brought to a screen where they can select the attributes required for this task, and then click “Save” to kick off the task to the assignee.
+Working a Task
+To begin work on a task, the assignee can navigate to the relevant product or variant, find their task through filtering to their assignments, and click “Start Task”. This will open the task in the Sidebar, allowing the user to view both the assigned attributes in a working area, as well as the full set of product attributes to use for information while completing the task.
+
+
+
+This task area is broken up into a header section containing the record ID, priority, and other details, and then an attribute view section that mimics the Tab/Group/Label layout on the Data Pages to make navigation easier.
+
+If there were any prior rejections during an approval process and this task is being reworked by the assignee, they will see the rejections in the form of a hover-over tooltip icon.
+
+Progress can be saved and the task can be returned to by the assignee at a later date, or once all information has been entered, the task can be submitted to the approval phase.
+Approving a Task
+Once a task has been completed by the assignee and submitted, it moves to the approver’s queue to be reviewed and either approved and merged to the live product, or rejected and sent back to the assignee.
+
+
+
+The approver is required to either accept or reject every attribute that is a part of the task, to ensure that the appropriate information is correct and approved before making it to a customer. Each rejection also requires an explanation of rejection so that the assignee will understand what fix is required.
+
+The approver can see the breakdown of the attributes in the same way as the other areas within the PIM, via Tabs, Groups, and Labels. A before and after version of the data is presented so that the approver can review any information that was created previously. If no data existed for the attribute prior to the task being initiated, then the “Original Values” will be blank for that attribute.
+
+Once the attributes have been filled out and all information is approved, the approver can click “Submit” and the task will enter an “approved” status and the information will be merged into the Product data page for usage.
+Propel PIM Digital Assets
+What are Digital Assets in Propel PIM?
+Within Propel PIM, the concept of a digital asset is broad, but a generic understanding of digital assets as they relate to PIM is:
+A set of electronic files that contain valuable information or media that can be used by a business or its customers for a variety of purposes. They can include images, videos, audio files, documents, and other types of media and files.
+Propel takes this concept to the extreme by allowing storage of practically any type of file. For example, a user may want to store a downloaded email that contains product requirements alongside the product line.
+How are Digital Assets Handled in Propel PIM?
+The actual file, or binary, is just part of the overall Digital Asset “record” - meaning that along with the binary, we allow the storage of important information, or metadata, that is customer driven. Examples of this metadata could be expiration dates, or a model’s name that’s used in a portrait shot.
+
+Within Propel we currently render images as well as video mimetypes for ease of visual identification of main product images and videos. However, since we offer storage of practically any file type, most that are not rendered are represented by an icon identifying the file type, with more obscure file types represented by a miscellaneous icon.
+
+Every asset can be accessed by navigating to the Digital Asset record and either downloading or viewing the assets directly from the data page itself. If a URL is needed, that is also accessible via download of Digital Asset metadata, or copied directly from the data page.
+Digital Asset Storage
+Although Propel sits on the Salesforce platform, we are using offsite (Amazon Web Services) storage for Digital Assets that is managed by Propel. 
+
+We then render the CDN URL within the Propel Application, such that no storage is impacted on the Salesforce side. With a cached CDN layer, this means we offer a speedy delivery of assets that can be accessed globally, and URLs that can be used by internal and external customers.
+Creating Digital Asset Records
+
+
+Either through the Digital Asset List page, or through the Data Import tab in PIM Admin, digital assets can be loaded one by one, or in batches together. A Digital Asset category can be entered to ensure that assets are delivered to the correct location in the Digital Asset category structure. If no category is entered, then the digital asset(s) will be loaded to an Uncategorized category, similar to a product with no category assignment.
+
+For a finer understanding of the way Attributes and Categories interact with Products and Variants, please refer to the Propel PIM Attributes and Propel PIM Categories guides.
+Propel PIM Product Data Page
+Page Layout and Functionality
+The Product Data Page acts as a hub for all activities surrounding a product and any variants, attributes, and any digital assets it may have attached to it. The data page is made up of three main components:
+
+
+
+The Preview Pane exists as an area to give high level information about the product or variant that the user is viewing.
+The preview thumbnail can be configured from the PIM Admin to display an image attached to a specific attribute (like a “Primary Image” attribute) and is specific to the product or variant selected for display.
+The “display attribute” is a custom selection that can be made in the PIM Admin to display a text-based attribute in the Preview Pane. Some use cases for this may be to display a “Release Status” attribute, or even an “MSRP” attribute.
+The Preview Pane is also the location where variant options and selections display, allowing the user to traverse the parent/child relationship of the product and its variants.
+
+
+
+The Attribute Display component is the area that contains all the tabs, groups, and attributes for the product and its variants. The layout is completely customer driven. It exists in a standard “view” mode and an “edit” mode (for users that have permission to edit).
+Please see Propel PIM Products and Variants to view more details around how inheritance of product data works within this component.
+
+
+Sidebar component
+Chatter - Using standard Salesforce chatter functionality, users are able to converse in real-time and have the conversation be context specific depending on the product or variant selected while submitting a chatter post.
+Tasks - Users are able to build, assign, and review tasks as they relate to PIM Product information. See Propel PIM Tasks section for more detail around the usage of Tasks.
+Other functions include maintenance around the Product and Variants themselves at a high level, which could include things like renaming a Variant label, or even reparenting a child variant to another location on the Product.
+Exporting Data
+Information can be exported from the Product Data page in multiple ways, giving the user flexibility in how they can access their data.
+
+Either the current, visible product or variant can be downloaded standalone, or “all variants” - meaning every record that is housed under the parent product - can be included in the download.
+
+The download type can be a standard “everything” export, with the option to “fill out” all inherited data for each record. 
+If the fill out option is not selected, then each record row in the export will only contain data that is specific to that record. This is very useful when analyzing missing data or understanding where to make changes in the most efficient manner.
+Finally, the option to download via a templated export. Please see Propel PIM Export Templates for additional information.
+Propel PIM Digital Asset Data Page
+Page Layout and Functionality
+The Digital Asset Data Page acts as a hub for all activities surrounding a digital asset and its attributes and its association to any products and/or variants. The data page is made up of three main components:
+
+
+
+The Preview Pane exists as an area to give high level information about the product or variant that the user is viewing.
+The preview thumbnail shows the image of the digital asset. If the digital asset is not one that is renderable within Propel PIM, then the icon for the file type displays instead.
+
+
+The Attribute Display component is the area that contains all the tabs, groups, and attributes for the digital asset. Unlike the Product Data page, the attribute tabs for Digital Assets are preset to - Asset View, Asset Metadata, and Product Relationship.
+Asset View contains a preview of the digital asset (if it is renderable) and system level information like file type, size, and CDN URL.
+Asset Metadata contains custom attribute groups and attributes that are associated with the digital asset.
+Product Relationship is where digital assets are assigned to one or many products and/or variants and attributes, such that one digital asset record can be used efficiently across many products and maintained in one location, rather than on each individual product.
+Please see Propel PIM Digital Assets to view more details around how digital asset data works within this component.
+
+
+Sidebar Component
+Chatter - Using standard Salesforce chatter functionality, users are able to converse in real-time and have the conversation be context specific depending on the product or variant selected while submitting a chatter post.
+Exporting Digital Assets
+Digital Assets can be downloaded by navigating to the action menu and selecting download. Digital Assets can also be downloaded via a display modal that shows when a thumbnail is clicked.
+Propel PIM Export Templates
+What are Custom Export Templates?
+In Propel PIM, custom export templates allow a user to specify the specific product data fields that they want to include in an export file, as well as the formatting and organization of that data. This can be useful if the user needs to export product data to a specific format that is required by a particular business partner or if they want to create a customized report for internal use.
+Configuring an Export Template
+Configuring a template is as easy as creating a CSV or XLSX file and organizing the required “column headers” that the endpoint that would be receiving the file requires. 
+Calling Propel PIM Attributes
+The first row that should contain data FROM Propel PIM should contain the following formula in any column that should receive PIM attributes on the exported template:
+PROPEL_ATT(“[ATTRIBUTE LABEL]”)
+Where [ATTRIBUTE LABEL] should be replaced with the label of the attribute that should be assigned to the column. For example, PROPEL_ATT(“Product Name”).
+All columns within the export template that require Propel PIM attributes should follow this same formatting.
+Using Blank or Static data
+If a column in the template should contain no at all, that column can simply be left blank in the first row where the PIM attributes are being associated. Likewise, if a static value is needed down every row that will be exported, the static value can simply be entered on the first row as well.
+Loading an Export Template
+Once configured, a template can be loaded to PIM Admin via the Template Export tab by users with the permissions to do so, and templates can be maintained and replaced/updated in the same location for when an endpoint’s requirements change.
+Using the Export Templates
+A user can invoke an export template on both a List page, as well as a Product data page, offering unique flexibility for extracting information from the PIM for various use case scenarios.
+Propel PIM User Administration
+
+What is User Administration?
+In Propel PIM, users can have specific permissions applied that allow or disallow them from doing certain actions, making updates or viewing records, or even administering other users within PIM.
+
+This is an extension from typical Salesforce User Administration. Based on the license type, Propel utilizes the Salesforce “System Administrator” and “Standard User” profile types. A Salesforce Admin would be responsible for these assignments, as well as the assignment of one of three specific Permission Sets within Salesforce User Administration, those being:
+PIM Sys Admin
+As it sounds, this gives unlimited privilege within Propel PIM
+A user that is a System Administrator profile type, and has the PIM Sys Admin Salesforce permission set can bypass the User Administration functionality within PIM Admin entirely.
+PIM Full Use
+The standard use case for a PIM user. A user that has this permission set will be Read Only until they are added to a Permission entry within User Administration in PIM Admin.
+PIM Collaboration
+For our Collaboration User license type, this permission set acts as a permanent Read Only mode for users. Even if a user is a part of a User Group that is assigned to a permission entry within PIM Admin, they will still be Read Only.
+The Different Options for User Administration
+Configuring a permission entry has four main areas of importance. 
+Permissions
+This is the “Admin Functions” portion of the permission entry, giving the user the ability to perform actions. These include:
+User Permission (Users with this permission can administer the User Permission entries)
+Attribute Tab (Ability to create/edit Attribute Tab entries in PIM Admin)
+Attribute Group (Ability to create/edit Attribute Group entries in PIM Admin)
+Attribute Label (Ability to create/edit Attribute Label entries in PIM Admin)
+Attribute Edit (Ability to directly create/edit attribute values on Products/Variants)
+Category (Ability to create/edit Categories within PIM Admin)
+Product (Ability to create Products and edit Product Metadata)
+Product Variant Set (Ability to create/edit Variant Layout entries in PIM Admin)
+Product Variant (Ability to create/edit Variants on Products)
+Digital Asset (Ability to create/edit Digital Assets and Digital Asset Metadata)
+Task Management (Ability to create/edit Tasks)
+Category
+This area limits users associated with the permission to selected Categories, meaning the user would be unable to make modifications to products within a Category that is not part of this permission’s selection.
+
+Note that NO SELECTION means that the permission set is NOT LIMITED in scope by Categories, and users can make modifications to Products/Variants/Attribute Values if they have the appropriate permission toggle to do so.
+Attributes
+This area limits users associated with the permission to selected Attributes (Tabs/Groups/Labels), meaning the user would be unable to create or make modifications to attribute values for Attributes that are not in scope of this permission’s selections.
+
+Note that NO SELECTION means that the permission set is NOT LIMITED in scope by Attributes, and users can make modifications to Products/Variants/Attribute Values if they have the appropriate permission toggle to do so.
+Membership
+This tab is where a User Administrator would assign Users or User Groups (User Groups are managed within Salesforce Administration, please see Salesforce user guide for more details) to the PIM Permission entry. Users can be a part of multiple entries. Restrictions take precedence for assignments.
+ 

@@ -1,0 +1,21 @@
+  Propel Supplier Community Overview
+The Propel Supplier Community leverages Salesforce Experience Cloud to make it easy for your company to collaborate with all your suppliers. Unlike suppliers who need frequent access to Propel or those who are deeply embedded in the product development process, many other suppliers only need sporadic access to Propel information and need a super intuitive interface to collaborate. That’s where the Propel Supplier Community can help.
+While there is extensive Salesforce documentation on their Experience Cloud (also commonly referred to as Salesforce Communities), we’ve created a few articles to help cover the basics so you can get up and running as quickly as possible.
+Propel Supplier Community Overview
+The Propel Supplier Community comes with a default template that you can use right away with your suppliers. The following articles provide an overview of what is available “out of the box,” but you can also configure the Supplier Community to do what you want.
+Propel Supplier Community Navigation : This article covers basic navigation and common tasks that you can perform with the default Propel Supplier Community. We recommend reading through this article first.
+Update News Content : If you want to promote certain information in the Community, you can update this content through Salesforce CMS.
+Managing Users in the Supplier Community : Adding and managing users for the Supplier Community is slightly different from the typical way users are managed in Propel.
+Sharing Information in the Supplier Community : Propel Supplier Community leverages many of the sharing configurations in the core Propel application. There are a few minor differences you can leverage that can further restrict what gets shared in the Community.
+New Community Configurations : Propel Supplier Community has a new Permission Set called Propel ReadOnly Communities, which provides community users access. There are also three default supplier requests that partners can use to request updates.
+Propel Supplier Community Advanced Configuration 
+If you are familiar with Salesforce Experience Cloud or are experienced with web development, you can make additional updates to the default template of the Propel Supplier Community. Make sure to refer to the Salesforce Experience Cloud documentation for much more detailed information. Please contact Propel Support if you need expert services help.
+Propel Supplier Community Configuration : This article provides an overview of the additional configuration you can do with the Propel Supplier Community.
+Configure Page Layouts in Communities : This article provides additional configuration for changing page layouts and default buttons for Items, Changes, and other Propel pages.
+Update the Navigation Menu Component in Supplier Community : Update the navigation menu on your site to access custom pages that you’ve created.
+Update a Tab Component in Supplier Community : Components provide record details for your users. If you create new components, or make changes to existing ones, you need to ensure they are configured correctly so users can access the information they need.
+Configure Supplier Community Search to Display Propel Records : If you add pages that access objects outside of the provided template, then you need to ensure the search is configured to return results for those objects.
+Add Images in Supplier Community : Some components let you add images, or replace images that were provided with the template. While adding images is straightforward, there is an extra step you need to take to make the images available to your users.
+Update Branding for Propel Supplier Community : Propel Supplier Community gives you an incredible amount of flexibility to let you customize your site to match your corporate branding. 
+
+ 

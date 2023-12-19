@@ -1,0 +1,121 @@
+Propel Setup and Administration
+This section is intended for Propel Administrators to help manage Propel and make modifications to the org to meet the needs of users. Each of the areas below covers key aspects of Propel that are important for Propel Administrators to be aware of.
+Propel Setup
+A good place to start for Administrators new to Propel, the Propel System Overview provides an overview of the system, the core objects Propel uses, and key setup information. The Propel Setup Tab article covers an important configuration area of the system outside of Setup tasks and is important for all Admins working with Propel.
+Propel System Overview
+Propel Setup
+Lifecycles
+Propel Lifecycles provide the overall structure to help you manage your business practices for the Items that you manage and track. This section includes Lifecycle Phases and Phase Transitions.
+Lifecycles Overview
+Configure a Lifecycle
+Lifecycle Phases
+Configure a Change, Quality, or Declaration Phase
+Configure an Item Phase
+Lifecycle Phase Transitions
+Configure a Lifecycle Phase Transition
+Categories
+Categories work in conjunction with Lifecycles and Lifecycle Phases to let you further configure and customize the behaviors and constraints of different Item, Change, Quality, and Declaration records.
+Categories Overview
+Configure a Category
+Configure a Category through Propel Setup
+Configure a Category through the Categories Tab
+Autonumbers
+Propel’s Autonumber feature lets you specify how the numbering sequence for a record will be formatted.
+Autonumbers Overview
+Configure an Autonumber
+Approvals
+Setting up Approvals and Approvers is an integral part to setting up Change, Quality, and Declaration records. This dictates how and by whom records will be reviewed and approved.
+Approvals Overview
+Observers Overview
+Create Criteria-Based Approver Rules
+Apply a Criteria-Based Approver Rule on a Record
+Configure an Approver Definition
+Setup Dual Signatures
+Users and Permissions
+Ensure your users have the correct configuration and permissions setup to ensure they can perform their duties. Much of this is standard Salesforce; however, we’ve customized the articles for Propel-specific situations.
+Create a New Propel User
+Assign Propel to a User
+Deactivate a Propel User
+Remove a Propel License from a User
+Configure a Profile
+Configure a Permission Set
+Assign a Propel Permission Set
+Add a Custom Field to a Permission Set
+Configure a Public Group
+Assign a User to a Public Group
+Custom Fields and Display
+Much of what users see on Item, Change, Quality, and Declaration records can be customized. Follow the links below to customize the data presented on the records and the various tabs within the records.
+Add Custom Fields to the Item Object
+Display Custom Fields on the Item Details Tab
+Display Custom Fields on the Item Attachments Tab
+Add Custom Fields to a Manufacturer Item or Manufacturer Part Record
+Display Custom Fields on Item Manufacturer Tab
+Display Custom Fields on the Item BOM Tab
+Add Custom Fields to a Change or Quality Record
+Make Custom Fields Required by Category and Phase
+Display Custom Fields on the Affected Items Tab
+Add Fields to the Where Used Tab
+Customize a Page Layout
+Add Values to a Picklist Field
+Add the Has Redlines Field to the BOM Tab
+Set Up Alternate Parts in a BOM
+Watermark Item Attachments using a Flow (recommended method for watermarking)
+Watermark Item Attachments using Process Builder
+Configure PDF Generation from a Word Template
+Override Field Labels for Propel Packaged Fields
+Manage Costs
+Quoted Costs and other Roll-Up Types
+Locked Costs
+Propel Advanced Costing
+Manage BOM Costs
+Edit Costs on Released BOMs
+Configure Cost Roll-Ups
+Configure Additional Cost Fields to Track in Part Cost History
+Propel Sharing Rules
+Propel Sharing Rules let you automate the sharing of private records, allowing for safe and secure information sharing between internal divisions and external groups, such as design, supply chain and manufacturing partners.
+Propel Sharing Rules and Reporting Overview
+Configure a Public Group for Propel Sharing Rules
+Create a Custom Field for a Propel Sharing Rule
+Configure a Propel Sharing Rule
+Create Process Builders for Propel Sharing Rules
+Set Objects to Private for Propel Sharing Rules
+Run a Workspace Report for Propel Sharing Rules
+Advanced Salesforce Help
+This section provides help with common Salesforce issues, such as Validation Rules, Dependent Fields, Licensing, Sharing Rules, etc.
+Configure Validation Rules
+Configure Dependent Picklists
+Configure Salesforce Sharing Rules
+Perform a Salesforce Security Health Check
+Configure a Password Policy
+Configure Network Access
+Manage Your Company Information Page
+Refresh a Sandbox
+Import Data
+While most common during implementations, there may be times when you need to import large amounts of data into Propel. This section covers importing various data types using Salesforce Dataloader or Propel’s Import Tool.
+Note: The articles in this section are intended for Propel Consultants and Partners and experienced Propel Administrators who are comfortable working with large data sets and importing directly into Salesforce custom objects. Propel Support is not responsible for data integrity errors or data loss resulting from importing data directly into Salesforce custom objects. It is assumed that the person performing the import is experienced with Salesforce objects and schema and has prior experience performing data migrations.
+Propel Import Tool
+Propel Import Tool: Item Data
+Propel Import Tool: Bill of Material (BOM) Data
+Propel Import Tool: Approved Manufacturer List (AML) Data
+Propel Import Tool: Item Attachments (Files)
+Propel Import Tool: Manufacturer Part Cost
+Propel Import Tool: Multi-Source Manufacturer Parts
+Import Data through an API
+View Recently Used Import Field Mappings
+Salesforce Dataloader and Import Wizard
+Dataload: Items and Item Revisions
+Dataload: Users
+Dataload: BOM (Bill of Material)
+Dataload: Manufacturers (Accounts)
+Dataload: Manufacturer Parts
+Dataload: Manufacturer Items (AML)
+Dataload: Changes
+Dataload: Affected Items (Changes)
+Dataload: Quality Records
+Dataload: Affected Items (Quality)
+Dataload File Attachments (Items)
+Dataload File Attachments (Change, Quality, and Declaration Records)
+Dataload: Affected Items (Declaration)
+Dataload: Import Activities into a Project from a Spreadsheet
+Propel Advanced Configurations
+Go to our Propel Advanced Configurations section which provides articles to help you perform more advanced Propel Administration activities.
